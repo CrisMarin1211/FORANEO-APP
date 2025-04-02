@@ -1,9 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import LogInForm from './logInForm/logInForm';
+import LogInForm from './components/logInForm/logInForm';
 import './login.css';
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const onFinish = values => {
     console.log('Success:', values);
     if (values.remember) {
@@ -13,6 +16,7 @@ const Login = () => {
       localStorage.removeItem('username');
       localStorage.removeItem('password');
     }
+    navigate('/main'); // Redirección a "main"
   };
 
   const onFinishFailed = errorInfo => {

@@ -21,7 +21,7 @@ const Register = () => {
 
   const onFinish = values => {
     console.log('Received values:', values);
-    navigate('/login');
+    navigate('/main');
   };
 
   return (
