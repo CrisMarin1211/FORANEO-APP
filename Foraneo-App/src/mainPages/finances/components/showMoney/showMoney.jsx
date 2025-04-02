@@ -16,7 +16,7 @@ const ShowMoney = () => {
       <div className="money-card expense">
         <h2><ArrowDownOutlined className="icon expense-icon" /> ${expenses.toLocaleString()}</h2>
         <p>Expense</p>
-        <button className="add-btn" onClick={() => navigate('/addexpense')}>
+        <button className="add-btn" onClick={() => navigate('/add')}>
           <PlusOutlined /> Add
         </button>
       </div>
@@ -24,7 +24,7 @@ const ShowMoney = () => {
       <div className="money-card income">
         <h2><ArrowUpOutlined className="icon income-icon" /> ${income.toLocaleString()}</h2>
         <p>Income</p>
-        <button className="add-btn" onClick={() => navigate('/addincome')}>
+        <button className="add-btn" onClick={() => navigate('/add')}>
           <PlusOutlined /> Add
         </button>
       </div>
