@@ -1,0 +1,46 @@
+.big-info-container {
+  margin-top: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  background: rgb(234, 69, 69);
+}
+
+.tabs {
+  display: flex;
+  position: absolute;
+  top: -25px;
+}
+
+.tab {
+  background-color: #f9f9f9;
+  margin-bottom: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  font-weight: bold;
+  margin-right: 5px;
+  transition: 0.3s;
+}
+
+.tab:hover {
+  opacity: 0.8;
+}
+
+/* Colores de las pestañas */
+.Timeline-tab { background: #3f8600; color: white; }
+.Statistics-tab { background: #cf1322; color: white; }
+.Goal-tab { background: #ff9800; color: white; }
+
+/* Pestaña activa */
+.active {
+  transform: translateY(-5px);
+}
+
+.tab-content {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  min-height: 100px;
+}
