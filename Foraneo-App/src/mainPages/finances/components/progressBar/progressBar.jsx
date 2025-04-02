@@ -12,7 +12,7 @@ const ProgressBar = ({ goal = 1000000, percent = 10 }) => {
   return (
     <section style={{ position: "relative", width: "500px", textAlign: "center" }}>
       {/* Pop Number*/}
-      <div
+      <section
         style={{
           position: "absolute",
           left: `${percent}%`,
@@ -28,7 +28,7 @@ const ProgressBar = ({ goal = 1000000, percent = 10 }) => {
         }}
       >
         ${raisedAmount.toLocaleString()}
-      </div>
+      </section>
 
       <Progress
         percent={percent}

@@ -12,28 +12,28 @@ const ShowMoney = () => {
   const balance = income - expenses;
 
   return (
-    <div className="money-container">
-      <div className="money-card expense">
+    <section className="money-container">
+      <section className="money-card expense">
         <h2><ArrowDownOutlined className="icon expense-icon" /> ${expenses.toLocaleString()}</h2>
         <p>Expense</p>
         <button className="add-btn" onClick={() => navigate('/add')}>
           <PlusOutlined /> Add
         </button>
-      </div>
+      </section>
 
-      <div className="money-card income">
+      <section className="money-card income">
         <h2><ArrowUpOutlined className="icon income-icon" /> ${income.toLocaleString()}</h2>
         <p>Income</p>
         <button className="add-btn" onClick={() => navigate('/add')}>
           <PlusOutlined /> Add
         </button>
-      </div>
+      </section>
 
-      <div className="money-card balance">
+      <section className="money-card balance">
         <h2>${balance.toLocaleString()}</h2>
         <p> ✅ Total balance</p>
-      </div>
-    </div>
+      </section>
+    </section>
   );
 };
 

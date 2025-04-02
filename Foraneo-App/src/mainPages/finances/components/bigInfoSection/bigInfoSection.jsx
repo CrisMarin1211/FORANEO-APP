@@ -19,30 +19,30 @@ const BigInfoSection = () => {
 
   return (
     <section className="big-info-container">
-      <div className="tabs">
-        <div
+      <section className="tabs">
+        <section
           className={`tab ${activeTab === 'Timeline' ? 'active Timeline-tab' : ''}`}
           onClick={() => setActiveTab('Timeline')}
         >
           Timeline
-        </div>
-        <div
+        </section>
+        <section
           className={`tab ${activeTab === 'Statistics' ? 'active Statistics-tab' : ''}`}
           onClick={() => setActiveTab('Statistics')}
         >
           Statistics
-        </div>
-        <div
+        </section>
+        <section
           className={`tab ${activeTab === 'Goal' ? 'active Goal-tab' : ''}`}
           onClick={() => setActiveTab('Goal')}
         >
           Goal
-        </div>
-      </div>
+        </section>
+      </section>
 
-      <div className="tab-content">
+      <section className="tab-content">
         {renderContent()}
-      </div>
+      </section>
     </section>
   );
 };
