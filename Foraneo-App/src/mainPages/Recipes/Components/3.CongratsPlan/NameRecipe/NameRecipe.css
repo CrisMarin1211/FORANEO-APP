@@ -1,0 +1,19 @@
+/* Fuente Satoshi (debería estar en tu index.html) */
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400&display=swap');
+
+.Name-Recipe {
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 10px 0;
+}
+
+.title-NameRecipe {
+	font-family: 'Satoshi', sans-serif !important;
+	font-weight: 900 !important;
+	font-size: 24px;
+	color: #000000;
+	margin: 0;
+	padding: 60px;
+	text-align: center;
+}
