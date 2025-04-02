@@ -10,7 +10,7 @@ const ProgressBar = ({ goal = 1000000, percent = 10 }) => {
   const raisedAmount = Math.round((percent / 100) * goal);
 
   return (
-    <div style={{ position: "relative", width: "500px", textAlign: "center" }}>
+    <section style={{ position: "relative", width: "500px", textAlign: "center" }}>
       {/* Pop Number*/}
       <div
         style={{
@@ -37,7 +37,7 @@ const ProgressBar = ({ goal = 1000000, percent = 10 }) => {
         strokeColor={twoColors}
         size={[450, 40]}
       />
-    </div>
+    </section>
   );
 };
 
