@@ -1,11 +1,15 @@
-import { useState } from 'react';
+import { BrowserRouter } from 'react-router-dom'; // Importa BrowserRouter
 import './App.css';
+import Router from './router/router';
 
 function App() {
 	return (
-		<div>
-			<h1> HELLOOOOO </h1>
-		</div>
+		<BrowserRouter>
+			<section>
+				<Router />
+			</section>
+		</BrowserRouter>
 	);
 }
+
 export default App;
