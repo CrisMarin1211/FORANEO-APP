@@ -1,37 +1,42 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import LogInForm from './components/logInForm/logInForm';
-import './login.css';
+import './finances.css';
+import ShowMoney from '../../components/showMoney/showMoney';
+import ProgressBar from '../../components/progressBar/progressBar';
+import BigInfoSection from '../../components/bigInfoSection/bigInfoSection';
 
-const Login = () => {
-  const navigate = useNavigate();
-
-  const onFinish = values => {
-    console.log('Success:', values);
-    if (values.remember) {
-      localStorage.setItem('username', values.username);
-      localStorage.setItem('password', values.password);
-    } else {
-      localStorage.removeItem('username');
-      localStorage.removeItem('password');
-    }
-    navigate('/main'); // Redirección a "main"
-  };
-
-  const onFinishFailed = errorInfo => {
-    console.log('Failed:', errorInfo);
-  };
+const Finances = () => {
 
   return (
-    <section>
-      <h1>Login</h1>
-      <LogInForm onFinish={onFinish} onFinishFailed={onFinishFailed} />
-      <p style={{ textAlign: 'center' }}>
-        Don't have an account? <Link to="/">Sign up</Link>
-      </p>
+    <section className='container'>
+
+      <section className='header'>
+      <section className='Welcome Message'>
+      <h2>You can do it Cris!</h2>
+      <h4>Keep track of your finances! </h4>
+      </section>
+
+      <button>
+        Boton mensual
+      </button>
+
+      </section>
+
+      <section>
+      <ShowMoney></ShowMoney>
+      </section>
+
+      <section>
+      <h2> Barra de progreso </h2>
+      <ProgressBar></ProgressBar>
+      </section>
+
+      <section>
+      <BigInfoSection/>
+      </section>
+
+
     </section>
   );
 };
 
-export default Login;
+export default Finances;

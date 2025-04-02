@@ -1,0 +1,15 @@
+.header{
+  background-color: aqua;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+button{
+  height: 80px;
+  width: 100px;
+  display: flex;
+  margin-left: 100px;
+  color: aliceblue;
+}
