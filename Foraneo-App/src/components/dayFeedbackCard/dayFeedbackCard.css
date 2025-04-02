@@ -1,0 +1,34 @@
+.day-feedback-container {
+	padding: 20px;
+	text-align: center;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 12px;
+	background-color: #fff;
+}
+
+.day-feedback-title {
+	font-size: 24px;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+.image-row {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.feedback-image {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+	.image-row {
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+	}
+}
