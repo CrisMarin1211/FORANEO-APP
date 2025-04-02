@@ -1,0 +1,72 @@
+.money-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #777; /* Color de fondo general */
+  border-radius: 10px;
+}
+
+.money-card {
+  width: 130px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.expense { background: #d9d9d9; } /* Gris claro */
+.income { background: #d9d9d9; } /* Gris claro */
+.balance { background: #d7ffd7; } /* Verde pastel */
+
+h2 {
+  margin: 5px 0;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.icon {
+  font-size: 18px;
+}
+
+.expense-icon { color: #cf1322; } /* Rojo */
+.income-icon { color: #3f8600; } /* Verde */
+.check-icon { color: #3f8600; } /* Verde */
+
+.add-btn {
+  margin: 0;
+  margin-top: 7px;
+  background: linear-gradient(135deg, #ff8a00, #e52e71);
+  border: none;
+  border-radius: 10px;
+  width: 90px;
+  height: 35px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background: linear-gradient(135deg, #e52e71, #ff8a00);
+}

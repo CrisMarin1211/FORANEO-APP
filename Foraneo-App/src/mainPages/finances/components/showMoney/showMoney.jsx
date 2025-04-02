@@ -1,32 +1,40 @@
 import React from 'react';
-import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
-import { Card, Col, Row, Statistic } from 'antd';
-const ShowMoney = () => (
-  <Row gutter={16}>
-    <Col span={12}>
-      <Card variant="borderless">
-        <Statistic
-          title="Active"
-          value={11.28}
-          precision={2}
-          valueStyle={{ color: '#3f8600' }}
-          prefix={<ArrowUpOutlined />}
-          suffix="%"
-        />
-      </Card>
-    </Col>
-    <Col span={12}>
-      <Card variant="borderless">
-        <Statistic
-          title="Idle"
-          value={9.3}
-          precision={2}
-          valueStyle={{ color: '#cf1322' }}
-          prefix={<ArrowDownOutlined />}
-          suffix="%"
-        />
-      </Card>
-    </Col>
-  </Row>
-);
-export default App;
+import { useNavigate } from 'react-router-dom';
+import { PlusOutlined, ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
+import './showMoney.css';
+
+const ShowMoney = () => {
+  const navigate = useNavigate();
+
+  // Datos quemados (ejemplo)
+  const income = 23000;
+  const expenses = 150000;
+  const balance = income - expenses;
+
+  return (
+    <div className="money-container">
+      <div className="money-card expense">
+        <h2><ArrowDownOutlined className="icon expense-icon" /> ${expenses.toLocaleString()}</h2>
+        <p>Expense</p>
+        <button className="add-btn" onClick={() => navigate('/addexpense')}>
+          <PlusOutlined /> Add
+        </button>
+      </div>
+
+      <div className="money-card income">
+        <h2><ArrowUpOutlined className="icon income-icon" /> ${income.toLocaleString()}</h2>
+        <p>Income</p>
+        <button className="add-btn" onClick={() => navigate('/addincome')}>
+          <PlusOutlined /> Add
+        </button>
+      </div>
+
+      <div className="money-card balance">
+        <h2>${balance.toLocaleString()}</h2>
+        <p> ✅ Total balance</p>
+      </div>
+    </div>
+  );
+};
+
+export default ShowMoney;
