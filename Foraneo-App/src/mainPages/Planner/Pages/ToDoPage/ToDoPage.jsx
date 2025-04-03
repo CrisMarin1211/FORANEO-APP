@@ -1,11 +1,11 @@
 import React from 'react';
 import './ToDoPage.css';
-import ToDoList from '../../components/toDoList/toDoList';
+import Menu from '../../components/navBar/navBar';
 
 const ToDoPage = () => {
 	return (
 		<>
-			<ToDoList />
+			<Menu />
 		</>
 	);
 };
