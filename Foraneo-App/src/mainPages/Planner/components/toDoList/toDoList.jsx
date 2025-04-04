@@ -4,7 +4,7 @@ import './toDoList.css';
 const ToDoList = () => {
 	return (
 		<>
-			<div className='todo-container'>
+			<section className='todo-container'>
 				<h2 className='todo-title'>TO-DO</h2>
 				<div className='task-list'>
 					<div className='task-item'>
@@ -13,7 +13,7 @@ const ToDoList = () => {
 					</div>
 				</div>
 				<button className='new-task-btn'>+ New Task</button>
-			</div>
+			</section>
 		</>
 	);
 };
