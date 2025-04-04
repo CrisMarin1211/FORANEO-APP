@@ -1,34 +1,36 @@
 .day-feedback-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: white;
+	border-radius: 15px;
 	padding: 20px;
-	text-align: center;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	border-radius: 12px;
-	background-color: #fff;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+	width: 90%;
+	max-width: 400px;
+	margin: auto;
+	border: 2px solid #02565f;
+	margin-top: 100px;
 }
 
 .day-feedback-title {
-	font-size: 24px;
-	margin-bottom: 20px;
+	text-align: left;
+	width: 100%;
+	font-size: 1.5rem;
 	font-weight: bold;
+	margin-bottom: 20px;
 }
 
 .image-row {
-	display: flex;
-	justify-content: center;
-	gap: 20px;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 15px;
+	width: 100%;
+	justify-items: center;
 }
 
-.feedback-image {
-	width: 100px;
-	height: 100px;
-	object-fit: cover;
-	border-radius: 8px;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 	.image-row {
-		flex-direction: column;
-		align-items: center;
-		gap: 10px;
+		grid-template-columns: repeat(5, minmax(50px, 1fr));
 	}
 }

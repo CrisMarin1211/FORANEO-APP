@@ -8,11 +8,11 @@ const DayFeedbackCard = () => {
 			<div className='day-feedback-container'>
 				<h2 className='day-feedback-title'>How was your day?</h2>
 				<div className='image-row'>
-					<IconCircle width={60} height={60} color='#FF4D4D' />
-					<IconCircle width={60} height={60} color='#FF4D4D' />
-					<IconCircle width={60} height={60} color='#FF4D4D' />
-					<IconCircle width={60} height={60} color='#FF4D4D' />
-					<IconCircle width={60} height={60} color='#FF4D4D' />
+					<img src='/images/happyface.png'></img>
+					<img src='/images/contentface.png'></img>
+					<img src='/images/seriousface.png'></img>
+					<img src='/images/depressedface.png'></img>
+					<img src='/images/sadface.png'></img>
 				</div>
 			</div>
 		</>
