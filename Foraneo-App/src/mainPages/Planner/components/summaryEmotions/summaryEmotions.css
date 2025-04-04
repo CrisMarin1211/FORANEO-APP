@@ -1,0 +1,57 @@
+.summary-card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: white;
+	border-radius: 15px;
+	padding: 20px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	width: 90%;
+	max-width: 400px;
+	margin: auto;
+	border: 2px solid #02565f;
+	margin-top: 100px;
+}
+
+.icon-column {
+	flex: 25%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.icon-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.icon-text {
+	font-size: 12px;
+	color: #555;
+	margin-top: 5px;
+	text-align: center;
+}
+
+.food-column {
+	flex: 75%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.row {
+	display: flex;
+	justify-content: space-around;
+	margin: 5px 0;
+}
+
+.icon-column svg {
+	width: 45px;
+	height: 45px;
+}
+
+.food-column svg {
+	width: 36px;
+	height: 36px;
+}
