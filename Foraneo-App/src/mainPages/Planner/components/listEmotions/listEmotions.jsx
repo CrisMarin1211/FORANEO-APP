@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './listEmotions.css';
 
-const ListEmotions = ({ title, emotions }) => {
+const ListEmotions = ({ title, emotions, onSelectionChange }) => {
 	const [selected, setSelected] = useState([]);
 
 	useEffect(() => {
@@ -23,7 +23,7 @@ const ListEmotions = ({ title, emotions }) => {
 				<div className='emotion-list'>
 					{emotions.map((emotion, index) => (
 						<div key={index} className='emotion-item' onClick={() => toggleEmotion(emotion.name)}>
-							<div className={`emotion-icon ${selected.includes(emotion.name) ? 'Selected' : ''}`}>{emotion.icon}</div>
+							<div className={`emotion-icon ${selected.includes(emotion.name) ? 'selected' : ''}`}>{emotion.icon}</div>
 							<span className='emotion-name'>{emotion.name}</span>
 						</div>
 					))}

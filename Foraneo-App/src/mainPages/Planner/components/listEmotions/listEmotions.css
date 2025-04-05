@@ -84,3 +84,7 @@
 .emotion-icon.selected {
 	background-color: #00a0b2;
 }
+
+svg {
+	color: white;
+}
