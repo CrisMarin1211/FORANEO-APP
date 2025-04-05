@@ -8,6 +8,7 @@ import DayFeedbackCard from '../../components/dayFeedbackCard/dayFeedbackCard';
 
 const EmotionTracker = () => {
 	const [allSelections, setAllSelections] = useState({});
+	const [dayMood, setDayMood] = useState(null);
 	const [showModal, setShowModal] = useState(false);
 
 	const handlerSelectionChange = (title, selectItems) => {
@@ -15,6 +16,10 @@ const EmotionTracker = () => {
 	};
 
 	const handlerSaveAll = () => {
+		if (!dayMood) {
+			alert('It is mandatory to select an emotion');
+			return;
+		}
 		Object.entries(allSelections).forEach(([title, items]) => {
 			const key = `emotions_${title}`;
 			if (items.length > 0) {
@@ -24,13 +29,18 @@ const EmotionTracker = () => {
 			}
 		});
 
+		const today = new Date().toISOString().split('T')[0];
+		const existentFeedback = JSON.parse(localStorage.getItem('day-feedbacks')) || {};
+		existentFeedback[today] = dayMood;
+		localStorage.setItem('day-feedbacks', JSON.stringify(existentFeedback));
+
 		setShowModal(true);
 	};
 
 	return (
 		<>
 			<Menu />
-			<DayFeedbackCard />
+			<DayFeedbackCard onSelect={setDayMood} />
 			<ListEmotions title='Emotions' emotions={emotionsData} onSelectionChange={handlerSelectionChange} />
 			<ListEmotions title='People' emotions={peopleData} onSelectionChange={handlerSelectionChange} />
 			<ListEmotions title='Weather' emotions={weatherData} onSelectionChange={handlerSelectionChange} />

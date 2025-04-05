@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './dayFeedbackCard.css';
-import faces from '../../data/imagesData';
+import { faces } from '../../data/imagesData';
 
 const DayFeedbackCard = ({ date, onSelect }) => {
 	const [selected, setSelected] = useState(null);
