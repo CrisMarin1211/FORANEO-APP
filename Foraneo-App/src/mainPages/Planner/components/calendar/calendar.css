@@ -88,3 +88,12 @@
 .calendar-controls button:hover {
 	color: #5aaeb5;
 }
+
+.calendar-mood-img {
+	width: 27px;
+	height: 27px;
+	margin-top: -34px;
+	margin-bottom: 6px;
+	z-index: 2;
+	position: relative;
+}
