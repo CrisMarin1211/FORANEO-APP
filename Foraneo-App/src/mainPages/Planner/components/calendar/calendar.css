@@ -3,20 +3,23 @@
 	flex-direction: column;
 	align-items: center;
 	padding: 20px;
-	margin-top: 100px;
+	margin-top: 80px;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .calendar-title {
 	text-align: center;
-	font-size: 24px;
-	margin-bottom: 40px;
+	font-size: 28px;
+	margin-bottom: 30px;
 }
 
 .calendar-controls {
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	gap: 10px;
-	margin-bottom: 15px;
-	align-items: center;
+	margin-bottom: 20px;
 }
 
 .calendar-controls button {
@@ -24,7 +27,7 @@
 	border: none;
 	padding: 8px 12px;
 	cursor: pointer;
-	font-size: 16px;
+	font-size: 18px;
 	border-radius: 5px;
 	color: white;
 	font-weight: bold;
@@ -38,18 +41,15 @@
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
 	gap: 10px;
-	max-width: 350px;
+	max-width: 380px;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .calendar-day-header {
 	text-align: center;
 	font-weight: bold;
-}
-
-.calendar-day {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	font-size: 15px;
 }
 
 .calendar-item {
@@ -60,8 +60,8 @@
 }
 
 .calendar-svg {
-	width: 40px;
-	height: 40px;
+	width: 44px;
+	height: 44px;
 	fill: #f2feff;
 	stroke: #79cfd9;
 	stroke-width: 2.5;
@@ -71,7 +71,16 @@
 	color: black;
 	font-size: 14px;
 	font-weight: bold;
-	margin-top: 4px;
+	margin-top: 6px;
+}
+
+.calendar-mood-img {
+	width: 45px;
+	height: 45px;
+	margin-top: -44px;
+	margin-bottom: 6px;
+	z-index: 2;
+	position: relative;
 }
 
 .calendar-controls button {
@@ -79,7 +88,7 @@
 	border: none;
 	padding: 8px 12px;
 	cursor: pointer;
-	font-size: 16px;
+	font-size: 18px;
 	color: #79cfd9;
 	font-weight: bold;
 	transition: color 0.3s ease;
@@ -89,11 +98,33 @@
 	color: #5aaeb5;
 }
 
-.calendar-mood-img {
-	width: 27px;
-	height: 27px;
-	margin-top: -34px;
-	margin-bottom: 6px;
-	z-index: 2;
-	position: relative;
+@media (max-width: 400px) {
+	.calendar-title {
+		font-size: 24px;
+	}
+
+	.calendar-controls button {
+		font-size: 14px;
+		padding: 8px 12px;
+	}
+
+	.calendar-grid {
+		gap: 8px;
+		max-width: 320px;
+	}
+
+	.calendar-svg {
+		width: 38px;
+		height: 38px;
+	}
+
+	.calendar-day-number {
+		font-size: 12px;
+	}
+
+	.calendar-mood-img {
+		width: 24px;
+		height: 24px;
+		margin-top: -30px;
+	}
 }

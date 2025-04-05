@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './calendar.css';
 import { faces } from '../../data/imagesData';
 
-const daysOfWeek = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const Calendar = () => {
 	const [year, setYear] = useState(2025);
@@ -35,14 +35,14 @@ const Calendar = () => {
 			<section className='calendar-container'>
 				<h2 className='calendar-title'>Mood Tracker</h2>
 				<div className='calendar-controls'>
-					<button onClick={prevYear}>⏮ Año</button>
+					<button onClick={prevYear}>⏮ Year</button>
 					<button onClick={prevMonth}>◀</button>
 					<span>
 						{new Date(year, month).toLocaleString('es-ES', { month: 'long' })}
 						{year}
 					</span>
 					<button onClick={nextMonth}>▶</button>
-					<button onClick={nextYear}>Año ⏭</button>
+					<button onClick={nextYear}>Year ⏭</button>
 				</div>
 				<div className='calendar-grid'>
 					{daysOfWeek.map((day) => (
