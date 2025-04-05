@@ -64,6 +64,23 @@
 	}
 }
 
-svg {
+.save-emotions-btn {
+	margin-top: 15px;
+	padding: 8px 16px;
+	background-color: #00a0b2;
 	color: white;
+	border: none;
+	border-radius: 8px;
+	font-size: 0.95rem;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background 0.3s;
+}
+
+.save-emotions-btn:hover {
+	background-color: #028997;
+}
+
+.emotion-icon.selected {
+	background-color: #00a0b2;
 }
