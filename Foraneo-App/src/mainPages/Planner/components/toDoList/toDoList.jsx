@@ -38,7 +38,7 @@ const ToDoList = () => {
 									setTasks(updated);
 								}}
 							>
-								<option value='Pending'>Pending</option>
+								<option value='Pending'>Not Started</option>
 								<option value='In Progress'>In Progress</option>
 								<option value='Completed'>Completed</option>
 							</select>
