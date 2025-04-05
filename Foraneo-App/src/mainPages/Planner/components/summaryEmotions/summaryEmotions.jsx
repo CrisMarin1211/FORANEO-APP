@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './summaryEmotions.css';
 import IconCircle2 from '../../assets/icons/iconCircle2';
+import { faces } from '../../data/imagesData';
 
 const EMOTION_ICONS = [
 	[
@@ -20,13 +21,28 @@ const EMOTION_ICONS = [
 ];
 
 const SummaryEmotions = () => {
+	const [currentFace, setCurrentFace] = useState(null);
+
+	useEffect(() => {
+		const data = JSON.parse(localStorage.getItem('day-feedbacks')) || {};
+		const dates = Object.keys(data).sort().reverse();
+		if (dates.length > 0) {
+			const lates = dates[0];
+			const mood = data[lates];
+			const face = faces.find((f) => f.label === mood);
+			setCurrentFace(face);
+		}
+	}, []);
+
+	const today = new Date().toISOString().split('T')[0];
+
 	return (
 		<>
 			<section className='summary-card'>
 				<div className='icon-column'>
 					<div className='icon-wrapper'>
-						<img src='/images/happyface.png' alt='happy face'></img>
-						<span className='icon-text'>Texto 1</span>
+						{currentFace && <img src={currentFace.src} alt={currentFace.label}></img>}
+						<span className='icon-text'>{today}</span>
 					</div>
 				</div>
 				<div className='food-column'>
