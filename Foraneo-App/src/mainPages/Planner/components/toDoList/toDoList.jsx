@@ -21,6 +21,11 @@ const ToDoList = () => {
 		localStorage.setItem('tasks', JSON.stringify(tasks));
 	}, [tasks]);
 
+	const handlerDeleteTask = (indexToDelete) => {
+		const updateTasks = tasks.filter((_, index) => index !== indexToDelete);
+		setTasks(updateTasks);
+	};
+
 	return (
 		<>
 			<section className='todo-container'>
@@ -28,6 +33,9 @@ const ToDoList = () => {
 				<div className='task-list'>
 					{tasks.map((task, index) => (
 						<div className='task-item' key={index}>
+							<span className='delete-task' key={index} onClick={() => handlerDeleteTask(index)} title='delete-task'>
+								x
+							</span>
 							<span className='task-text'>{task.text}</span>
 							<select
 								className={`task-status ${task.status.toLowerCase().replace(' ', '')}`}
