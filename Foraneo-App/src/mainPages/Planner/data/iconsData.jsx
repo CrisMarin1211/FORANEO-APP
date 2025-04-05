@@ -48,6 +48,7 @@ import {
 	faSuitcase,
 	faBriefcase,
 	faGift,
+	faArrowLeft,
 } from '@fortawesome/free-solid-svg-icons';
 
 export const emotionsData = [
@@ -119,3 +120,5 @@ export const healthData = [
 	{ name: 'On Meds', icon: <FontAwesomeIcon icon={faPills} /> },
 	{ name: 'Healthy', icon: <FontAwesomeIcon icon={faSuitcaseMedical} /> },
 ];
+
+export const navigationPages = [{ icon: <FontAwesomeIcon icon={faArrowLeft} /> }];
