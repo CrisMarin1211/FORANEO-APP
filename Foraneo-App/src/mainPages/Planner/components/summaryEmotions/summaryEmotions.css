@@ -28,7 +28,7 @@
 
 .icon-text {
 	font-size: 12px;
-	color: #555;
+	color: black;
 	margin-top: 5px;
 	text-align: center;
 }
@@ -52,6 +52,7 @@
 }
 
 .food-column svg {
-	width: 20px;
-	height: 20px;
+	width: 27px;
+	height: 27px;
+	color: #00a0b2;
 }

@@ -1,11 +1,12 @@
 .icon-circle {
-	width: 40px;
-	height: 40px;
+	width: 41px;
+	height: 41px;
 	border-radius: 50%;
-	background-color: #9edae1;
+	border: 2px solid #79cfd9;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin: 6px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	color: #00a0b2;
 }
