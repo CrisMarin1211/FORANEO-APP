@@ -10,6 +10,7 @@ const EmotionTracker = () => {
 	const [allSelections, setAllSelections] = useState({});
 	const [dayMood, setDayMood] = useState(null);
 	const [showModal, setShowModal] = useState(false);
+	const today = new Date().toISOString().split('T')[0];
 
 	const handlerSelectionChange = (title, selectItems) => {
 		setAllSelections((prev) => ({ ...prev, [title]: selectItems }));
@@ -30,9 +31,9 @@ const EmotionTracker = () => {
 		});
 
 		const today = new Date().toISOString().split('T')[0];
-		const existentFeedback = JSON.parse(localStorage.getItem('day-feedbacks')) || {};
-		existentFeedback[today] = dayMood;
-		localStorage.setItem('day-feedbacks', JSON.stringify(existentFeedback));
+		const existingFeedbacks = JSON.parse(localStorage.getItem('day-feedbacks')) || {};
+		existingFeedbacks[today] = dayMood;
+		localStorage.setItem('day-feedbacks', JSON.stringify(existingFeedbacks));
 
 		setShowModal(true);
 	};
@@ -40,7 +41,7 @@ const EmotionTracker = () => {
 	return (
 		<>
 			<Menu />
-			<DayFeedbackCard onSelect={setDayMood} />
+			<DayFeedbackCard onSelect={setDayMood} date={today} />
 			<ListEmotions title='Emotions' emotions={emotionsData} onSelectionChange={handlerSelectionChange} />
 			<ListEmotions title='People' emotions={peopleData} onSelectionChange={handlerSelectionChange} />
 			<ListEmotions title='Weather' emotions={weatherData} onSelectionChange={handlerSelectionChange} />

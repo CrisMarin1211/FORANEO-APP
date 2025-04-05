@@ -6,7 +6,7 @@ const DayFeedbackCard = ({ date, onSelect }) => {
 	const [selected, setSelected] = useState(null);
 
 	useEffect(() => {
-		const stored = JSON.parse(localStorage.getItem('day-feedbacks'));
+		const stored = JSON.parse(localStorage.getItem('day-feedbacks')) || {};
 		if (stored[date]) {
 			setSelected(stored[date]);
 			onSelect(stored[date]);
@@ -14,7 +14,7 @@ const DayFeedbackCard = ({ date, onSelect }) => {
 	}, [date, onSelect]);
 
 	const handlerSelect = (label) => {
-		const stored = JSON.parse(localStorage.getItem('day-feedbacks'));
+		const stored = JSON.parse(localStorage.getItem('day-feedbacks')) || {};
 		stored[date] = label;
 		localStorage.setItem('day-feedbacks', JSON.stringify(stored));
 		setSelected(label);
