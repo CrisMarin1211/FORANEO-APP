@@ -1,9 +1,13 @@
 import React from 'react';
 
-import './IconCircle.css';
+import './iconCircle.css';
 
 const IconCircle2 = ({ icon }) => {
-	return <div className='icon-circle'>{icon}</div>;
+	return (
+		<section className='icon-circle'>
+			<div className='icon-content'>{icon}</div>
+		</section>
+	);
 };
 
 export default IconCircle2;
