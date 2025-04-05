@@ -34,3 +34,22 @@
 		grid-template-columns: repeat(5, minmax(50px, 1fr));
 	}
 }
+
+.face-img {
+	width: 50px;
+	margin: 0 10px;
+	cursor: pointer;
+	opacity: 0.6;
+	transition: transform 0.2s, opacity 0.2s;
+}
+
+.face-img:hover {
+	transform: scale(1.1);
+	opacity: 1;
+}
+
+.face-img.selected {
+	border: 3px solid #02565f;
+	border-radius: 50%;
+	opacity: 1;
+}
