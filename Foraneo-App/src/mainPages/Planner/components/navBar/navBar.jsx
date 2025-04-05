@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './navBar.css';
 import IconMoney from '../../assets/icons/iconMoney';
 import IconFood from '../../assets/icons/iconFood';
@@ -12,22 +13,22 @@ const Menu = () => {
 			<section>
 				<nav className='menu'>
 					<button className='btn'>
-						<IconMoney width={30} height={30} />
+						<IconMoney />
 					</button>
 					<button className='btn'>
-						<IconFood width={30} height={30} />
+						<IconFood />
 					</button>
 					<div className='home-container'>
-						<button className='btn home'>
-							<IconHome width={30} height={30} />
-						</button>
+						<Link className='btn home' to='/'>
+							<IconHome />
+						</Link>
 					</div>
-					<button className='btn'>
-						<IconCalendar width={30} height={30} />
-					</button>
-					<button className='btn'>
-						<IconUser width={30} height={30} />
-					</button>
+					<Link className='btn' to='/calendar'>
+						<IconCalendar />
+					</Link>
+					<Link className='btn' to='/to-do'>
+						<IconUser />
+					</Link>
 				</nav>
 			</section>
 		</>
