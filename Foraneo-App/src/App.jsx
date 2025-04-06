@@ -7,12 +7,12 @@ import WeeklyPlan from './mainPages/Recipes/Pages/WeeklyPlan/WeeklyPlan';
 
 function App() {
 	return (
-		<div className='App'>
+		<section className='App'>
 			{/* <Welcome /> */}
 			{/* <PlanCreate /> */}
 			{/* <Congratulation /> */}
 			<WeeklyPlan />
-		</div>
+		</section>
 	);
 }
 
