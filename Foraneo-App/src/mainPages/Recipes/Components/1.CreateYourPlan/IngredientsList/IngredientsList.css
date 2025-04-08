@@ -1,6 +1,6 @@
 .ingredients-container {
 	padding: 5px;
-	font-family: Arial, sans-serif;
+	font-family: 'Satoshi', sans-serif !important;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -18,26 +18,63 @@
 	color: black;
 }
 
-.input-field {
-	font-size: 19px;
-	font-family: 'Satoshi', sans-serif !important;
-	font-weight: 500 !important;
-	width: 280px;
-	padding: 13px;
+.input-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.input-wrapperr {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	max-width: 300px;
 	border: 2px solid #02565f;
 	border-radius: 12px;
-	font-size: 1.1rem;
+	background-color: white;
+	overflow: hidden;
+}
+
+.input-field {
+	font-size: 17px;
+	font-family: 'Satoshi', sans-serif !important;
+	font-weight: 500 !important;
+	flex: 1;
+	padding: 13px;
+	border: none;
 	outline: none;
-	margin: 5px auto;
 	text-align: center;
-	display: block;
-	background-color: #ffffff;
 	color: #02565f;
+	background-color: white;
 }
 
 .input-field::placeholder {
 	color: #000000;
 	opacity: 0.8;
+}
+
+.add-button {
+	background-color: #4a9dab;
+	color: white;
+	font-size: 1.2rem;
+	font-weight: bold;
+	border: none;
+	border-radius: 8px;
+	padding: 10px 15px;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.2s;
+	margin: 10px;
+	outline: none; /* Añade esto para quitar el outline por defecto */
+}
+
+/* Opcional: Puedes añadir un estilo personalizado para el estado focus si lo deseas */
+.add-button:focus {
+	outline: none;
+}
+
+.add-button:hover {
+	background-color: #3c8a97;
+	transform: scale(1.05);
 }
 
 .suggestions-container {
@@ -50,36 +87,29 @@
 	max-width: 75%;
 	padding: 10px 0;
 	border-radius: 12px;
-	/* border: 2px solid #02565f; */
 }
 
 .suggestion-button {
 	padding: 10px 16px;
 	border: 1.5px solid #1f4b52;
 	border-radius: 20px;
-	background-color: #c5dde0;
-	color: #1f4b52;
+	background-color: #f2feff;
+	color: #000000;
 	font-size: 1rem;
 	cursor: pointer;
 	transition: background 0.3s, transform 0.2s;
 	white-space: nowrap;
+	outline: none;
+}
+.suggestion-button:focus {
+	outline: none;
+	box-shadow: none;
 }
 
-.suggestion-button:hover {
-	background-color: #e0f7ff;
-	transform: scale(1.05);
+button:hover {
+	border-color: #1f4b52;
 }
 
-.selected-list {
-	margin-top: 20px;
-}
-
-.selected-title {
-	font-size: 1.2rem;
-	font-weight: 600;
-}
-
-.selected-item {
-	color: #1f4b52;
-	font-size: 1.1rem;
+.suggestion-button:focus-visible {
+	outline: none;
 }
