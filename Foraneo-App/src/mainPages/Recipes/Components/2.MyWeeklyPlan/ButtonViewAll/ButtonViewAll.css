@@ -1,0 +1,23 @@
+.Button-View-All {
+	display: flex;
+	justify-content: flex-end; /* Alinea el enlace a la derecha */
+	margin-right: 16px; /* Ajusta la distancia del borde derecho */
+}
+
+.View-All {
+	color: #0099cc; /* Color celeste del texto */
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: none; /* Elimina el subrayado */
+	transition: color 0.3s ease, transform 0.2s ease;
+	margin-right: 10px;
+}
+
+.View-All:hover {
+	color: #0077aa; /* Un tono más oscuro al pasar el mouse */
+	transform: scale(1.05); /* Pequeña animación de zoom */
+}
+
+.View-All:active {
+	transform: scale(0.95); /* Efecto al hacer clic */
+}
