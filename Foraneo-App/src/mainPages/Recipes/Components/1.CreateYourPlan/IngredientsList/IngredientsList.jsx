@@ -1,11 +1,6 @@
-import { useState } from 'react';
 import './IngredientsList.css';
 
-const IngredientsList = () => {
-	const [input, setInput] = useState('');
-	const [selectedIngredients, setSelectedIngredients] = useState([]);
-	const suggestedIngredients = ['Tomato', 'Meat', 'Pasta'];
-
+const IngredientsList = ({ selectedIngredients, setSelectedIngredients }) => {
 	const handleSelectIngredient = (ingredient) => {
 		if (!selectedIngredients.includes(ingredient)) {
 			setSelectedIngredients([...selectedIngredients, ingredient]);
@@ -14,9 +9,10 @@ const IngredientsList = () => {
 
 	const handleAddIngredient = (e) => {
 		e.preventDefault();
-		if (input.trim() !== '' && !selectedIngredients.includes(input)) {
-			setSelectedIngredients([...selectedIngredients, input]);
-			setInput('');
+		const newIngredient = e.target.ingredient.value.trim();
+		if (newIngredient !== '' && !selectedIngredients.includes(newIngredient)) {
+			setSelectedIngredients([...selectedIngredients, newIngredient]);
+			e.target.reset();
 		}
 	};
 
@@ -24,16 +20,15 @@ const IngredientsList = () => {
 		<div className='ingredients-container'>
 			<h3 className='title'>What do you have in your fridge?</h3>
 			<form onSubmit={handleAddIngredient} className='input-container'>
-				<input
-					type='text'
-					value={input}
-					onChange={(e) => setInput(e.target.value)}
-					placeholder='Write the ingredient'
-					className='input-field'
-				/>
+				<div className='input-wrapperr'>
+					<input name='ingredient' type='text' placeholder='Write the ingredient' className='input-field' />
+					<button type='submit' className='add-button'>
+						+
+					</button>
+				</div>
 			</form>
 			<div className='suggestions-container'>
-				{[...suggestedIngredients, ...selectedIngredients].map((ingredient, index) => (
+				{selectedIngredients.map((ingredient, index) => (
 					<button key={index} onClick={() => handleSelectIngredient(ingredient)} className='suggestion-button'>
 						{ingredient}
 					</button>
