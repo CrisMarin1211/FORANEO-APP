@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Importar useNavigate
+import { useNavigate } from 'react-router-dom';
 import TitleBuild from '../../Components/1.CreateYourPlan/TitleBuild/TitleBuild';
 import BudgetInput from '../../Components/1.CreateYourPlan/BudgetInput/BudgetInput';
 import FoodTypeSelector from '../../Components/1.CreateYourPlan/FoodTypeSelector/FoodTypeSelector';
