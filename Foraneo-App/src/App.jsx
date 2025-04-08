@@ -1,18 +1,14 @@
-import { useState } from 'react';
+import { BrowserRouter } from 'react-router-dom'; // Importa BrowserRouter
 import './App.css';
-import Welcome from './mainPages/Recipes/Pages/WelcomeRecipes/Welcome';
-import PlanCreate from './mainPages/Recipes/Pages/PlanCreate/PlanCreate';
-import Congratulation from './mainPages/Recipes/Pages/Congratulation/Congratulation';
-import WeeklyPlan from './mainPages/Recipes/Pages/WeeklyPlan/WeeklyPlan';
+import Router from './router/router';
 
 function App() {
 	return (
-		<section className='App'>
-			{/* <Welcome /> */}
-			{/* <PlanCreate /> */}
-			{/* <Congratulation /> */}
-			<WeeklyPlan />
-		</section>
+		<BrowserRouter>
+			<section className='App'>
+				<Router />
+			</section>
+		</BrowserRouter>
 	);
 }
 
