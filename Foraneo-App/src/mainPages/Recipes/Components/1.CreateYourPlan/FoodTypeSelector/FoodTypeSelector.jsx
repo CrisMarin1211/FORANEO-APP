@@ -1,13 +1,12 @@
-import { useState } from 'react';
 import './FoodTypeSelector.css';
 
-const foodTypes = ['Quick & Easy', 'Seafood', 'Italian', 'Vegetarian', 'Meat & Grill', 'Vegan'];
+const foodTypes = ['Quick & Easy', 'Seafood', 'Italian', 'Vegetarian', 'Meat & Grill', 'Vegan', 'Gluten-Free'];
 
-const FoodTypeSelector = () => {
-	const [selectedFoodType, setSelectedFoodType] = useState('Quick & Easy');
-
+const FoodTypeSelector = ({ selectedFoodTypes, setSelectedFoodTypes }) => {
 	const handleSelect = (type) => {
-		setSelectedFoodType(type);
+		setSelectedFoodTypes((prevSelected) =>
+			prevSelected.includes(type) ? prevSelected.filter((item) => item !== type) : [...prevSelected, type]
+		);
 	};
 
 	return (
@@ -18,7 +17,7 @@ const FoodTypeSelector = () => {
 					{foodTypes.map((type) => (
 						<div
 							key={type}
-							className={`food-option ${selectedFoodType === type ? 'selected' : ''}`}
+							className={`food-option ${selectedFoodTypes.includes(type) ? 'selected' : ''}`}
 							onClick={() => handleSelect(type)}
 						>
 							{type}
