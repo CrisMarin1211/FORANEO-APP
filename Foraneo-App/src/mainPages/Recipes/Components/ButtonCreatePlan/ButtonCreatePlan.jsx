@@ -1,10 +1,12 @@
 import React from 'react';
 import './ButtonCreatePlan.css';
 
-function ButtonCreatePlan() {
+function ButtonCreatePlan({ onClick, text = 'Create Plan' }) {
 	return (
 		<div className='Button-Create'>
-			<button className='Create-Plan'> Create Plan</button>
+			<button className='Create-Plan' onClick={onClick}>
+				{text}
+			</button>
 		</div>
 	);
 }
