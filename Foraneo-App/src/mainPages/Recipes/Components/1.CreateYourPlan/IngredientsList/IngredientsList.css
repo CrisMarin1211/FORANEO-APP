@@ -64,10 +64,9 @@
 	cursor: pointer;
 	transition: background-color 0.3s, transform 0.2s;
 	margin: 10px;
-	outline: none; /* Añade esto para quitar el outline por defecto */
+	outline: none;
 }
 
-/* Opcional: Puedes añadir un estilo personalizado para el estado focus si lo deseas */
 .add-button:focus {
 	outline: none;
 }

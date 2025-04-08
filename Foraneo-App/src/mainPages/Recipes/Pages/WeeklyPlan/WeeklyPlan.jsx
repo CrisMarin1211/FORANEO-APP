@@ -27,13 +27,11 @@ function WeeklyPlan() {
 	};
 
 	useEffect(() => {
-		// Get plans from localStorage when component mounts
 		const storedPlans = localStorage.getItem('weeklyPlan');
 		if (storedPlans) {
 			const parsedPlans = JSON.parse(storedPlans);
 			setPlans(parsedPlans);
 
-			// Find today's plan
 			const currentDay = getCurrentDay();
 			const todayPlan = parsedPlans.find((plan) => plan.day === currentDay);
 			setTodaysPlan(todayPlan);
@@ -48,19 +46,15 @@ function WeeklyPlan() {
 				<ButtonViewAll />
 			</section>
 
-			{/* Display horizontal cards for the week */}
 			<div className='week-preview-cards'>{plans.length > 0 && <CardsPlans plans={plans} />}</div>
 
 			<ButtonEditPlan />
 			<TitlePlanToday />
 
-			{/* Show current date */}
 			<DateDay currentDate={getCurrentDate()} />
 
-			{/* Today's meal cards */}
 			{todaysPlan ? (
 				<div className='today-meals-container'>
-					{/* Breakfast Card */}
 					{todaysPlan.breakfast && (
 						<CardsRecipe
 							mealTime='Breakfast'
@@ -72,7 +66,6 @@ function WeeklyPlan() {
 						/>
 					)}
 
-					{/* Lunch Card */}
 					{todaysPlan.lunch && (
 						<CardsRecipe
 							mealTime='Lunch'

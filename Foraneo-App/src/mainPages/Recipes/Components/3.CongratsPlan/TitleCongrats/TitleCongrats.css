@@ -1,8 +1,6 @@
-/* Fuente Satoshi (debería estar en tu index.html) */
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@400&display=swap');
 
 .Congrats {
-	/* display: flex; */
 	justify-content: center;
 	align-items: center;
 	width: 100%;
