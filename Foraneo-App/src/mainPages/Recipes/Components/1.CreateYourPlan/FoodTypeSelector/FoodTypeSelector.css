@@ -14,7 +14,7 @@
 	border: 2px solid #02565f;
 	border-radius: 12px;
 	display: inline-block;
-	max-width: 60%;
+	max-width: 300px;
 	margin: 0 auto;
 }
 
@@ -29,17 +29,20 @@
 	padding: 10px 20px;
 	border-radius: 25px;
 	background-color: #c5dde0;
-	color: #000000;
+	color: black;
 	font-weight: 500;
 	text-align: center;
 	cursor: pointer;
-	transition: background-color 0.3s, border 0.3s;
+	transition: background-color 0.3s, border 0.3s, color 0.3s;
+	border: 1.5px solid transparent;
 }
 
 .food-option.selected {
+	background-color: #f2feff;
+	color: black;
 	border: 1.5px solid #02565f;
 }
 
 .food-option:hover {
-	background-color: #f2feff;
+	background-color: #e0f5f7;
 }
