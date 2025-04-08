@@ -1,11 +1,8 @@
-import { useState } from 'react';
 import './DaySelectorCook.css';
 
-const daysOfWeek = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-const DaySelectorCook = () => {
-	const [selectedDays, setSelectedDays] = useState([]);
-
+const DaySelectorCook = ({ selectedDays, setSelectedDays }) => {
 	const toggleDay = (day) => {
 		setSelectedDays((prevSelected) =>
 			prevSelected.includes(day) ? prevSelected.filter((d) => d !== day) : [...prevSelected, day]
