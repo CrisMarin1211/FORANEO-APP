@@ -18,7 +18,6 @@
   flex-direction: row;
   justify-content: center;
   margin-top: 10px;
-
 }
 
 .money-card {
@@ -38,17 +37,15 @@
 
 .expense { border-color: #f7b2b2; }
 .income { border-color: #FFE772; }
-.balance { background: #5aa222;
-  height: 100px;
-width: 300px;
 
-} /* Verde pastel */
-
-.expense-icon {
-  margin-right: 4px;
-  color: red;
+/* Estilos específicos para balance positivo y balance cero */
+.balance-positive {
+  background-color: #71d6a9; /* Verde pastel */
 }
 
+.balance-zero {
+  background-color: #f78a8a; /* Rojo claro */
+}
 
 .money-card-balance {
   height: 30px;
@@ -62,7 +59,6 @@ width: 300px;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
-  background-color:#71d6a9 ;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
   margin-bottom: 20px;
 }
@@ -87,8 +83,13 @@ p {
 
 .income-icon {
   color: #00a746;
-  margin-right: 4px;
-} /* Verde */
+  margin-right: 4px; /* Verde */
+}
+
+.expense-icon {
+  color: #c11330;
+  margin-right: 4px; /* Verde */
+}
 
 .add-btn {
   margin-top: 10px;
