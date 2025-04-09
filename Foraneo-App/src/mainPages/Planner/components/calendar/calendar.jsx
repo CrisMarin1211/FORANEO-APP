@@ -33,7 +33,6 @@ const Calendar = () => {
 		setDayFeedbacks(storedFeedbacks);
 	}, []);
 
-	const nextMonth = () => setMonth((prev) => (prev === 11 ? 0 : prev + 1));
 	const prevYear = () => setYear((prev) => prev - 1);
 	const nextYear = () => setYear((prev) => prev - 1);
 
