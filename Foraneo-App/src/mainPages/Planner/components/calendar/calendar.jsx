@@ -46,6 +46,12 @@ const Calendar = () => {
 		return faces.find((face) => face.label === label)?.src || null;
 	};
 
+	const handleDayClick = (day) => {
+		if (!day) return;
+		const selectedDate = getDateKey(day);
+		navigate('/', { state: { selectedDate } });
+	};
+
 	return (
 		<>
 			<section className='calendar-container'>
