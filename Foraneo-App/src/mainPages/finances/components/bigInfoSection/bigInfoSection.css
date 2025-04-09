@@ -41,18 +41,18 @@
 
 /* Colores de las pestañas */
 .Timeline-tab {
-  background: linear-gradient(135deg, #34c9eb, #00A0B2);
-  color: white;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
 }
 
 .Statistics-tab {
-  background: linear-gradient(135deg, #d4e3ff, #B1CEFF);
-  color: #333;
+  background: #ffffff;
+  color: #000000;
 }
 
 .Goal-tab {
-  background: linear-gradient(135deg, #e3c5ff, #CEA8FC);
-  color: #333;
+  background: #ffffff;
+  color: #000000;
 }
 
 /* Pestaña activa */
