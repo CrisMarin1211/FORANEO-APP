@@ -1,0 +1,52 @@
+.Add-container {
+  color: black;
+  margin: 20px;
+  border-radius: 10px;
+  padding: 5px;
+  position: relative;
+  background: #B1CEFF;
+  margin-top: 40px;
+}
+
+.Addtabs {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: -25px;
+
+}
+
+.Addtab {
+
+  color: black;
+  background-color: #f9f9f9;
+  margin-bottom: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 20px 20px 0 0;
+  font-weight: bold;
+  margin-right: 5px;
+  transition: 0.3s;
+}
+
+
+
+/* Colores de las pestañas */
+.Expenses-tab { background: #00A0B2; color: white; }
+.Incomes-tab { background: #B1CEFF; color: rgb(0, 0, 0); }
+
+/* Pestaña activa */
+.Addactive {
+  transform: translateY(-5px);
+}
+
+.Addtab-content {
+  padding-top: 5px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  min-height: 100px;
+}
