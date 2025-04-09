@@ -17,6 +17,8 @@
 	border: none;
 	outline: none;
 	transition: background-color 0.3s ease;
+	margin-top: 30px;
+	margin-block-end: 30px;
 }
 
 .Create-Plan:hover {
