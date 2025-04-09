@@ -11,6 +11,7 @@ const EmotionTracker = () => {
 	const [allSelections, setAllSelections] = useState({});
 	const [dayMood, setDayMood] = useState(null);
 	const [showModal, setShowModal] = useState(false);
+	const [selectedDate, setSelectedDate] = useState(null);
 	const today = new Date().toISOString().split('T')[0];
 	const navigate = useNavigate();
 
