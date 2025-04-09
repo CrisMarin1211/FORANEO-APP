@@ -16,7 +16,7 @@ const Login = () => {
       localStorage.removeItem('username');
       localStorage.removeItem('password');
     }
-    navigate('/main'); // Redirección a "main"
+    navigate('/finances'); // Redirección a "main"
   };
 
   const onFinishFailed = errorInfo => {
@@ -24,7 +24,7 @@ const Login = () => {
   };
 
   return (
-    <section>
+    <section className='login'>
       <h1>Login</h1>
       <LogInForm onFinish={onFinish} onFinishFailed={onFinishFailed} />
       <p style={{ textAlign: 'center' }}>
