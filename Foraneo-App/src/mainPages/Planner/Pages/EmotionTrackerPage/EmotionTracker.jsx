@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './EmotionTracker.css';
 import Menu from '../../components/navBar/navBar';
 import ListEmotions from '../../components/listEmotions/listEmotions';
@@ -15,6 +15,10 @@ const EmotionTracker = () => {
 	const today = new Date().toISOString().split('T')[0];
 	const navigate = useNavigate();
 	const location = useLocation();
+
+	useEffect(() => {
+		const incomingDate = location.state?.selectedDate;
+	});
 
 	const handlerSelectionChange = (title, selectItems) => {
 		setAllSelections((prev) => ({ ...prev, [title]: selectItems }));
