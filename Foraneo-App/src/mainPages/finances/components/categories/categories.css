@@ -30,7 +30,7 @@
   justify-self: center;
   width: 60px;
   height: 60px;
-  background-color: #C5DDE0;
+  background-color: #C0BFBF;
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -38,13 +38,13 @@
 
 .categorie-option:hover,
 .categorie-option.selected {
-  background-color: #F2FEFF;
+  background-color: #00A0B2;
 }
 
 .category-icon {
   width: 35px;
   height: 40px;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 
