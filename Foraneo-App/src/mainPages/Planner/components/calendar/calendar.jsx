@@ -8,10 +8,7 @@ const Calendar = () => {
 	const [daysInMonth, setDaysInMonth] = useState([]);
 	const [dayFeedbacks, setDayFeedbacks] = useState({});
 
-	useEffect(() => {
-		const stored = JSON.parse(localStorage.getItem('day-feedbacks')) || {};
-		setMoodData(stored);
-	}, []);
+	useEffect(() => {}, []);
 
 	const firstDay = new Date(year, month, 1).getDay();
 	const daysInMonth = new Date(year, month + 1, 0).getDate();
