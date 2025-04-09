@@ -20,7 +20,9 @@ const ListEmotions = ({ title, emotions, onSelectionChange }) => {
 	return (
 		<>
 			<section className='emotion-container'>
-				<div className='emotion-header' onClick={() => setIsOpen(!isOpen)}></div>
+				<div className='emotion-header' onClick={() => setIsOpen(!isOpen)}>
+					<h2 className='emotion-title'>{title}</h2>
+				</div>
 				<div className='emotion-list'>
 					{emotions.map((emotion, index) => (
 						<div key={index} className='emotion-item' onClick={() => toggleEmotion(emotion.name)}>
