@@ -40,7 +40,7 @@ const EmotionTracker = () => {
 		});
 
 		const existingFeedbacks = JSON.parse(localStorage.getItem('day-feedbacks')) || {};
-		existingFeedbacks[today] = dayMood;
+		existingFeedbacks[selectedDate] = dayMood;
 		localStorage.setItem('day-feedbacks', JSON.stringify(existingFeedbacks));
 
 		setShowModal(true);
