@@ -3,10 +3,10 @@ import './ButtonViewAll.css';
 
 function ButtonViewAll({ href = '#', text = 'View All', onClick }) {
 	return (
-		<section className='Button-View-All'>
-			<a className='View-All' href={href} onClick={onClick}>
+		<section className='button-view-All'>
+			<button className='view-all' onClick={onClick}>
 				{text}
-			</a>
+			</button>
 		</section>
 	);
 }
