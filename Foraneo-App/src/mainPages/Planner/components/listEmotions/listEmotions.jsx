@@ -20,7 +20,7 @@ const ListEmotions = ({ title, emotions, onSelectionChange }) => {
 	return (
 		<>
 			<section className='emotion-container'>
-				<div></div>
+				<div className='emotion-header'></div>
 				<h2 className='emotion-title'>{title}</h2>
 				<div className='emotion-list'>
 					{emotions.map((emotion, index) => (
