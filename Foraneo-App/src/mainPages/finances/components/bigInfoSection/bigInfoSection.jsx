@@ -2,21 +2,55 @@ import React, { useState, useEffect } from 'react';
 import './bigInfoSection.css';
 import Timeline from '../timeline/timeline';
 
-const BigInfoSection = () => {
+const BigInfoSection = ({ selectedMonth, hasNoData }) => {
   const [activeTab, setActiveTab] = useState('Timeline');
-  const [savedData, setSavedData] = useState([]); // Aquí guardamos los datos de los tickets
+  const [savedData, setSavedData] = useState([]);
 
   // Cargar los datos de localStorage cuando el componente se monta
   useEffect(() => {
-    const storedData = JSON.parse(localStorage.getItem('savedData')) || [];  // Si no hay datos, un array vacío
-    setSavedData(storedData); // Establecer los datos en el estado
+    const storedData = JSON.parse(localStorage.getItem('savedData')) || [];
+    setSavedData(storedData);
   }, []);
 
-  // Función para cambiar las pestañas
+  // Filtrar los datos por mes seleccionado
+  const filterDataByMonth = (month) => {
+    if (!month) return []; // Si no hay mes seleccionado, devolvemos array vacío
+
+    const [selectedYear, selectedMonthIndex] = month.split('-'); // Formato 'YYYY-MM'
+
+    return savedData.filter(item => {
+      const itemDate = new Date(item.date);
+      const itemYear = itemDate.getFullYear();
+      const itemMonth = itemDate.getMonth(); // 0-11
+
+      return itemYear === parseInt(selectedYear) && itemMonth === parseInt(selectedMonthIndex) - 1;
+    });
+  };
+
+  // Filtrar los datos por el mes seleccionado
+  const filteredData = filterDataByMonth(selectedMonth);
+
+  // Componente para mostrar mensaje cuando no hay datos
+  const NoDataMessage = () => (
+    <div className="no-data-message" style={{
+      textAlign: 'center',
+      padding: '2rem',
+      color: '#555'
+    }}>
+      <p>You don't have expenses or incomes for this month yet.</p>
+    </div>
+  );
+
+  // Función para renderizar el contenido según la pestaña activa
   const renderContent = () => {
+    // Si no hay datos filtrados, mostrar mensaje
+    if (hasNoData || filteredData.length === 0) {
+      return <NoDataMessage />;
+    }
+
     switch (activeTab) {
       case 'Timeline':
-        return <Timeline data={savedData} />;  // Solo renderizamos Timeline cuando la pestaña es 'Timeline'
+        return <Timeline data={filteredData} selectedMonth={selectedMonth} />;
       case 'Statistics':
         return <p>Data Statistics Lorem Ipsum.</p>;
       case 'Goal':
