@@ -12,12 +12,12 @@ const EmotionTracker = () => {
 	const [dayMood, setDayMood] = useState(null);
 	const [showModal, setShowModal] = useState(false);
 	const [selectedDate, setSelectedDate] = useState(null);
-	const today = new Date().toISOString().split('T')[0];
 	const navigate = useNavigate();
 	const location = useLocation();
 
 	useEffect(() => {
 		const incomingDate = location.state?.selectedDate;
+		const today = new Date().toISOString().split('T')[0];
 	});
 
 	const handlerSelectionChange = (title, selectItems) => {
