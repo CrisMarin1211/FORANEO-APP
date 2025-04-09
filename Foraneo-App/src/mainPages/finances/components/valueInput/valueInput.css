@@ -1,15 +1,22 @@
 .valueInputGeneralContainer {
   display: flex;
   justify-content: center;
-  justify-self: center;
-  padding: 20px;
-  background-color: #f0f0f0;
-  border-radius: 8px;
-  width: 220px
+  align-items: center; /* Center items vertically */
+  padding: 10px;
+  align-self: center;
+
+justify-self: center;
+width: 250px; /* Increased width for better spacing */
+
 }
 
-.valueInputTittle{
-  color: black;
+
+
+.valueInputTittle {
+  color: #333; /* Darker title color for better contrast */
+  margin-bottom: 10px; /* Space between title and input */
+  font-size: 1.5em; /* Increased font size for title */
+  text-align: center; /* Center the title */
 }
 
 .valueInputContainer {
@@ -18,13 +25,19 @@
 }
 
 .valueInputButton {
-  background-color: #dcdcdc;
+  background-color: #cccccc57; /* Bootstrap primary color */
+  color: rgb(0, 0, 0); /* White text for contrast */
   border: none;
-  padding: 8px 12px;
-  font-size: 16px;
+  padding: 10px 15px; /* Increased padding for better touch targets */
+  font-size: 18px; /* Slightly larger font size */
   cursor: pointer;
-  border-radius: 4px;
-  margin: 0 5px;
+  border-radius: 15px; /* More rounded corners */
+  margin: 0 10px;
+}
+
+.valueInputButton:hover {
+  background-color: #00A0B2; /* Darker shade on hover */
+  color: white;
 }
 
 .valueInputWrapper {
@@ -41,10 +54,13 @@
 }
 
 .valueInputInput {
-  font-size: 16px;
-  width: 120px;
-  padding: 8px 8px 8px 30px; /* Deja espacio para el símbolo de la moneda */
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  font-size: 18px; /* Increased font size for better readability */
+  width: 100px; /* Full width for better responsiveness */
+  padding: 10px 10px 10px 40px; /* Adjusted padding for better spacing */
+  border: 1px solid #02565F;
+  color: #333;
+  background-color: transparent;
+  border-radius: 15px; /* More rounded corners */
   text-align: right;
+  transition: border-color 0.3s; /* Smooth transition for focus effect */
 }
