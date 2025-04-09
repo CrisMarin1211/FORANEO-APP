@@ -3,9 +3,9 @@ import './TitleWelcome.css';
 
 function Title() {
 	return (
-		<div className='Welcome'>
+		<section className='Welcome'>
 			<h2 className='title-text'>Welcome to my Weekly plan!</h2>
-		</div>
+		</section>
 	);
 }
 

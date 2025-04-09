@@ -3,9 +3,9 @@ import './PlanYetPhrase.css';
 
 function PlanYet() {
 	return (
-		<div className='Phrase'>
+		<section className='Phrase'>
 			<p>You don't have a plan yet</p>
-		</div>
+		</section>
 	);
 }
 

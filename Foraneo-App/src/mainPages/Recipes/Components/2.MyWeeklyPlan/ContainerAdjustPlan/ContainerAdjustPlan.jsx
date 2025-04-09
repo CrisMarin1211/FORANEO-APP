@@ -11,11 +11,11 @@ function ContainerAdjustPlan() {
 	};
 
 	return (
-		<div className='adjust-plan'>
+		<section className='adjust-plan'>
 			<h2>Want to adjust your plan?</h2>
 			<h2>Create a new one.</h2>
 			<ButtonEditPlan onClick={handleEditPlanClick} />
-		</div>
+		</section>
 	);
 }
 

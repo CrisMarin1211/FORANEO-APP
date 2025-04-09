@@ -45,14 +45,14 @@ function PlanCreate() {
 	};
 
 	return (
-		<div className='plan-container'>
+		<section className='plan-container'>
 			<TitleBuild />
 			<BudgetInput budget={budget} setBudget={setBudget} />
 			<FoodTypeSelector selectedFoodTypes={selectedFoodTypes} setSelectedFoodTypes={setSelectedFoodTypes} />
 			<IngredientsList selectedIngredients={selectedIngredients} setSelectedIngredients={setSelectedIngredients} />
 			<DaySelectorCook selectedDays={selectedDays} setSelectedDays={setSelectedDays} />
 			<ButtonCreatePlan onClick={handleCreatePlan} />
-		</div>
+		</section>
 	);
 }
 

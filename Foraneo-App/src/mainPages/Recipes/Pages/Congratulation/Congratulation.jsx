@@ -8,13 +8,13 @@ import NameRecipe from '../../Components/3.CongratsPlan/NameRecipe/NameRecipe';
 
 function Congratulation() {
 	return (
-		<div>
+		<section>
 			<TitleCongrats />
 			<ImageEmotions />
 			<UnlockedMessage />
 			<MealPlanPhrase />
 			<NameRecipe />
-		</div>
+		</section>
 	);
 }
 

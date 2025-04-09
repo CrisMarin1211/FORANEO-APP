@@ -10,22 +10,22 @@ const FoodTypeSelector = ({ selectedFoodTypes, setSelectedFoodTypes }) => {
 	};
 
 	return (
-		<div className='food-title'>
+		<section className='food-title'>
 			<h2 className='food-selector-title'>What type of food do you want to cook?</h2>
-			<div className='food-selector-container'>
-				<div className='food-options-container'>
+			<section className='food-selector-container'>
+				<section className='food-options-container'>
 					{foodTypes.map((type) => (
-						<div
+						<section
 							key={type}
 							className={`food-option ${selectedFoodTypes.includes(type) ? 'selected' : ''}`}
 							onClick={() => handleSelect(type)}
 						>
 							{type}
-						</div>
+						</section>
 					))}
-				</div>
-			</div>
-		</div>
+				</section>
+			</section>
+		</section>
 	);
 };
 

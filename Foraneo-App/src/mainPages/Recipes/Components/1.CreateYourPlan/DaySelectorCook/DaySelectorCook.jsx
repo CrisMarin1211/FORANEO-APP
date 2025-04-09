@@ -10,10 +10,10 @@ const DaySelectorCook = ({ selectedDays, setSelectedDays }) => {
 	};
 
 	return (
-		<div className='title-days'>
+		<section className='title-days'>
 			<h4 className='day-title'>Which days do you want to cook?</h4>
-			<div className='day-container'>
-				<div className='day-grid'>
+			<section className='day-container'>
+				<section className='day-grid'>
 					{daysOfWeek.map((day) => (
 						<label key={day} className='day-label'>
 							<input
@@ -25,9 +25,9 @@ const DaySelectorCook = ({ selectedDays, setSelectedDays }) => {
 							<span>{day}</span>
 						</label>
 					))}
-				</div>
-			</div>
-		</div>
+				</section>
+			</section>
+		</section>
 	);
 };
 

@@ -17,24 +17,24 @@ const IngredientsList = ({ selectedIngredients, setSelectedIngredients }) => {
 	};
 
 	return (
-		<div className='ingredients-container'>
+		<section className='ingredients-container'>
 			<h3 className='title'>What do you have in your fridge?</h3>
 			<form onSubmit={handleAddIngredient} className='input-container'>
-				<div className='input-wrapperr'>
+				<section className='input-wrapperr'>
 					<input name='ingredient' type='text' placeholder='Write the ingredient' className='input-field' />
 					<button type='submit' className='add-button'>
 						+
 					</button>
-				</div>
+				</section>
 			</form>
-			<div className='suggestions-container'>
+			<section className='suggestions-container'>
 				{selectedIngredients.map((ingredient, index) => (
 					<button key={index} onClick={() => handleSelectIngredient(ingredient)} className='suggestion-button'>
 						{ingredient}
 					</button>
 				))}
-			</div>
-		</div>
+			</section>
+		</section>
 	);
 };
 

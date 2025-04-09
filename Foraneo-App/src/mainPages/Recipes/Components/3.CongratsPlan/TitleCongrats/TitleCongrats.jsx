@@ -3,9 +3,9 @@ import './TitleCongrats.css';
 
 function TitleCongrats() {
 	return (
-		<div className='Congrats'>
+		<section className='Congrats'>
 			<h2 className='title-Congrats'>Congratulations! 🎉</h2>
-		</div>
+		</section>
 	);
 }
 

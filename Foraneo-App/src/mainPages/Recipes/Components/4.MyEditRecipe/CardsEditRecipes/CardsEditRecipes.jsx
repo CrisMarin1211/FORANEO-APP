@@ -12,7 +12,7 @@ function CardsEditRecipes({ mealTime, recipe, day, showPencil = true }) {
 	};
 
 	return (
-		<div className='recipe-card'>
+		<section className='recipe-card'>
 			<h3>{mealTime}</h3>
 			<img src={recipe.image} alt={recipe.name} className='recipe-image' />
 			<p>{recipe.name}</p>
@@ -27,11 +27,11 @@ function CardsEditRecipes({ mealTime, recipe, day, showPencil = true }) {
 			<ButtonViewAll />
 
 			{showPencil && (
-				<div className='pencil-button' onClick={handlePencilClick}>
+				<section className='pencil-button' onClick={handlePencilClick}>
 					<Pencil />
-				</div>
+				</section>
 			)}
-		</div>
+		</section>
 	);
 }
 

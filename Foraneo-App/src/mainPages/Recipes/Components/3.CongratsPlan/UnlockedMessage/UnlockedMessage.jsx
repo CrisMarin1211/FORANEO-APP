@@ -3,9 +3,9 @@ import './UnlockedMessage.css';
 
 function UnlockedMessage() {
 	return (
-		<div className='Unlocked-Message'>
+		<section className='Unlocked-Message'>
 			<p className='message'>🔓 You have unlocked the Banana Oatmeal Bowl</p>
-		</div>
+		</section>
 	);
 }
 

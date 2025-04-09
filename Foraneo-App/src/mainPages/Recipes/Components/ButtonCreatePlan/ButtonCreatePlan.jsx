@@ -3,11 +3,11 @@ import './ButtonCreatePlan.css';
 
 function ButtonCreatePlan({ onClick, text = 'Create Plan' }) {
 	return (
-		<div className='Button-Create'>
+		<section className='Button-Create'>
 			<button className='Create-Plan' onClick={onClick}>
 				{text}
 			</button>
-		</div>
+		</section>
 	);
 }
 

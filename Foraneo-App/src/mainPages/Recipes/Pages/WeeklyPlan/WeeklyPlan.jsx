@@ -12,14 +12,12 @@ function WeeklyPlan() {
 	const [plans, setPlans] = useState([]);
 	const [todaysPlan, setTodaysPlan] = useState(null);
 
-	// Get current day of the week
 	const getCurrentDay = () => {
 		const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 		const today = new Date();
 		return days[today.getDay()];
 	};
 
-	// Get current date in format "Day, Month DD" (e.g., "Tuesday, March 13")
 	const getCurrentDate = () => {
 		const options = { weekday: 'long', month: 'long', day: 'numeric' };
 		return new Date().toLocaleDateString('en-US', options);
@@ -44,7 +42,7 @@ function WeeklyPlan() {
 				<TakeLook />
 			</section>
 
-			<div className='week-preview-cards'>{plans.length > 0 && <CardsPlans plans={plans} />}</div>
+			<section className='week-preview-cards'>{plans.length > 0 && <CardsPlans plans={plans} />}</section>
 
 			<ContainerAdjustPlan />
 			<TitlePlanToday />
@@ -52,7 +50,7 @@ function WeeklyPlan() {
 			<DateDay currentDate={getCurrentDate()} />
 
 			{todaysPlan ? (
-				<div className='today-meals-container'>
+				<section className='today-meals-container'>
 					{todaysPlan.breakfast && (
 						<CardsRecipe
 							mealTime='Breakfast'
@@ -86,7 +84,7 @@ function WeeklyPlan() {
 							}}
 						/>
 					)}
-				</div>
+				</section>
 			) : (
 				<p className='no-plan-message'>No meal plan found for today. Create one by clicking "Edit your Plan".</p>
 			)}

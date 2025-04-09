@@ -13,8 +13,8 @@ const BudgetInput = ({ budget, setBudget }) => {
 	};
 
 	return (
-		<div className='budget-container'>
-			<div className='input-wrapper'>
+		<section className='budget-container'>
+			<section className='input-wrapper'>
 				<span className='currency-symbol'>$</span>
 				<input
 					id='budget-input'
@@ -23,8 +23,8 @@ const BudgetInput = ({ budget, setBudget }) => {
 					onChange={handleChange}
 					placeholder='What is your budget? '
 				/>
-			</div>
-		</div>
+			</section>
+		</section>
 	);
 };
 

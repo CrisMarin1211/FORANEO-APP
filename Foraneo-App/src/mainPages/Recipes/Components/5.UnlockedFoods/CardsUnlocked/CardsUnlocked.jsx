@@ -3,7 +3,7 @@ import './CardsUnlocked.css';
 
 function CardsUnlocked({ recipe, onAddRecipe }) {
 	return (
-		<div className='unlocked-card'>
+		<section className='unlocked-card'>
 			<img src={recipe.image} alt={recipe.name} className='unlocked-image' />
 			<h3>{recipe.name}</h3>
 			<ul className='ingredients-list'>
@@ -12,7 +12,7 @@ function CardsUnlocked({ recipe, onAddRecipe }) {
 				))}
 			</ul>
 			<button onClick={() => onAddRecipe(recipe)}>+ Add</button>
-		</div>
+		</section>
 	);
 }
 

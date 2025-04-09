@@ -4,21 +4,20 @@ import ButtonLetsCook from '../ButtonLetsCook/ButtonLetsCook';
 
 function CardsRecipe({ mealTime, recipe }) {
 	return (
-		<div className='recipe-card'>
-			<div className='recipe-header'>
+		<section className='recipe-card'>
+			<section className='recipe-header'>
 				<h3 className='meal-time'>{mealTime}</h3>
-				<button className='edit-button'>Edit</button>
-			</div>
+			</section>
 
-			<div className='recipe-image-container'>
+			<section className='recipe-image-container'>
 				<img src={recipe.image} alt={recipe.name} className='recipe-image' />
-			</div>
+			</section>
 
 			<h4 className='recipe-name'>{recipe.name}</h4>
 			<p className='recipe-description'>{recipe.description}</p>
 
 			<ButtonLetsCook />
-		</div>
+		</section>
 	);
 }
 

@@ -14,14 +14,14 @@ function Welcome() {
 	};
 
 	return (
-		<div>
-			<div className='tittle-welcome'>
+		<section>
+			<section className='tittle-welcome'>
 				<Title />
-			</div>
+			</section>
 			<ImageSad />
 			<PlanYet />
 			<ButtonCreatePlan onClick={handleCreatePlanClick} />
-		</div>
+		</section>
 	);
 }
 
