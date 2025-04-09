@@ -1,34 +1,80 @@
+/* buttonMonth.css */
 .floating-button {
-
-  right: 20px; /* Alineado a la derecha */
-  width: 150px;
-  margin-left: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #00A0B2;
-  color: rgb(255, 255, 255);
-  padding: 10px 15px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  font-weight: bold;
-  font-size: 18px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: #3498db;
+  color: white;
   border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-left: 50px;
+}
+
+.floating-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.floating-button:active {
+  transform: translateY(0);
 }
 
 .iconCalendar {
-  margin-right: 8px;
+  flex-shrink: 0;
 }
 
-.monthly{
-  color: #ffffff;
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.monthly {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 600;
 }
 
 .monthText {
-  margin: 0;
-  margin-top: 2px;
   font-size: 14px;
-  color: #ffffff;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Estilos para el contenedor de ButtonMonth */
+.button-month-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Estilos para el overlay del calendario */
+.calendar-overlay {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 10px;
+  z-index: 1000;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  min-width: 280px;
+}
+
+/* Triángulo pequeño arriba del popup */
+.calendar-overlay::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
 }
