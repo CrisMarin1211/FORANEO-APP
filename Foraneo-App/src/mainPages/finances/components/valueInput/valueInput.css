@@ -1,0 +1,50 @@
+.valueInputGeneralContainer {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  width: 220px
+}
+
+.valueInputTittle{
+  color: black;
+}
+
+.valueInputContainer {
+  display: flex;
+  align-items: center;
+}
+
+.valueInputButton {
+  background-color: #dcdcdc;
+  border: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 0 5px;
+}
+
+.valueInputWrapper {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.valueInputCurrencySymbol {
+  position: absolute;
+  left: 10px;
+  color: #888;
+  font-size: 18px;
+}
+
+.valueInputInput {
+  font-size: 16px;
+  width: 120px;
+  padding: 8px 8px 8px 30px; /* Deja espacio para el símbolo de la moneda */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: right;
+}
