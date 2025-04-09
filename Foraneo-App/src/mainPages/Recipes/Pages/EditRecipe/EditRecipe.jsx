@@ -2,39 +2,38 @@ import React, { useEffect, useState } from 'react';
 import CardsEditRecipes from '../../Components/4.MyEditRecipe/CardsEditRecipes/CardsEditRecipes.JSX';
 import TitleEditRecipes from '../../Components/4.MyEditRecipe/TitleEditRecipes/TitleEditRecipes';
 import './EditRecipe.css';
+import { useParams } from 'react-router-dom';
 
 function EditRecipe() {
 	const [recipes, setRecipes] = useState(null);
+	const { day } = useParams();
 
-	const currentDay = window.location.pathname.split('/').pop();
-	console.log('Current Day:', currentDay);
+	console.log('Current Day:', day);
 
 	useEffect(() => {
 		const storedPlans = JSON.parse(localStorage.getItem('weeklyPlan'));
 		console.log(storedPlans);
 
 		if (storedPlans) {
-			const selectedDayPlan = storedPlans.find((plan) => plan.day === currentDay);
+			const selectedDayPlan = storedPlans.find((plan) => plan.day === day);
 			console.log('Selected Day Plan:', selectedDayPlan);
 
 			if (selectedDayPlan) {
 				setRecipes(selectedDayPlan);
 			}
 		}
-	}, [currentDay]);
+	}, [day]);
 
 	if (!recipes) return <div>Loading...</div>;
 
-	// Función para convertir descripción en lista de ingredientes si es necesario
 	const getIngredients = (recipe) => {
 		if (recipe.ingredients) return recipe.ingredients;
-
 		return [];
 	};
 
 	return (
 		<section>
-			<TitleEditRecipes day={currentDay} />
+			<TitleEditRecipes day={day} />
 
 			{recipes.breakfast && (
 				<CardsEditRecipes
@@ -45,9 +44,9 @@ function EditRecipe() {
 						image: recipes.breakfast.image || 'default-breakfast.jpg',
 						ingredients: getIngredients(recipes.breakfast),
 					}}
+					day={day}
 				/>
 			)}
-
 			{recipes.lunch && (
 				<CardsEditRecipes
 					mealTime='Lunch'
@@ -57,9 +56,9 @@ function EditRecipe() {
 						image: recipes.lunch.image || 'default-lunch.jpg',
 						ingredients: getIngredients(recipes.lunch),
 					}}
+					day={day}
 				/>
 			)}
-
 			{recipes.dinner && (
 				<CardsEditRecipes
 					mealTime='Dinner'
@@ -69,6 +68,7 @@ function EditRecipe() {
 						image: recipes.dinner.image || 'default-dinner.jpg',
 						ingredients: getIngredients(recipes.dinner),
 					}}
+					day={day}
 				/>
 			)}
 		</section>
