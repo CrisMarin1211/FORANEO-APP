@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './categories.css';
 import {
-  Utensils, Bus, PartyPopper, Home, BookOpenCheck, User, Gamepad2, Heart, BanknoteArrowDown, Gift, AlertTriangle, MoreHorizontal, Banknote, BriefcaseBusiness
+  Utensils, Bus, PartyPopper, Home, BookOpenCheck, User, Gamepad2, Heart, BanknoteArrowDown, Gift, AlertTriangle, MoreHorizontal, Banknote, BriefcaseBusiness, ChartNoAxesCombined
 } from 'lucide-react';
 
 const Categories = ({ isIncome, setSelectedCategory }) => {
@@ -9,7 +9,7 @@ const Categories = ({ isIncome, setSelectedCategory }) => {
 
   const categoryIcons = {
     'Salary': Banknote,
-    'Investment': BookOpenCheck,
+    'Investment': ChartNoAxesCombined,
     'Business': BriefcaseBusiness,
     'Food': Utensils,
     'Transport': Bus,

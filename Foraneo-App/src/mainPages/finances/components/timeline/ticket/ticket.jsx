@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Utensils, Bus, PartyPopper, Home, BookOpenCheck, User, Gamepad2, Heart,
-  BanknoteArrowDown, Gift, AlertTriangle, MoreHorizontal, Banknote, BriefcaseBusiness
+  BanknoteArrowDown, Gift, AlertTriangle, MoreHorizontal, Banknote, BriefcaseBusiness, ChartNoAxesCombined
 } from "lucide-react";
 import './ticket.css';
 
@@ -9,7 +9,7 @@ const Ticket = ({ category, value, name, details, type }) => {
   // Objeto para mapear categorías a sus iconos respectivos
   const categoryIcons = {
     'Salary': Banknote,
-    'Investment': BookOpenCheck,
+    'Investment': ChartNoAxesCombined,
     'Business': BriefcaseBusiness,
     'Other Income': MoreHorizontal,
     'Food': Utensils,
