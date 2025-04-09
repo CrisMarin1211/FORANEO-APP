@@ -26,6 +26,11 @@ const Calendar = () => {
 		for (let i = 1; i <= totalDays; i++) {
 			daysArray.push(i);
 		}
+
+		setDaysInMonth(daysArray);
+
+		const storedFeedbacks = JSON.parse(localStorage.getItem('day-feedbacks')) || {};
+		setDayFeedbacks(storedFeedbacks);
 	}, []);
 
 	const firstDay = new Date(year, month, 1).getDay();
