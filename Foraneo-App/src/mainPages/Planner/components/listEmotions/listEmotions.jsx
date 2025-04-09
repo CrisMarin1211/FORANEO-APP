@@ -19,7 +19,7 @@ const ListEmotions = ({ title, emotions, onSelectionChange }) => {
 	};
 	return (
 		<>
-			<section className='emotion-container'>
+			<section className={`emotion-container ${isOpen ? 'open' : ''}`}>
 				<div className='emotion-header' onClick={() => setIsOpen(!isOpen)}>
 					<h2 className='emotion-title'>{title}</h2>
 					<span className={`arrow ${isOpen ? 'open' : ''}`}>▼</span>
