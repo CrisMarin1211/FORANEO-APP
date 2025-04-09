@@ -12,7 +12,7 @@
 }
 
 .emotion-container.open {
-	border-color: white;
+	background-color: white;
 }
 
 .emotion-title {
