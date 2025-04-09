@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Title from '../../Components/TitleWelcome/TitleWelcome';
 import TakeLook from '../../Components/2.MyWeeklyPlan/TakeLook/TakeLook';
-import ButtonViewAll from '../../Components/2.MyWeeklyPlan/ButtonViewAll/ButtonViewAll';
 import CardsPlans from '../../Components/2.MyWeeklyPlan/CardsPlans/CardsPlans';
-import ButtonEditPlan from '../../Components/2.MyWeeklyPlan/ButtonEditPlan/ButtonEditPlan';
 import TitlePlanToday from '../../Components/2.MyWeeklyPlan/TitlePlanToday/TitlePlanToday';
 import DateDay from '../../Components/2.MyWeeklyPlan/DateDay/DateDay';
 import CardsRecipe from '../../Components/CardsRecipe/CardsRecipe';
+import ContainerAdjustPlan from '../../Components/2.MyWeeklyPlan/ContainerAdjustPlan/ContainerAdjustPlan';
 import './WeeklyPlan.css';
 
 function WeeklyPlan() {
@@ -43,12 +42,11 @@ function WeeklyPlan() {
 			<Title />
 			<section className='plan-header'>
 				<TakeLook />
-				<ButtonViewAll />
 			</section>
 
 			<div className='week-preview-cards'>{plans.length > 0 && <CardsPlans plans={plans} />}</div>
 
-			<ButtonEditPlan />
+			<ContainerAdjustPlan />
 			<TitlePlanToday />
 
 			<DateDay currentDate={getCurrentDate()} />
