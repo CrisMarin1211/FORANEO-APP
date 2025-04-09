@@ -5,7 +5,6 @@ import { faces } from '../../data/imagesData';
 const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const Calendar = () => {
-	const [year, setYear] = useState(2025);
 	const [month, setMonth] = useState(new Date().getMonth());
 	const [moodData, setMoodData] = useState({});
 
