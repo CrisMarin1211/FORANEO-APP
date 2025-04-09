@@ -102,4 +102,5 @@ svg {
 }
 
 .arrow.open {
+	transform: rotate(180deg);
 }
