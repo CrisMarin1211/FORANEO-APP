@@ -102,6 +102,7 @@ svg {
 .arrow {
 	font-size: 1.2rem;
 	transition: transform 0.3s ease;
+	color: #02565f;
 }
 
 .arrow.open {
