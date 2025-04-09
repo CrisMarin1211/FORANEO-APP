@@ -5,7 +5,7 @@ import Router from './router/router';
 function App() {
 	return (
 		<BrowserRouter>
-			<section>
+			<section className='App'>
 				<Router />
 			</section>
 		</BrowserRouter>
