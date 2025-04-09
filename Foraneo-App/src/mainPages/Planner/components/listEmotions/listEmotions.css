@@ -1,7 +1,7 @@
 .emotion-container {
 	display: flex;
 	flex-direction: column;
-	background: white;
+	background: #8fd5dd;
 	border-radius: 15px;
 	padding: 20px;
 	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
