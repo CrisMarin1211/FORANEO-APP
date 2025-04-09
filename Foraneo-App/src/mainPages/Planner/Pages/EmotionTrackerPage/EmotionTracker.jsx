@@ -38,6 +38,10 @@ const EmotionTracker = () => {
 		setShowModal(true);
 	};
 
+	const goToCalendar = () => {
+		navigate('/calendar');
+	};
+
 	return (
 		<>
 			<Menu />
