@@ -10,12 +10,10 @@ const Add = () => {
 
   return (
     <section className='Addcontainer'>
-      {/* Botón para navegar hacia '/finances' */}
-      <button className='buttonBackAdd' onClick={() => navigate('/finances')}>
-        <ChevronLeft className='backIcon' />
-      </button>
+
+        <ChevronLeft className='backIcon' onClick={() => navigate('/finances')}/>
+      
       <AddSection />
-      {/* Aquí puedes agregar ValueInput si es necesario */}
     </section>
   );
 };

@@ -8,10 +8,5 @@
   color: black;
   margin-top: 30px;
   margin-left: 20px;
-}
+  cursor: pointer;}
 
-.buttonBackAdd{
-  background-color: transparent;
-  width: 60px;
-  height: 20px;
-}
