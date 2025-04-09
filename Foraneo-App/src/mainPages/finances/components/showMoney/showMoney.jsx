@@ -6,6 +6,12 @@ import './showMoney.css';
 const ShowMoney = ({ totalExpenses, totalIncomes, balance }) => {
   const navigate = useNavigate();
 
+  // Aseguramos que el balance no sea negativo
+  const totalAvailable = Math.max(balance, 0); // Si balance es negativo, se mostrará 0
+
+  // Definir la clase de fondo para el balance
+  const balanceClass = totalAvailable === 0 ? 'balance-zero' : 'balance-positive';
+
   return (
     <section className="money-container">
       <section className="top-section">
@@ -36,12 +42,11 @@ const ShowMoney = ({ totalExpenses, totalIncomes, balance }) => {
         </section>
       </section>
 
-      <section className="balance-container">
-        <section className="money-card-balance">
-          <p className='ptotal' >✦ Total balance: </p>
-          <br></br>
-          <h2 className={`h2text1`}> ${balance.toLocaleString()}</h2>
-        </section>
+      {/* Cambiar el fondo de money-card-balance según el balance */}
+      <section className={`money-card-balance ${balanceClass}`}>
+        <p className='ptotal' >✦ Total available: </p>
+        <br></br>
+        <h2 className={`h2text1`}> ${totalAvailable.toLocaleString()}</h2> {/* Mostramos totalAvailable */}
       </section>
     </section>
   );
