@@ -9,6 +9,7 @@ const Calendar = () => {
 	const [dayFeedbacks, setDayFeedbacks] = useState({});
 	const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
 	const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		const currentDate = new Date();
