@@ -4,6 +4,7 @@ import ShowMoney from '../../components/showMoney/showMoney';
 import ProgressBar from '../../components/progressBar/progressBar';
 import BigInfoSection from '../../components/bigInfoSection/bigInfoSection';
 import FloatingButton from '../../components/buttonMonth/buttonMonth';
+import { useLocation } from 'react-router-dom';
 
 const Finances = () => {
   const [savedData, setSavedData] = useState([]);
@@ -11,28 +12,42 @@ const Finances = () => {
   const [selectedMonth, setSelectedMonth] = useState('');
   const [displayMonth, setDisplayMonth] = useState('');
 
+  const location = useLocation();
+
   useEffect(() => {
     // Cargar datos guardados
     const storedData = JSON.parse(localStorage.getItem('savedData')) || [];
     setSavedData(storedData);
 
-    // Establecer el mes actual como seleccionado al inicio
-    const now = new Date();
-    const currentYear = now.getFullYear();
-    const currentMonth = (now.getMonth() + 1).toString().padStart(2, '0'); // +1 porque getMonth() devuelve 0-11
-    const currentMonthString = `${currentYear}-${currentMonth}`;
+    // Obtener el parámetro del mes de la URL (si existe)
+    const params = new URLSearchParams(location.search);
+    const monthParam = params.get('month');
 
-    // Actualizar el mes seleccionado y filtrar los datos
-    setSelectedMonth(currentMonthString);
+    // Si se proporciona un mes en la URL, usarlo; de lo contrario, usar el mes actual
+    let targetMonth;
+    if (monthParam) {
+      targetMonth = monthParam;
+    } else {
+      // Establecer el mes actual como seleccionado
+      const now = new Date();
+      const currentYear = now.getFullYear();
+      const currentMonth = (now.getMonth() + 1).toString().padStart(2, '0');
+      targetMonth = `${currentYear}-${currentMonth}`;
+    }
+
+    // Actualizar el mes seleccionado
+    setSelectedMonth(targetMonth);
 
     // Formatear el nombre del mes para mostrar
+    const [year, monthIndex] = targetMonth.split('-');
+    const date = new Date(parseInt(year), parseInt(monthIndex) - 1);
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-                       'July', 'August', 'September', 'October', 'November', 'December'];
-    setDisplayMonth(`${monthNames[now.getMonth()]}, ${currentYear}`);
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+    setDisplayMonth(`${monthNames[date.getMonth()]}, ${date.getFullYear()}`);
 
-    // Filtrar datos con el mes actual
-    filterDataByMonth(storedData, currentMonthString);
-  }, []);
+    // Filtrar datos con el mes objetivo
+    filterDataByMonth(storedData, targetMonth);
+  }, [location.search]); // Reaccionar a cambios en la URL
 
   // Función para filtrar los datos por mes
   const filterDataByMonth = (data, month) => {
@@ -86,7 +101,6 @@ const Finances = () => {
         <section className='WelcomeMessage'>
           <h2 className={`youCanTittle `}>You can do it Cris!</h2>
           <h4 className='keepTrackTittle' >💰 Keep track of your finances!</h4>
-
         </section>
         <FloatingButton
           onClick={handleMonthSelection}
