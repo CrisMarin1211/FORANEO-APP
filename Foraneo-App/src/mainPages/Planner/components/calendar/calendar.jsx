@@ -33,8 +33,6 @@ const Calendar = () => {
 		setDayFeedbacks(storedFeedbacks);
 	}, []);
 
-	const nextYear = () => setYear((prev) => prev - 1);
-
 	return (
 		<>
 			<section className='calendar-container'>
