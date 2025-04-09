@@ -8,7 +8,11 @@ const Calendar = () => {
 	const [daysInMonth, setDaysInMonth] = useState([]);
 	const [dayFeedbacks, setDayFeedbacks] = useState({});
 
-	useEffect(() => {}, []);
+	useEffect(() => {
+		const currentDate = new Date();
+		const year = currentDate.getFullYear();
+		const month = currentDate.getMonth();
+	}, []);
 
 	const firstDay = new Date(year, month, 1).getDay();
 	const daysInMonth = new Date(year, month + 1, 0).getDate();
