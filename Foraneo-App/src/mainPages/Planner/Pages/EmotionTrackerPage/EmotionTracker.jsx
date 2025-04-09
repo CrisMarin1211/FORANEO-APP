@@ -56,7 +56,7 @@ const EmotionTracker = () => {
 		<>
 			<Menu />
 			<section className='selected-date-header'>
-				<span></span>
+				<span>{selectedDate}</span>
 				<span className='date-arrow-icon' onClick={goToCalendar}>
 					▼
 				</span>
