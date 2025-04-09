@@ -71,16 +71,7 @@ const Calendar = () => {
 		<>
 			<section className='calendar-container'>
 				<h2 className='calendar-title'>Mood Tracker</h2>
-				<div className='calendar-controls'>
-					<button onClick={prevYear}>⏮ Year</button>
-					<button onClick={prevMonth}>◀</button>
-					<span>
-						{new Date(year, month).toLocaleString('es-ES', { month: 'long' })}
-						{year}
-					</span>
-					<button onClick={nextMonth}>▶</button>
-					<button onClick={nextYear}>Year ⏭</button>
-				</div>
+				<div className='calendar-controls'></div>
 				<div className='calendar-grid'>
 					{daysOfWeek.map((day) => (
 						<div key={day} className='calendar-day-header'>
