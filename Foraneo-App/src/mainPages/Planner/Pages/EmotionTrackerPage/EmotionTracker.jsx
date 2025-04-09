@@ -18,7 +18,8 @@ const EmotionTracker = () => {
 	useEffect(() => {
 		const incomingDate = location.state?.selectedDate;
 		const today = new Date().toISOString().split('T')[0];
-	});
+		setSelectedDate(incomingDate || today);
+	}, [location.state]);
 
 	const handlerSelectionChange = (title, selectItems) => {
 		setAllSelections((prev) => ({ ...prev, [title]: selectItems }));
