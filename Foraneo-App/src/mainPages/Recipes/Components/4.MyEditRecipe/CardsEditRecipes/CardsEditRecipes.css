@@ -5,7 +5,7 @@
 	border-radius: 12px;
 	padding: 20px;
 	margin-bottom: 50px;
-	max-width: 450px;
+	max-width: 350px;
 	position: relative;
 	color: black;
 	display: flex;
@@ -77,7 +77,7 @@
 }
 
 .pencil-button:hover svg {
-	fill: #008c9b;
+	fill: #1ed6eb9f;
 }
 
 @media (max-width: 450px) {
