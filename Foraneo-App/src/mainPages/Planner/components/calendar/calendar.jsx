@@ -18,6 +18,14 @@ const Calendar = () => {
 
 		const firstDay = new Date(year, month, 1).getDay();
 		const daysArray = [];
+
+		for (let i = 0; i < firstDay; i++) {
+			daysArray.push(null);
+		}
+
+		for (let i = 1; i <= totalDays; i++) {
+			daysArray.push(i);
+		}
 	}, []);
 
 	const firstDay = new Date(year, month, 1).getDay();
