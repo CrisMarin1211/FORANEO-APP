@@ -22,7 +22,7 @@ const ListEmotions = ({ title, emotions, onSelectionChange }) => {
 			<section className='emotion-container'>
 				<div className='emotion-header' onClick={() => setIsOpen(!isOpen)}>
 					<h2 className='emotion-title'>{title}</h2>
-					<span></span>
+					<span>▼</span>
 				</div>
 				<div className='emotion-list'>
 					{emotions.map((emotion, index) => (
