@@ -12,6 +12,13 @@
 	margin-top: 50px;
 }
 
+.emotion-container {
+	background-color: #91d9e3;
+	border: 2px solid transparent;
+	border-radius: 15px;
+	transition: border 0.3s ease;
+}
+
 .emotion-title {
 	text-align: left;
 	font-weight: bold;
