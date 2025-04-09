@@ -41,6 +41,7 @@ const EmotionTracker = () => {
 	return (
 		<>
 			<Menu />
+			<section className='selected-date-header'></section>
 			<DayFeedbackCard onSelect={setDayMood} date={today} />
 			<ListEmotions title='Emotions' emotions={emotionsData} onSelectionChange={handlerSelectionChange} />
 			<ListEmotions title='People' emotions={peopleData} onSelectionChange={handlerSelectionChange} />
