@@ -1,16 +1,29 @@
 .money-container {
   display: flex;
-  gap: 15px;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: 20px;
-  background: #777; /* Color de fondo general */
+  padding: 5px;
+  gap: 15px;
   border-radius: 10px;
 }
 
+.top-section {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.balance-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+
+}
+
 .money-card {
-  width: 130px;
-  height: 150px;
+  margin-top: 20px;
+  width: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,16 +36,48 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.expense { background: #d9d9d9; } /* Gris claro */
-.income { background: #d9d9d9; } /* Gris claro */
-.balance { background: #d7ffd7; } /* Verde pastel */
+.expense { border-color: #f7b2b2; }
+.income { border-color: #FFE772; }
+.balance { background: #5aa222;
+  height: 100px;
+width: 300px;
 
-h2 {
+} /* Verde pastel */
+
+.expense-icon {
+  margin-right: 4px;
+  color: red;
+}
+
+
+.money-card-balance {
+  height: 30px;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  background-color:#71d6a9 ;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+  margin-bottom: 20px;
+}
+
+.ptotal{
+  font-size: 18px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.h2text {
   margin: 5px 0;
   font-size: 20px;
   display: flex;
   align-items: center;
-  gap: 5px;
 }
 
 p {
@@ -40,22 +85,18 @@ p {
   font-size: 14px;
 }
 
-.icon {
-  font-size: 18px;
-}
-
-.expense-icon { color: #cf1322; } /* Rojo */
-.income-icon { color: #3f8600; } /* Verde */
-.check-icon { color: #3f8600; } /* Verde */
+.income-icon {
+  color: #00a746;
+  margin-right: 4px;
+} /* Verde */
 
 .add-btn {
-  margin: 0;
-  margin-top: 7px;
-  background: linear-gradient(135deg, #ff8a00, #e52e71);
+  margin-top: 10px;
+  background: linear-gradient(135deg, #79CFD9, #00A0B2);
   border: none;
   border-radius: 10px;
-  width: 90px;
-  height: 35px;
+  width: 75px;
+  height: 25px;
   font-size: 16px;
   font-weight: bold;
   color: white;
@@ -68,5 +109,10 @@ p {
 }
 
 .add-btn:hover {
-  background: linear-gradient(135deg, #e52e71, #ff8a00);
+  background: linear-gradient(135deg, #00A0B2, #79CFD9);
+}
+
+.h2text1{
+  font-size: 20px;
+  margin-right: 20px;
 }
