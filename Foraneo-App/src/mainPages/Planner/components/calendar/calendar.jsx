@@ -6,6 +6,7 @@ const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const Calendar = () => {
 	const [daysInMonth, setDaysInMonth] = useState([]);
+	const [dayFeedbacks, setDayFeedbacks] = useState({});
 
 	useEffect(() => {
 		const stored = JSON.parse(localStorage.getItem('day-feedbacks')) || {};
