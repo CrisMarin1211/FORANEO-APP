@@ -3,6 +3,7 @@ import './listEmotions.css';
 
 const ListEmotions = ({ title, emotions, onSelectionChange }) => {
 	const [selected, setSelected] = useState([]);
+	const [isOpen, setIsOpen] = useState(false);
 
 	useEffect(() => {
 		const stored = JSON.parse(localStorage.getItem(`emotions_${title}`));
