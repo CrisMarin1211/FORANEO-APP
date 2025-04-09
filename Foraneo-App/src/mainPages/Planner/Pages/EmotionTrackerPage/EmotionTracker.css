@@ -10,36 +10,26 @@
 	}
 }
 
-.save-emotions-btn {
-	background-color: #02565f;
-	color: white;
-	font-weight: bold;
-	font-size: 24px;
-	line-height: 1.2;
-	padding: 16px 0;
-	width: 100%;
-	height: 45px;
-	max-width: 320px;
-	border: none;
-	border-radius: 12px;
-	text-align: center;
-	cursor: pointer;
-	transition: background-color 0.3s ease, transform 0.2s ease;
+.selected-date-header {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 20px auto 0 auto;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 20px auto 10px;
+	gap: 8px;
+	color: #333;
+	cursor: pointer;
+	margin-top: 100px;
 }
 
-.save-emotions-btn {
-	font-size: 20px !important;
+.date-arrow-icon {
+	font-size: 14px;
+	margin-top: 2px;
+	transition: transform 0.2s ease;
 }
 
-.save-emotions-btn:hover {
-	background-color: #01454d;
-	transform: scale(1.02);
-}
-
-.save-emotions-btn:active {
-	transform: scale(0.98);
+.date-arrow-icon:hover {
+	transform: translateY(2px);
+	color: #79cfd9;
 }
