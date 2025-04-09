@@ -4,6 +4,11 @@
 
 }
 
+.WelcomeMessage{
+  max-width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
 .youCanTittle{
   color: black;
   font-size: 18px;
@@ -11,11 +16,13 @@
   font-weight: 800;
   margin: 5px 0;
   display: flex;
+  width: fit-content;
   align-items: center;
 
 }
 
 .keepTrackTittle{
+  max-width: 120px;
   color: black;
   font-size: 16px;
   margin: 0;
