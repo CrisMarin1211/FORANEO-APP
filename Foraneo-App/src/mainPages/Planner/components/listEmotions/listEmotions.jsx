@@ -24,7 +24,18 @@ const ListEmotions = ({ title, emotions, onSelectionChange }) => {
 					<h2 className='emotion-title'>{title}</h2>
 					<span className={`arrow ${isOpen ? 'open' : ''}`}>▼</span>
 				</div>
-				{isOpen && ()}
+				{isOpen && (
+					<div className='emotion-list'>
+						{emotions.map((emotion, index) => (
+							<div key={index} className='emotion-item' onClick={() => toggleEmotion(emotion.name)}>
+								<div className={`emotion-icon ${selected.includes(emotion.name) ? 'selected' : ''}`}>
+									{emotion.icon}
+								</div>
+								<span className='emotion-name'>{emotion.name}</span>
+							</div>
+						))}
+					</div>
+				)}
 			</section>
 		</>
 	);
