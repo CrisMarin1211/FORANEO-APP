@@ -1,0 +1,115 @@
+.recipe-card {
+	background-color: #f2feff;
+	border-color: rgba(2, 86, 95, 0.35);
+	border-width: 1.5px;
+	border-radius: 12px;
+	padding: 20px;
+	margin-bottom: 50px;
+	max-width: 450px;
+	position: relative;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card h3 {
+	font-size: 24px;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+.recipe-card p:nth-of-type(1) {
+	font-size: 28px;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 15px;
+	font-weight: bold;
+}
+
+.recipe-card .content-container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	margin-bottom: 15px;
+}
+
+.recipe-image {
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+	border-radius: 8px;
+	margin-right: 20px;
+	flex-shrink: 0;
+}
+
+.ingredients-container {
+	flex: 1;
+	min-width: 200px;
+}
+
+.ingredients-list {
+	list-style-type: disc;
+	padding-left: 20px;
+	margin: 0;
+}
+
+.ingredients-list li {
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+.pencil-button {
+	position: absolute;
+	color: #00a0b2;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+}
+
+.pencil-button svg {
+	width: 24px;
+	height: 24px;
+	fill: transparent;
+	transition: fill 0.3s ease;
+}
+
+.pencil-button:hover svg {
+	fill: #008c9b;
+}
+
+@media (max-width: 450px) {
+	.recipe-image {
+		width: 120px;
+		height: 120px;
+	}
+
+	.recipe-card p:nth-of-type(1) {
+		font-size: 24px;
+	}
+
+	.recipe-card h3 {
+		font-size: 20px;
+	}
+}
+
+/* Media query para cuando hay muchos ingredientes */
+@media (max-width: 400px), (min-height: 300px) {
+	.content-container {
+		flex-direction: column;
+	}
+
+	.recipe-image {
+		width: 100%;
+		height: auto;
+		max-height: 200px;
+		margin-right: 0;
+		margin-bottom: 15px;
+	}
+
+	.ingredients-container {
+		width: 100%;
+	}
+}
