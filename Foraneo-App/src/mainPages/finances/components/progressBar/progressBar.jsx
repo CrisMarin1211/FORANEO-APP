@@ -1,41 +1,36 @@
 import React from "react";
 import { Progress } from "antd";
+import "./progressBar.css";
 
 const twoColors = {
-  "0%": "#108ee9",
-  "100%": "#87d068",
+
+  "0%": "#79CFD9",
+  "100%": "#CEA8FC",
 };
 
-const ProgressBar = ({ goal = 1000000, percent = 10 }) => {
+const ProgressBar = ({ goal = 1000000, percent = 70 }) => {
   const raisedAmount = Math.round((percent / 100) * goal);
 
   return (
-    <section style={{ position: "relative", width: "500px", textAlign: "center" }}>
-      {/* Pop Number*/}
+    <section className="progressBarContainer">
+      {/* Número flotante (con límites) */}
       <section
+        className="floatingNumber"
         style={{
-          position: "absolute",
-          left: `${percent}%`,
+          left: `min(90%, max(10%, ${percent}%))`, // Limita el movimiento entre 10% y 90%
           transform: "translateX(-50%)",
-          top: "-30px",
-          background: "#E3E3E3",
-          color: "black",
-          padding: "6px 12px",
-          borderRadius: "12px",
-          fontWeight: "bold",
-          fontSize: "14px",
-          boxShadow: "0px 2px 5px rgba(0,0,0,0.2)",
         }}
       >
         ${raisedAmount.toLocaleString()}
       </section>
 
+      {/* Barra de progreso */}
       <Progress
+        className="progressbar"
         percent={percent}
-        percentPosition={{ align: 'end', type: 'inner' , justify: 'center'}}
-
+        percentPosition={{ align: "end", type: "inner", justify: "center" }}
         strokeColor={twoColors}
-        size={[450, 40]}
+        size={[390, 40]}
       />
     </section>
   );
