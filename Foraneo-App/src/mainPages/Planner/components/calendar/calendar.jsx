@@ -5,8 +5,6 @@ import { faces } from '../../data/imagesData';
 const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const Calendar = () => {
-	const [moodData, setMoodData] = useState({});
-
 	useEffect(() => {
 		const stored = JSON.parse(localStorage.getItem('day-feedbacks')) || {};
 		setMoodData(stored);
