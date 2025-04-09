@@ -12,7 +12,7 @@ const EmotionTracker = () => {
 	const [dayMood, setDayMood] = useState(null);
 	const [showModal, setShowModal] = useState(false);
 	const today = new Date().toISOString().split('T')[0];
-	const navigate = useNavigate;
+	const navigate = useNavigate();
 
 	const handlerSelectionChange = (title, selectItems) => {
 		setAllSelections((prev) => ({ ...prev, [title]: selectItems }));
