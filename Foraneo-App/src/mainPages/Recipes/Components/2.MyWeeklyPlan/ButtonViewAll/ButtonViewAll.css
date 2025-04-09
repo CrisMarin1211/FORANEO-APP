@@ -1,23 +1,35 @@
-.Button-View-All {
+.button-view-All {
 	display: flex;
-	justify-content: flex-end;
-	margin-right: 16px;
+	justify-content: center;
+	align-items: center;
+	margin-top: 10px;
+	padding: 20px;
 }
 
-.View-All {
-	color: #0099cc;
+.view-all {
+	width: 136px;
+	height: 44px;
+	background-color: #00a0b2;
+	color: white;
+	border-radius: 10px;
+	cursor: pointer;
+	font-weight: 500;
 	font-size: 16px;
-	font-weight: bold;
-	text-decoration: none;
-	transition: color 0.3s ease, transform 0.2s ease;
-	margin-right: 10px;
+	border: none;
+	outline: none;
+	transition: background-color 0.3s ease;
 }
 
-.View-All:hover {
-	color: #0077aa;
-	transform: scale(1.05);
+.view-all:hover {
+	background-color: #008c9b;
 }
 
-.View-All:active {
-	transform: scale(0.95);
+.view-all:focus {
+	outline: none;
+	box-shadow: none;
+}
+
+.view-all:focus-visible {
+	outline: 2px solid #00a0b2;
+	outline-offset: 2px;
 }
