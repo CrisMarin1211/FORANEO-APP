@@ -49,6 +49,15 @@ const Calendar = () => {
 		navigate('/', { state: { selectedDate } });
 	};
 
+	const goToPrevMonth = () => {
+		if (currentMonth === 0) {
+			setCurrentMonth(11);
+			setCurrentYear((prev) => prev - 1);
+		} else {
+			setCurrentMonth((prev) => prev - 1);
+		}
+	};
+
 	return (
 		<>
 			<section className='calendar-container'>
