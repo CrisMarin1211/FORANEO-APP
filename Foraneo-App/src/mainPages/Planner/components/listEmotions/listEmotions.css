@@ -90,4 +90,5 @@ svg {
 }
 
 .emotion-header {
+	display: flex;
 }
