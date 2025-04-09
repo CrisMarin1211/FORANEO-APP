@@ -42,6 +42,10 @@ const Calendar = () => {
 		return `${year}-${monthStr}-${dayStr}`;
 	};
 
+	const getFaceByLabel = (label) => {
+		return faces.find((face) => face.label === label)?.src || null;
+	};
+
 	return (
 		<>
 			<section className='calendar-container'>
