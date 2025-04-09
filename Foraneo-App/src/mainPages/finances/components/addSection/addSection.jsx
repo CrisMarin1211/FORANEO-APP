@@ -7,31 +7,29 @@ import CalendarInput from '../calendarInput/calendarInput';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const AddSection = () => {
-  const [savedData, setSavedData] = useState([]); // Aquí guardamos los datos
-  const [activeTab, setActiveTab] = useState('Expenses'); // Para controlar la pestaña activa
-  const [selectedCategory, setSelectedCategory] = useState(''); // Para la categoría específica seleccionada
-  const [value, setValue] = useState(10000); // Inicializamos con un valor
-  const [name, setName] = useState(''); // Para el nombre
-  const [details, setDetails] = useState(''); // Para la descripción
-  const [date, setDate] = useState(''); // Aquí guardamos la fecha
+  const [savedData, setSavedData] = useState([]);
+  const [activeTab, setActiveTab] = useState('Expenses');
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [value, setValue] = useState(10000);
+  const [name, setName] = useState('');
+  const [details, setDetails] = useState('');
+  const [date, setDate] = useState('');
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Definimos si es Ingreso o Gasto basado en la pestaña activa, no en la categoría
+  // Definimos si es Ingreso o Gasto basado en la pestaña activa
   const isIncome = activeTab === 'Incomes';
 
   // Función para mostrar los datos guardados en la consola
   const logSavedData = (data) => {
     console.log('Current saved data:', data);
 
-    // También podemos mostrar un resumen por tipo (income/expense)
     const expenses = data.filter(item => item.type === 'Expense');
     const incomes = data.filter(item => item.type === 'Income');
 
     console.log(`Total entries: ${data.length} (${expenses.length} expenses, ${incomes.length} incomes)`);
 
-    // Calcular totales
     const totalExpenses = expenses.reduce((sum, item) => sum + Number(item.value), 0);
     const totalIncomes = incomes.reduce((sum, item) => sum + Number(item.value), 0);
 
@@ -42,41 +40,37 @@ const AddSection = () => {
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
-    const tab = params.get('tab'); // Obtenemos el parámetro 'tab' de la URL
+    const tab = params.get('tab');
     if (tab && (tab === 'Expenses' || tab === 'Incomes')) {
-      setActiveTab(tab); // Establecemos la pestaña activa
+      setActiveTab(tab);
     }
   }, [location]);
 
   useEffect(() => {
-    // Recuperar los datos guardados desde localStorage
     const storedData = JSON.parse(localStorage.getItem('savedData')) || [];
     setSavedData(storedData);
-
-    // Mostrar los datos actuales en la consola al cargar el componente
     logSavedData(storedData);
   }, []);
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
-    // No cambiamos activeTab aquí, para mantener la pestaña actual
   };
 
   const handleSave = () => {
     // Validar que todos los campos estén completos
     if (!selectedCategory || !value || !name || !details || !date) {
       alert('Please fill in all fields!');
-      return; // No guardar si algún campo está vacío
+      return;
     }
 
     const data = {
       category: selectedCategory,
       value,
-      name, // Guardamos el nombre
-      details, // Guardamos los detalles
-      date, // Guardamos la fecha
+      name,
+      details,
+      date,
       type: isIncome ? 'Income' : 'Expense',
-      timestamp: new Date().toISOString() // Agregar timestamp para ordenar cronológicamente
+      timestamp: new Date().toISOString()
     };
 
     // Guardamos el dato en el array de datos
@@ -86,19 +80,24 @@ const AddSection = () => {
     // Guardamos los datos en localStorage
     localStorage.setItem('savedData', JSON.stringify(updatedData));
 
-    // Mostrar los datos actualizados en la consola
     console.log('New entry added:', data);
     logSavedData(updatedData);
 
-    // Limpiar los inputs después de guardar
-    setSelectedCategory('');
-    setValue(10000); // Reiniciar el valor
-    setName(''); // Limpiar el nombre
-    setDetails(''); // Limpiar los detalles
-    setDate(''); // Limpiar la fecha
+    // Extraer el año y mes del registro para pasarlo como parámetro
+    const entryDate = new Date(date);
+    const entryYear = entryDate.getFullYear();
+    const entryMonth = (entryDate.getMonth() + 1).toString().padStart(2, '0'); // +1 porque getMonth() devuelve 0-11
+    const monthParam = `${entryYear}-${entryMonth}`;
 
-    // Redirigir a la página de Finances
-    navigate('/finances');
+    // Limpiar los inputs
+    setSelectedCategory('');
+    setValue(10000);
+    setName('');
+    setDetails('');
+    setDate('');
+
+    // Redirigir a la página de Finances con el parámetro del mes
+    navigate(`/finances?month=${monthParam}`);
   };
 
   const renderContent = () => {
@@ -111,26 +110,26 @@ const AddSection = () => {
         <h2>{categoryTitle}</h2>
         <Categories
           isIncome={isIncome}
-          setSelectedCategory={handleCategorySelect} // Usamos nuestra nueva función
-          selectedCategory={selectedCategory} // Pasamos la categoría seleccionada
+          setSelectedCategory={handleCategorySelect}
+          selectedCategory={selectedCategory}
         />
         <h2>{valueTitle}</h2>
         <ValueInput
-          setValue={setValue} // Pasamos setValue para actualizar el valor
-          value={value} // Pasamos el valor para que se mantenga sincronizado
+          setValue={setValue}
+          value={value}
         />
         <h2>{detailTitle}</h2>
         <AddInputs
-          setName={setName} // Pasamos setName para actualizar el nombre
-          setDetails={setDetails} // Pasamos setDetails para actualizar los detalles
-          name={name} // Pasamos el nombre actual
-          details={details} // Pasamos los detalles actuales
+          setName={setName}
+          setDetails={setDetails}
+          name={name}
+          details={details}
         />
         <CalendarInput
-          setDate={setDate} // Pasamos setDate para actualizar la fecha
-          date={date} // Pasamos la fecha actual
+          setDate={setDate}
+          date={date}
         />
-        <button className="add-btn" onClick={handleSave}>
+        <button className="add-btn2" onClick={handleSave}>
           Save
         </button>
       </section>
