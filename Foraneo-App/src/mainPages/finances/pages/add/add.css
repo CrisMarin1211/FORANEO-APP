@@ -1,0 +1,17 @@
+.Addcontainer{
+  width: 430px;
+  max-width: 100%;
+
+}
+
+.backIcon{
+  color: black;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.buttonBackAdd{
+  background-color: transparent;
+  width: 60px;
+  height: 20px;
+}
