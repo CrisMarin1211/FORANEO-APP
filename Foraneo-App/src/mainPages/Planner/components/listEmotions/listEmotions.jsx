@@ -24,6 +24,7 @@ const ListEmotions = ({ title, emotions, onSelectionChange }) => {
 					<h2 className='emotion-title'>{title}</h2>
 					<span className={`arrow ${isOpen ? 'open' : ''}`}>▼</span>
 				</div>
+				{isOpen && ()}
 			</section>
 		</>
 	);
