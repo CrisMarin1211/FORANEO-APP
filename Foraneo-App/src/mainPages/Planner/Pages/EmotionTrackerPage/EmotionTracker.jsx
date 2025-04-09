@@ -39,7 +39,6 @@ const EmotionTracker = () => {
 			}
 		});
 
-		const today = new Date().toISOString().split('T')[0];
 		const existingFeedbacks = JSON.parse(localStorage.getItem('day-feedbacks')) || {};
 		existingFeedbacks[today] = dayMood;
 		localStorage.setItem('day-feedbacks', JSON.stringify(existingFeedbacks));
