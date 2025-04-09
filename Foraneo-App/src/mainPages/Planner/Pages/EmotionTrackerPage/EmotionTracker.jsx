@@ -50,6 +50,8 @@ const EmotionTracker = () => {
 		navigate('/calendar');
 	};
 
+	if (!selectedDate) return null;
+
 	return (
 		<>
 			<Menu />
