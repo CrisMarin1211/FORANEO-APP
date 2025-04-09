@@ -58,6 +58,15 @@ const Calendar = () => {
 		}
 	};
 
+	const goToNextMonth = () => {
+		if (currentMonth === 11) {
+			setCurrentMonth(0);
+			setCurrentYear((prev) => prev + 1);
+		} else {
+			setCurrentMonth((prev) => prev + 1);
+		}
+	};
+
 	return (
 		<>
 			<section className='calendar-container'>
