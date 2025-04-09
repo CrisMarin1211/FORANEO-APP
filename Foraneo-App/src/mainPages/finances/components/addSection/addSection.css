@@ -50,3 +50,28 @@
   border-radius: 5px;
   min-height: 100px;
 }
+
+
+.add-btn2 {
+  align-self: center;
+  justify-self: center;
+  margin-top: 20px;
+  background: #00A0B2;
+  border: none;
+  border-radius: 10px;
+  width: 95px;
+
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: 0.3s;
+}
+
+.add-btn2:hover {
+  background: linear-gradient(135deg, #00A0B2, #79CFD9);
+}
