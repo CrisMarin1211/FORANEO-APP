@@ -33,6 +33,15 @@ const Calendar = () => {
 		setDayFeedbacks(storedFeedbacks);
 	}, []);
 
+	const getDateKey = (day) => {
+		const today = new Date();
+		const month = today.getMonth() + 1;
+		const year = today.getFullYear();
+		const dayStr = day < 10 ? `0${day}` : day;
+		const monthStr = month < 10 ? `0${month}` : month;
+		return `${year}-${monthStr}-${dayStr}`;
+	};
+
 	return (
 		<>
 			<section className='calendar-container'>
