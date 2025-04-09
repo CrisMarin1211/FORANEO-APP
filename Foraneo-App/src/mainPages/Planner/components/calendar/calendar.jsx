@@ -33,7 +33,6 @@ const Calendar = () => {
 		setDayFeedbacks(storedFeedbacks);
 	}, []);
 
-	const calendarDays = [];
 	for (let i = 0; i < firstDay; i++) {
 		calendarDays.push(null);
 	}
