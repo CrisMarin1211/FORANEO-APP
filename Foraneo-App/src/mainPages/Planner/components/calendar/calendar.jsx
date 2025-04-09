@@ -81,7 +81,57 @@ const Calendar = () => {
 					</span>
 					<button onClick={goToNextMonth}>→</button>
 				</div>
-				<div className='calendar-grid'></div>
+				<div className='calendar-grid'>
+				{daysOfWeek.map((d) => (
+          <div key={d} className="calendar-day-header">
+            {d}
+          </div>
+        ))}
+
+        {daysInMonth.map((day, index) => {
+          const dateKey = day ? getDateKey(day) : null;
+          const mood = dayFeedbacks[dateKey];
+          const faceSrc = getFaceByLabel(mood);
+
+          return (
+            <div
+              key={index}
+              className={calendar-day ${day ? "clickable" : "empty"}}
+              onClick={() => handleDayClick(day)}
+            >
+              {day && (
+                <div className="calendar-item">
+                  <svg
+                    className="calendar-svg"
+                    viewBox="0 0 100 100"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      stroke="#79CFD9"
+                      strokeWidth="5"
+                      fill="white"
+                    />
+                    {faceSrc && (
+                      <image
+                        href={faceSrc}
+                        x="32"
+                        y="32"
+                        width="36"
+                        height="36"
+                        className="image-face-src"
+                      />
+                    )}
+                  </svg>
+                  <div className="calendar-day-number">{day}</div>
+                </div>
+              )}
+            </div>
+          );
+        })}
+				</div>
 			</section>
 		</>
 	);
