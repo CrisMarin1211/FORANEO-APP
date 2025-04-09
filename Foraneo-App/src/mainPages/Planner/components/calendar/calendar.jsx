@@ -13,14 +13,10 @@ const Calendar = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		const currentDate = new Date();
-		const year = currentDate.getFullYear();
-		const month = currentDate.getMonth();
-
-		const date = new Date(year, month + 1, 0);
+		const date = new Date(currentYear, currentMonth + 1, 0);
 		const totalDays = date.getDate();
 
-		const firstDay = new Date(year, month, 1).getDay();
+		const firstDay = new Date(currentYear, currentMonth, 1).getDay();
 		const daysArray = [];
 
 		for (let i = 0; i < firstDay; i++) {
@@ -35,7 +31,7 @@ const Calendar = () => {
 
 		const storedFeedbacks = JSON.parse(localStorage.getItem('day-feedbacks')) || {};
 		setDayFeedbacks(storedFeedbacks);
-	}, []);
+	}, [currentMonth, currentYear]);
 
 	const getDateKey = (day) => {
 		const today = new Date();
