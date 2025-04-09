@@ -12,6 +12,12 @@ const Calendar = () => {
 		const currentDate = new Date();
 		const year = currentDate.getFullYear();
 		const month = currentDate.getMonth();
+
+		const date = new Date(year, month + 1, 0);
+		const totalDays = date.getDate();
+
+		const firstDay = new Date(year, month, 1).getDay();
+		const daysArray = [];
 	}, []);
 
 	const firstDay = new Date(year, month, 1).getDay();
