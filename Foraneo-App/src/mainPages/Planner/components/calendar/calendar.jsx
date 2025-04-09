@@ -7,6 +7,8 @@ const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const Calendar = () => {
 	const [daysInMonth, setDaysInMonth] = useState([]);
 	const [dayFeedbacks, setDayFeedbacks] = useState({});
+	const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
+	const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
 	useEffect(() => {
 		const currentDate = new Date();
