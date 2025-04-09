@@ -5,9 +5,6 @@ import { faces } from '../../data/imagesData';
 const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const Calendar = () => {
-	const [daysInMonth, setDaysInMonth] = useState([]);
-	const [dayFeedbacks, setDayFeedbacks] = useState({});
-
 	useEffect(() => {
 		const currentDate = new Date();
 		const year = currentDate.getFullYear();
