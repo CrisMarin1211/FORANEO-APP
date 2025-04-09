@@ -1,46 +1,82 @@
 .big-info-container {
-  margin-top: 20px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
+  color: #333;
+  margin: 40px 15px 20px; /* Aumentado el margen superior para dar más espacio a las tabs */
+  border-radius: 16px;
+  padding: 0;
   position: relative;
-  background: rgb(234, 69, 69);
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: visible; /* Cambiado de 'hidden' a 'visible' para permitir que las pestañas sobresalgan */
 }
 
 .tabs {
   display: flex;
   position: absolute;
-  top: -25px;
+  justify-content: center;
+  align-items: flex-end; /* Alineamos las pestañas por su parte inferior */
+  top: -25px; /* Ajustado para que se vean completamente */
+  left: 0;
+  right: 0;
+  height: 40px; /* Altura definida para las pestañas */
+  z-index: 10; /* Aseguramos que las pestañas estén por encima del contenido */
 }
 
 .tab {
-  background-color: #f9f9f9;
+  color: #555;
+  background-color: #f0f0f0;
   margin-bottom: 0;
-  padding: 10px 20px;
+  padding: 8px 16px 10px; /* Ajustado el relleno */
   cursor: pointer;
-  border-radius: 8px 8px 0 0;
+  border-radius: 12px 12px 0 0;
   font-weight: bold;
-  margin-right: 5px;
-  transition: 0.3s;
-}
-
-.tab:hover {
-  opacity: 0.8;
+  margin-right: 4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
+  font-size: 14px;
+  border-bottom: none;
+  height: 25px; /* Altura fija para las pestañas */
+  display: flex;
+  align-items: center;
 }
 
 /* Colores de las pestañas */
-.Timeline-tab { background: #3f8600; color: white; }
-.Statistics-tab { background: #cf1322; color: white; }
-.Goal-tab { background: #ff9800; color: white; }
+.Timeline-tab {
+  background: linear-gradient(135deg, #34c9eb, #00A0B2);
+  color: white;
+}
+
+.Statistics-tab {
+  background: linear-gradient(135deg, #d4e3ff, #B1CEFF);
+  color: #333;
+}
+
+.Goal-tab {
+  background: linear-gradient(135deg, #e3c5ff, #CEA8FC);
+  color: #333;
+}
 
 /* Pestaña activa */
 .active {
-  transform: translateY(-5px);
+  transform: translateY(-5px); /* Reducido para evitar que se corte */
+  font-weight: 600;
+  padding: 8px 16px 10px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.12);
+  height: 30px; /* Altura ligeramente mayor para la pestaña activa */
 }
 
 .tab-content {
-  padding: 20px;
-  background: #f9f9f9;
-  border-radius: 5px;
-  min-height: 100px;
+  padding: 20px 16px;
+  background: white;
+  border-radius: 16px; /* Bordes redondeados en todas las esquinas */
+  min-height: 300px;
+}
+
+/* Añadir un pequeño efecto hover para las pestañas */
+.tab:not(.active):hover {
+  transform: translateY(-3px);
+}
+
+/* Asegurarse de que los emojis se vean bien */
+.tab span, .tab svg {
+  margin-right: 5px;
 }
