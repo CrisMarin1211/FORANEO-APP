@@ -5,6 +5,10 @@
 	transition: border 0.3s ease;
 }
 
+.emotion-container.open {
+	border-color: #00a0b2;
+}
+
 .emotion-title {
 	text-align: left;
 	font-weight: bold;
