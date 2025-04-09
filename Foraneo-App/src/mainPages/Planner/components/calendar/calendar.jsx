@@ -34,12 +34,9 @@ const Calendar = () => {
 	}, [currentMonth, currentYear]);
 
 	const getDateKey = (day) => {
-		const today = new Date();
-		const month = today.getMonth() + 1;
-		const year = today.getFullYear();
-		const dayStr = day < 10 ? `0${day}` : day;
-		const monthStr = month < 10 ? `0${month}` : month;
-		return `${year}-${monthStr}-${dayStr}`;
+		const dayStr = day < 10 ? `0${day}` : `${day}`;
+		const monthStr = currentMonth + 1 < 10 ? `0${currentMonth + 1}` : `${currentMonth + 1}`;
+		return `${currentYear}-${monthStr}-${dayStr}`;
 	};
 
 	const getFaceByLabel = (label) => {
