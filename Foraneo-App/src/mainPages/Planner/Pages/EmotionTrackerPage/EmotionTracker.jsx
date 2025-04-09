@@ -61,7 +61,7 @@ const EmotionTracker = () => {
 					▼
 				</span>
 			</section>
-			<DayFeedbackCard onSelect={setDayMood} date={today} />
+			<DayFeedbackCard onSelect={setDayMood} date={selectedDate} />
 			<ListEmotions title='Emotions' emotions={emotionsData} onSelectionChange={handlerSelectionChange} />
 			<ListEmotions title='People' emotions={peopleData} onSelectionChange={handlerSelectionChange} />
 			<ListEmotions title='Weather' emotions={weatherData} onSelectionChange={handlerSelectionChange} />
