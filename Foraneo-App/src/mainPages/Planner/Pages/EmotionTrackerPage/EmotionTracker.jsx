@@ -5,7 +5,7 @@ import ListEmotions from '../../components/listEmotions/listEmotions';
 import { emotionsData, hobbiesData, peopleData, weatherData, healthData, eventsData } from '../../data/iconsData';
 import ModalSaveEmotions from '../../components/modalSaveEmotions/modalSaveEmotions';
 import DayFeedbackCard from '../../components/dayFeedbackCard/dayFeedbackCard';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const EmotionTracker = () => {
 	const [allSelections, setAllSelections] = useState({});
@@ -14,6 +14,7 @@ const EmotionTracker = () => {
 	const [selectedDate, setSelectedDate] = useState(null);
 	const today = new Date().toISOString().split('T')[0];
 	const navigate = useNavigate();
+	const location = useLocation();
 
 	const handlerSelectionChange = (title, selectItems) => {
 		setAllSelections((prev) => ({ ...prev, [title]: selectItems }));
