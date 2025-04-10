@@ -5,7 +5,7 @@ import './iconCircle.css';
 const IconCircle2 = ({ icon, onClick }) => {
 	return (
 		<section className='icon-circle' onClick={onClick}>
-			<div className='icon-content'>{icon}</div>
+			<section className='icon-content'>{icon}</section>
 		</section>
 	);
 };
