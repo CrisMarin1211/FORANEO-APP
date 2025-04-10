@@ -26,7 +26,7 @@ const Menu = () => {
 					<Link className='btn' to='/calendar'>
 						<IconCalendar />
 					</Link>
-					<Link className='btn' to='/to-do'>
+					<Link className='btn' to='/'>
 						<IconUser />
 					</Link>
 				</nav>
