@@ -14,7 +14,7 @@ function Welcome() {
 	};
 
 	return (
-		<section>
+		<section className='container-welcome'>
 			<section className='tittle-welcome'>
 				<Title />
 			</section>
