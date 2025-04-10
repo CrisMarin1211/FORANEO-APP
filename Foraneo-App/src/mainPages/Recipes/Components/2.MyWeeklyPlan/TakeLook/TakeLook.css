@@ -1,0 +1,12 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400&display=swap');
+
+.Take-Look {
+	font-family: 'Satoshi', sans-serif !important;
+	font-weight: 500 !important;
+	font-size: 18px;
+	color: #000000;
+	margin: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

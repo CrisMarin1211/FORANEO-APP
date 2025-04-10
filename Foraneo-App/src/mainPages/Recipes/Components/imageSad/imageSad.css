@@ -1,0 +1,9 @@
+.Image-Sad {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding-block-end: 30px;
+	padding-block-start: 30px;
+}
