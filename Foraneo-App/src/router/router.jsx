@@ -4,6 +4,8 @@ import { PlanCreateView } from '../mainPages/export';
 import { WeeklyPlanView } from '../mainPages/export';
 import { EditRecipeView } from '../mainPages/export';
 import { UnlockedRecipesView } from '../mainPages/export';
+import { RecipeDetailView } from '../mainPages/export';
+import { CongratulationView } from '../mainPages/export';
 
 function Router() {
 	return (
@@ -13,6 +15,8 @@ function Router() {
 			<Route path='/weeklyplan' element={<WeeklyPlanView />} />
 			<Route path='/editrecipe/:day' element={<EditRecipeView />} />
 			<Route path='/unlockedrecipes/:day/:mealTime' element={<UnlockedRecipesView />} />
+			<Route path='/recipedetail/:day/:mealTime/:recipeName' element={<RecipeDetailView />} />
+			<Route path='/congratulation' element={<CongratulationView />} />
 		</Routes>
 	);
 }
