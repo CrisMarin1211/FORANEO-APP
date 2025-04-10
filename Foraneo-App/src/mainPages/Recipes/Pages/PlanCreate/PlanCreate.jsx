@@ -20,7 +20,37 @@ function PlanCreate() {
 
 	const navigate = useNavigate();
 
-	const getRandomRecipe = (recipes) => recipes[Math.floor(Math.random() * recipes.length)];
+	const filterRecipesByTags = (recipes, selectedFoodTypes) => {
+		return recipes.filter((recipe) => {
+			const tags = recipe.tags || [];
+
+			return selectedFoodTypes.every((type) => tags.includes(type));
+		});
+	};
+
+	const getRandomRecipe = (recipes) => {
+		if (recipes.length > 0) {
+			return recipes[Math.floor(Math.random() * recipes.length)];
+		} else {
+			return { name: 'No recipe available', price: 0, image: '', description: '', tags: [] };
+		}
+	};
+
+	const checkIncompatibleFilters = (selectedFoodTypes) => {
+		const incompatibleCombos = [
+			['Seafood', 'Vegetarian'],
+			['Meat & Grill', 'Vegetarian'],
+			['Meat & Grill', 'Vegan'],
+			['Seafood', 'Vegan'],
+		];
+
+		for (const combo of incompatibleCombos) {
+			if (combo.every((type) => selectedFoodTypes.includes(type))) {
+				return true;
+			}
+		}
+		return false;
+	};
 
 	const handleCreatePlan = () => {
 		if (!budget || selectedFoodTypes.length === 0 || selectedDays.length === 0 || selectedIngredients.length === 0) {
@@ -28,15 +58,45 @@ function PlanCreate() {
 			return;
 		}
 
-		const newPlan = selectedDays.map((day) => ({
-			day,
-			breakfast: getRandomRecipe(BreakfastBowls),
-			lunch: getRandomRecipe(LunchBowls),
-			dinner: getRandomRecipe(DinnerBowls),
-		}));
+		if (checkIncompatibleFilters(selectedFoodTypes)) {
+			alert('The selected food types are incompatible. Please choose different options.');
+			return;
+		}
+
+		const numericBudget = parseInt(budget.replace(/\D/g, ''), 10);
+
+		const newPlan = selectedDays.map((day) => {
+			let filteredBreakfast = filterRecipesByTags(BreakfastBowls, selectedFoodTypes);
+
+			let breakfastRecipe =
+				filteredBreakfast.length > 0 ? getRandomRecipe(filteredBreakfast) : getRandomRecipe(BreakfastBowls);
+
+			const filteredLunch = filterRecipesByTags(LunchBowls, selectedFoodTypes);
+			const filteredDinner = filterRecipesByTags(DinnerBowls, selectedFoodTypes);
+
+			const lunchRecipe = filteredLunch.length > 0 ? getRandomRecipe(filteredLunch) : getRandomRecipe(LunchBowls);
+			const dinnerRecipe = filteredDinner.length > 0 ? getRandomRecipe(filteredDinner) : getRandomRecipe(DinnerBowls);
+
+			return {
+				day,
+				breakfast: breakfastRecipe,
+				lunch: lunchRecipe,
+				dinner: dinnerRecipe,
+			};
+		});
+
+		let totalCost = 0;
+		newPlan.forEach((dayPlan) => {
+			const dayCost = dayPlan.breakfast.price + dayPlan.lunch.price + dayPlan.dinner.price;
+			console.log(`Total cost for ${dayPlan.day}: ${dayCost}`);
+			totalCost += dayCost;
+		});
+
+		console.log(`Total cost of the entire plan: ${totalCost}`);
+
+		console.log(`Budget entered: ${numericBudget}`);
 
 		setPlans(newPlan);
-		alert('Plan created successfully!');
 		console.log('Weekly plan:', newPlan);
 
 		localStorage.setItem('weeklyPlan', JSON.stringify(newPlan));
