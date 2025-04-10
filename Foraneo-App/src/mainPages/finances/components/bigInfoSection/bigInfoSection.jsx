@@ -51,7 +51,7 @@ const BigInfoSection = ({ selectedMonth, hasNoData }) => {
 
     switch (activeTab) {
       case 'Timeline':
-        return <Timeline data={filteredData} selectedMonth={selectedMonth} />;
+        return <Timeline className='timelinesectionbig'   data={filteredData} selectedMonth={selectedMonth} />;
       case 'Statistics':
         return <Statistics filteredData={filteredData} />;
       case 'Goal':

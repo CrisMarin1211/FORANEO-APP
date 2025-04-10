@@ -13,6 +13,7 @@
 .ticket.income {
   background-color: rgba(0, 200, 83, 0.1);
   border-left: 4px solid #00c853;
+  color: black;
 }
 
 .ticket.expense {
@@ -21,6 +22,7 @@
 }
 
 .ticketIconContainer {
+  color: black;
   min-width: 48px;
   height: 48px;
   display: flex;
@@ -33,6 +35,7 @@
 }
 
 .ticketIcon {
+  color: black;
   flex-shrink: 0;
 }
 

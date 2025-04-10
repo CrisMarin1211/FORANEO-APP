@@ -40,7 +40,7 @@ const Timeline = ({ data, selectedMonth }) => {
   const sortedDates = Object.keys(groupedTickets).sort((a, b) => new Date(b) - new Date(a));
 
   return (
-    <section>
+    <section >
 
       {sortedDates.map((date, index) => {
 
@@ -58,7 +58,7 @@ const Timeline = ({ data, selectedMonth }) => {
                 category={ticket.category}
                 value={ticket.value}
                 name={ticket.name}
-                details={ticket.details} 
+                details={ticket.details}
                 type={ticket.type}
               />
             ))}

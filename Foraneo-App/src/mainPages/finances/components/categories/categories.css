@@ -2,7 +2,8 @@
   text-align: left;
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+
 }
 
 .categorie-selector-container {
@@ -59,4 +60,8 @@
   line-height: 1;
   display: flex;
   flex-direction: column;
+}
+
+.categorie-selector-title{
+  margin-bottom: 20px;
 }

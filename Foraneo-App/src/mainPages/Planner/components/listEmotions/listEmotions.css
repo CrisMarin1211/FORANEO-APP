@@ -38,6 +38,10 @@
 }
 
 .emotion-icon {
+
+		color: white;
+
+
 	width: 50px;
 	height: 50px;
 	background: #c0bfbf;
@@ -89,9 +93,7 @@
 	background-color: #00a0b2;
 }
 
-svg {
-	color: white;
-}
+
 
 .emotion-header {
 	display: flex;

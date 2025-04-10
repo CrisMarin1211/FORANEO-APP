@@ -74,3 +74,12 @@
 .add-btn2:hover {
   background: linear-gradient(135deg, #00A0B2, #79CFD9);
 }
+
+.categorytitle{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.detaitittle{
+  margin-bottom: 20px;
+}

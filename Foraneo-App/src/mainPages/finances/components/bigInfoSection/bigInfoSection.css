@@ -60,10 +60,12 @@
   font-weight: 600;
   padding: 8px 16px 10px;
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.12);
-  height: 30px;
+  height: 40px;
+  font-size: 18px;
 }
 
 .tab-content {
+  margin-top: 20px;
   padding: 20px 16px;
   background: white;
   border-radius: 16px;
@@ -77,5 +79,7 @@
 
 
 .tab span, .tab svg {
+  color: black;
   margin-right: 5px;
 }
+

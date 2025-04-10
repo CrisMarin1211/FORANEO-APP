@@ -93,7 +93,7 @@ const AddSection = () => {
     setDetails('');
     setDate('');
 
-    
+
     navigate(`/finances?month=${monthParam}`);
   };
 
@@ -104,7 +104,7 @@ const AddSection = () => {
 
     return (
       <section>
-        <h2>{categoryTitle}</h2>
+        <h2 className='categorytitle'>{categoryTitle}</h2>
         <Categories
           isIncome={isIncome}
           setSelectedCategory={handleCategorySelect}
@@ -115,7 +115,7 @@ const AddSection = () => {
           setValue={setValue}
           value={value}
         />
-        <h2>{detailTitle}</h2>
+        <h2 className='detaitittle'>{detailTitle}</h2>
         <AddInputs
           setName={setName}
           setDetails={setDetails}
