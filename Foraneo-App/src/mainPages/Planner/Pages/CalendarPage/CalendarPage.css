@@ -1,0 +1,21 @@
+.back-button {
+	background-color: transparent;
+	border: none;
+	color: #333;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: color 0.2s;
+	font-weight: bold;
+}
+
+.calendar-back-container {
+	display: flex;
+	align-items: center;
+	padding: 10px 20px;
+}
+
+@media (min-width: 768px) {
+	.calendar-back-container {
+		margin-top: 80px;
+	}
+}
