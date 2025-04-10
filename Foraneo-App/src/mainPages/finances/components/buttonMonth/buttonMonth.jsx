@@ -7,11 +7,11 @@ const FloatingButton = ({ onClick, displayMonth }) => {
   const [showCalendar, setShowCalendar] = useState(false);
   const buttonRef = React.useRef(null);
 
-  // Manejador para clics fuera del componente
+
   useEffect(() => {
-    // Función para manejar clics fuera del componente
+
     const handleClickOutside = (event) => {
-      // No cerrar si el clic fue dentro del panel de Ant Design
+
       const antdDropdowns = document.querySelectorAll('.ant-picker-dropdown');
       let clickedInDropdown = false;
 
@@ -28,9 +28,9 @@ const FloatingButton = ({ onClick, displayMonth }) => {
       }
     };
 
-    // Agregar el listener solo cuando el calendario está visible
+
     if (showCalendar) {
-      // Pequeño retraso para evitar que se cierre inmediatamente
+
       setTimeout(() => {
         document.addEventListener('mousedown', handleClickOutside);
       }, 100);
@@ -45,11 +45,11 @@ const FloatingButton = ({ onClick, displayMonth }) => {
     setShowCalendar(!showCalendar);
   };
 
-  // Manejar la selección de mes
+
   const handleSelectMonth = (date) => {
     if (date) {
       onClick(date);
-      // Retrasar ligeramente el cierre para evitar problemas con Ant Design
+
       setTimeout(() => {
         setShowCalendar(false);
       }, 100);
@@ -57,21 +57,21 @@ const FloatingButton = ({ onClick, displayMonth }) => {
   };
 
   return (
-    <div className="button-month-wrapper" ref={buttonRef}>
+    <section className="button-month-wrapper" ref={buttonRef}>
       <button className="floating-button" onClick={toggleCalendar}>
         <Calendar className="iconCalendar" size={25} color="white" />
-        <div className="text">
+        <section className="text">
           <strong className="monthly">Monthly View</strong>
           <p className="monthText">{displayMonth || "Select Month"}</p>
-        </div>
+        </section>
       </button>
 
       {showCalendar && (
-        <div className="calendar-overlay">
+        <section className="calendar-overlay">
           <CalendarMonth onSelectMonth={handleSelectMonth} />
-        </div>
+        </section>
       )}
-    </div>
+    </section>
   );
 };
 
