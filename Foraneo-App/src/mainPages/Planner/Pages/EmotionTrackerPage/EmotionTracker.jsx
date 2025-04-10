@@ -42,16 +42,15 @@ const EmotionTracker = () => {
 			}
 		});
 
-		const existingFeedbacksRaw = localStorage.getItem('day-feedbacks');
-		const existingFeedbacks = existingFeedbacksRaw ? JSON.parse(existingFeedbacksRaw) : {};
-
-		const isFirstTimeEver = !existingFeedbacksRaw;
-		const isFirstTimeForDate = !existingFeedbacks[selectedDate];
+		const existingFeedbacks = JSON.parse(localStorage.getItem('day-feedbacks')) || {};
 
 		existingFeedbacks[selectedDate] = dayMood;
 		localStorage.setItem('day-feedbacks', JSON.stringify(existingFeedbacks));
 
-		if (isFirstTimeEver || isFirstTimeForDate) {
+		const hasSavedBefore = localStorage.getItem('hasSavedEmotionBefore');
+
+		if (!hasSavedBefore) {
+			localStorage.setItem('hasSavedEmotionBefore', 'true');
 			setShowModal(true);
 		} else {
 			alert('Emotion updated successfully for this day ✅');
