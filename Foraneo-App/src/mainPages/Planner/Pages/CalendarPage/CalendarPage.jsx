@@ -16,7 +16,7 @@ const CalendarPage = () => {
 			<Menu />
 			<section className='calendar-back-container'>
 				<button className='back-button' onClick={handlerBackClick}>
-					<FontAwesomeIcon icon={faChevronLeft} />
+					<FontAwesomeIcon icon={faChevronLeft} className='icon-arrow' />
 				</button>
 			</section>
 			<Calendar />
