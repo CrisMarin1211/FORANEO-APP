@@ -1,0 +1,25 @@
+.back-button {
+	background-color: transparent;
+	border: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+	transition: color 0.2s;
+	font-weight: bold;
+}
+
+.calendar-back-container {
+	display: flex;
+	align-items: center;
+	padding: 10px 20px;
+	margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+	.calendar-back-container {
+		margin-top: 80px;
+	}
+}
+
+.icon-arrow {
+	color: #02565f;
+}
