@@ -16,7 +16,7 @@ const Login = () => {
       localStorage.removeItem('username');
       localStorage.removeItem('password');
     }
-    navigate('/finances'); // Redirección a "main"
+    navigate('/finances'); 
   };
 
   const onFinishFailed = errorInfo => {
