@@ -46,7 +46,7 @@ const Calendar = () => {
 	const handleDayClick = (day) => {
 		if (!day) return;
 		const selectedDate = getDateKey(day);
-		navigate('/', { state: { selectedDate } });
+		navigate('/emotions', { state: { selectedDate } });
 	};
 
 	const goToPrevMonth = () => {
