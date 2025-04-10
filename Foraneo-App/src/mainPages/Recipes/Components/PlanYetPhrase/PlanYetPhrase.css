@@ -8,5 +8,7 @@
 	margin: 0;
 	padding: 50px;
 	text-align: center;
+	padding-block-end: 40px;
+	padding-block-start: 20px;
 	line-height: 1.3;
 }
