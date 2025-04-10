@@ -9,7 +9,7 @@
   overflow: hidden;
 }
 
-/* Estilos específicos para ingresos y gastos */
+
 .ticket.income {
   background-color: rgba(0, 200, 83, 0.1);
   border-left: 4px solid #00c853;

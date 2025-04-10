@@ -6,7 +6,7 @@ import {
 import './ticket.css';
 
 const Ticket = ({ category, value, name, details, type }) => {
-  // Objeto para mapear categorías a sus iconos respectivos
+
   const categoryIcons = {
     'Salary': Banknote,
     'Investment': ChartNoAxesCombined,
@@ -26,13 +26,13 @@ const Ticket = ({ category, value, name, details, type }) => {
     'Other': MoreHorizontal,
   };
 
-  // Seleccionar el icono correspondiente a la categoría o usar MoreHorizontal como predeterminado
+
   const Icon = categoryIcons[category] || MoreHorizontal;
 
-  // Determinar la clase CSS basada en el tipo (Income o Expense)
+
   const ticketClass = type === 'Income' ? 'ticket income' : 'ticket expense';
 
-  // Función para truncar texto si es muy largo
+  
   const truncateText = (text, maxLength = 20) => {
     if (!text) return '';
     return text.length > maxLength
