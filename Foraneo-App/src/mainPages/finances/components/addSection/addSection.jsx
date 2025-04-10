@@ -18,24 +18,21 @@ const AddSection = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Definimos si es Ingreso o Gasto basado en la pestaña activa
+
   const isIncome = activeTab === 'Incomes';
 
-  // Función para mostrar los datos guardados en la consola
+
   const logSavedData = (data) => {
-    console.log('Current saved data:', data);
+
 
     const expenses = data.filter(item => item.type === 'Expense');
     const incomes = data.filter(item => item.type === 'Income');
 
-    console.log(`Total entries: ${data.length} (${expenses.length} expenses, ${incomes.length} incomes)`);
 
     const totalExpenses = expenses.reduce((sum, item) => sum + Number(item.value), 0);
     const totalIncomes = incomes.reduce((sum, item) => sum + Number(item.value), 0);
 
-    console.log(`Total expenses: $${totalExpenses.toLocaleString()}`);
-    console.log(`Total incomes: $${totalIncomes.toLocaleString()}`);
-    console.log(`Balance: $${(totalIncomes - totalExpenses).toLocaleString()}`);
+
   };
 
   useEffect(() => {
@@ -57,7 +54,7 @@ const AddSection = () => {
   };
 
   const handleSave = () => {
-    // Validar que todos los campos estén completos
+
     if (!selectedCategory || !value || !name || !details || !date) {
       alert('Please fill in all fields!');
       return;
@@ -73,30 +70,30 @@ const AddSection = () => {
       timestamp: new Date().toISOString()
     };
 
-    // Guardamos el dato en el array de datos
+
     const updatedData = [...savedData, data];
     setSavedData(updatedData);
 
-    // Guardamos los datos en localStorage
+
     localStorage.setItem('savedData', JSON.stringify(updatedData));
 
-    console.log('New entry added:', data);
+
     logSavedData(updatedData);
 
-    // Extraer el año y mes del registro para pasarlo como parámetro
+
     const entryDate = new Date(date);
     const entryYear = entryDate.getFullYear();
-    const entryMonth = (entryDate.getMonth() + 1).toString().padStart(2, '0'); // +1 porque getMonth() devuelve 0-11
+    const entryMonth = (entryDate.getMonth() + 1).toString().padStart(2, '0');
     const monthParam = `${entryYear}-${entryMonth}`;
 
-    // Limpiar los inputs
+
     setSelectedCategory('');
     setValue(10000);
     setName('');
     setDetails('');
     setDate('');
 
-    // Redirigir a la página de Finances con el parámetro del mes
+    
     navigate(`/finances?month=${monthParam}`);
   };
 

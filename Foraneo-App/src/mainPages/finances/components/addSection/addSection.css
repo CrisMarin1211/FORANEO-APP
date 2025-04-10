@@ -32,11 +32,10 @@
 
 
 
-/* Colores de las pestañas */
 .Expenses-tab { background: #00A0B2; color: white; }
 .Incomes-tab { background: #B1CEFF; color: rgb(0, 0, 0); }
 
-/* Pestaña activa */
+
 .Addactive {
   transform: translateY(-5px);
 }
