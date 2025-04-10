@@ -2,6 +2,7 @@ import React from 'react';
 import './CalendarPage.css';
 import Menu from '../../components/navBar/navBar';
 import Calendar from '../../components/calendar/calendar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const CalendarPage = () => {
 	return (
