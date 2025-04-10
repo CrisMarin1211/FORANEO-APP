@@ -45,6 +45,10 @@ const SummaryEmotions = () => {
 
 	const today = new Date().toISOString().split('T')[0];
 
+	const handlerIconClick = () => {
+		navigate('/emotions');
+	};
+
 	return (
 		<>
 			<section className='summary-card'>
