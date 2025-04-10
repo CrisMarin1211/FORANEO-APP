@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 const SummaryEmotions = () => {
 	const [currentFace, setCurrentFace] = useState(null);
 	const [selectedIcons, setSelectedIcons] = useState([]);
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		const data = JSON.parse(localStorage.getItem('day-feedbacks')) || {};
