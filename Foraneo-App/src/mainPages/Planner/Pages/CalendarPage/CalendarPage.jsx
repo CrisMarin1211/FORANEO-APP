@@ -7,7 +7,9 @@ const CalendarPage = () => {
 	return (
 		<>
 			<Menu />
-			<section className='calendar-back-container'></section>
+			<section className='calendar-back-container'>
+				<button className='back-button'></button>
+			</section>
 			<Calendar />
 		</>
 	);
