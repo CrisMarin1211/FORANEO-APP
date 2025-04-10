@@ -1,28 +1,30 @@
 import React, { useEffect, useState } from 'react';
+import { ChevronLeft } from 'lucide-react';
+import { useNavigate, useParams } from 'react-router-dom';
 import CardsEditRecipes from '../../Components/4.MyEditRecipe/CardsEditRecipes/CardsEditRecipes.JSX';
 import TitleEditRecipes from '../../Components/4.MyEditRecipe/TitleEditRecipes/TitleEditRecipes';
 import './EditRecipe.css';
-import { useParams } from 'react-router-dom';
 
 function EditRecipe() {
+	const navigate = useNavigate();
 	const [recipes, setRecipes] = useState(null);
 	const { day } = useParams();
 
-	console.log('Current Day:', day);
-
 	useEffect(() => {
 		const storedPlans = JSON.parse(localStorage.getItem('weeklyPlan'));
-		console.log(storedPlans);
 
 		if (storedPlans) {
 			const selectedDayPlan = storedPlans.find((plan) => plan.day === day);
-			console.log('Selected Day Plan:', selectedDayPlan);
 
 			if (selectedDayPlan) {
 				setRecipes(selectedDayPlan);
 			}
 		}
 	}, [day]);
+
+	const handleGoBack = () => {
+		navigate('/weeklyplan');
+	};
 
 	if (!recipes) return <div>Loading...</div>;
 
@@ -33,6 +35,10 @@ function EditRecipe() {
 
 	return (
 		<section>
+			<section className='button-chevro' onClick={handleGoBack}>
+				<ChevronLeft />
+			</section>
+
 			<TitleEditRecipes day={day} />
 
 			{recipes.breakfast && (
