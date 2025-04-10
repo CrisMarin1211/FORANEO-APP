@@ -88,16 +88,10 @@ function PlanCreate() {
 		let totalCost = 0;
 		newPlan.forEach((dayPlan) => {
 			const dayCost = dayPlan.breakfast.price + dayPlan.lunch.price + dayPlan.dinner.price;
-			console.log(`Total cost for ${dayPlan.day}: ${dayCost}`);
 			totalCost += dayCost;
 		});
 
-		console.log(`Total cost of the entire plan: ${totalCost}`);
-
-		console.log(`Budget entered: ${numericBudget}`);
-
 		setPlans(newPlan);
-		console.log('Weekly plan:', newPlan);
 
 		localStorage.setItem('weeklyPlan', JSON.stringify(newPlan));
 
