@@ -12,8 +12,8 @@ const ModalSaveEmotions = ({ onClose }) => {
 
 	return (
 		<>
-			<div className='modal-overlay'>
-				<div className='modal-content'>
+			<section className='modal-overlay'>
+				<section className='modal-content'>
 					<button className='close-button' onClick={onClose}>
 						X
 					</button>
@@ -23,8 +23,8 @@ const ModalSaveEmotions = ({ onClose }) => {
 					<button className='modal-button' onClick={handlerContinue}>
 						Continue
 					</button>
-				</div>
-			</div>
+				</section>
+			</section>
 		</>
 	);
 };
