@@ -8,7 +8,9 @@ const CalendarPage = () => {
 		<>
 			<Menu />
 			<section className='calendar-back-container'>
-				<button className='back-button'></button>
+				<button className='back-button'>
+					<FontAwesomeIcon icon='fa-solid fa-chevron-left' />
+				</button>
 			</section>
 			<Calendar />
 		</>
