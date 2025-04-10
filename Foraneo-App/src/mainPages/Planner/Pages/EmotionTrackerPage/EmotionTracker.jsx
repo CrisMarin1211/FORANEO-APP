@@ -6,6 +6,8 @@ import { emotionsData, hobbiesData, peopleData, weatherData, healthData, eventsD
 import ModalSaveEmotions from '../../components/modalSaveEmotions/modalSaveEmotions';
 import DayFeedbackCard from '../../components/dayFeedbackCard/dayFeedbackCard';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 const EmotionTracker = () => {
 	const [allSelections, setAllSelections] = useState({});
