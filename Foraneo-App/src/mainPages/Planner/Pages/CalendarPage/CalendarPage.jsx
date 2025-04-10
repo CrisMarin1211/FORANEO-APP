@@ -3,8 +3,13 @@ import './CalendarPage.css';
 import Menu from '../../components/navBar/navBar';
 import Calendar from '../../components/calendar/calendar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNavigate } from 'react-router-dom';
 
 const CalendarPage = () => {
+	const navigate = useNavigate();
+	const handlerBackClick = () => {
+		navigate('/to-do');
+	};
 	return (
 		<>
 			<Menu />
