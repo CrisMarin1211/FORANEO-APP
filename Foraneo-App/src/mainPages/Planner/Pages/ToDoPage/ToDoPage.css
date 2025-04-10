@@ -1,5 +1,30 @@
 .title-page {
 	align-items: center;
 	text-align: center;
-	margin-top: 40px;
+}
+
+.back-button {
+	background-color: transparent;
+	border: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+	transition: color 0.2s;
+	font-weight: bold;
+}
+
+.todo-back-container {
+	display: flex;
+	align-items: center;
+	padding: 10px 20px;
+	margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+	.todo-back-container {
+		margin-top: 80px;
+	}
+}
+
+.icon-arrow {
+	color: #02565f;
 }
