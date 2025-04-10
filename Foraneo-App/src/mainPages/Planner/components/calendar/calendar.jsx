@@ -103,7 +103,7 @@ const Calendar = () => {
 									<div className='calendar-item'>
 										<svg className='calendar-svg' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
 											<circle cx='50' cy='50' r='45' stroke='#79CFD9' strokeWidth='5' fill='white' />
-											{faceSrc && <image href={faceSrc} x='25' y='25' width='56' height='56' />}
+											{faceSrc && <image href={faceSrc} x='18' y='18' width='64' height='64' />}
 										</svg>
 										<div className='calendar-day-number'>{day}</div>
 									</div>
