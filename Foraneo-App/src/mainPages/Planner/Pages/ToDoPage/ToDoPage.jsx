@@ -7,8 +7,13 @@ import SummaryEmotions from '../../components/summaryEmotions/summaryEmotions';
 const ToDoPage = () => {
 	return (
 		<>
-			<h2 className='title-page'>Mood Tracker</h2>
 			<Menu />
+			<section className='todo-back-container'>
+				<button className='back-button' onClick={handlerBackClick}>
+					<FontAwesomeIcon icon={faChevronLeft} className='icon-arrow' />
+				</button>
+			</section>
+			<h2 className='title-page'>Mood Tracker</h2>
 			<SummaryEmotions />
 			<ToDoList />
 		</>
