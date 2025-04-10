@@ -7,44 +7,44 @@ const BigInfoSection = ({ selectedMonth, hasNoData }) => {
   const [activeTab, setActiveTab] = useState('Timeline');
   const [savedData, setSavedData] = useState([]);
 
-  // Cargar los datos de localStorage cuando el componente se monta
+
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem('savedData')) || [];
     setSavedData(storedData);
   }, []);
 
-  // Filtrar los datos por mes seleccionado
-  const filterDataByMonth = (month) => {
-    if (!month) return []; // Si no hay mes seleccionado, devolvemos array vacío
 
-    const [selectedYear, selectedMonthIndex] = month.split('-'); // Formato 'YYYY-MM'
+  const filterDataByMonth = (month) => {
+    if (!month) return [];
+
+    const [selectedYear, selectedMonthIndex] = month.split('-');
 
     return savedData.filter(item => {
       const itemDate = new Date(item.date);
       const itemYear = itemDate.getFullYear();
-      const itemMonth = itemDate.getMonth(); // 0-11
+      const itemMonth = itemDate.getMonth();
 
       return itemYear === parseInt(selectedYear) && itemMonth === parseInt(selectedMonthIndex) - 1;
     });
   };
 
-  // Filtrar los datos por el mes seleccionado
+
   const filteredData = filterDataByMonth(selectedMonth);
 
-  // Componente para mostrar mensaje cuando no hay datos
+
   const NoDataMessage = () => (
-    <div className="no-data-message" style={{
+    <section className="no-data-message" style={{
       textAlign: 'center',
       padding: '2rem',
       color: '#555'
     }}>
       <p>You don't have expenses or incomes for this month yet.</p>
-    </div>
+    </section>
   );
 
-  // Función para renderizar el contenido según la pestaña activa
+
   const renderContent = () => {
-    // Si no hay datos filtrados, mostrar mensaje
+
     if (hasNoData || filteredData.length === 0) {
       return <NoDataMessage />;
     }
