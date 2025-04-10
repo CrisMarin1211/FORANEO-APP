@@ -3,6 +3,7 @@ import './CalendarPage.css';
 import Menu from '../../components/navBar/navBar';
 import Calendar from '../../components/calendar/calendar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 
 const CalendarPage = () => {
