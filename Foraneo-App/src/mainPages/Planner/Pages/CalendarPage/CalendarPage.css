@@ -1,7 +1,6 @@
 .back-button {
 	background-color: transparent;
 	border: none;
-	color: #333;
 	font-size: 1rem;
 	cursor: pointer;
 	transition: color 0.2s;
@@ -18,4 +17,8 @@
 	.calendar-back-container {
 		margin-top: 80px;
 	}
+}
+
+.icon-arrow {
+	color: #02565f;
 }
