@@ -1,4 +1,4 @@
-/* calendarMonth.css */
+
 .custom-month-picker {
   padding: 8px;
   min-width: 280px;
@@ -6,7 +6,7 @@
   border-radius: 10px;
 }
 
-/* Hacemos que el input sea casi invisible pero manteniendo funcionalidad */
+
 .month-picker-visible {
   width: 100% !important;
   height: 0 !important;
@@ -19,7 +19,7 @@
   pointer-events: none !important;
 }
 
-/* Estilos para el panel desplegable */
+
 .custom-month-dropdown {
   animation: fadeIn 0.2s ease-in-out;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15) !important;
@@ -70,7 +70,7 @@
   font-weight: bold !important;
 }
 
-/* Modificaciones para el calendario en el contenedor del FloatingButton */
+
 .calendar-overlay {
   position: absolute !important;
   top: 100% !important;
@@ -83,7 +83,7 @@
   overflow: visible !important;
 }
 
-/* Triángulo arriba del popup */
+
 .calendar-overlay::before {
   content: '';
   position: absolute;
@@ -107,12 +107,12 @@
   }
 }
 
-/* Prevenir que el popup se cierre al hacer clic dentro */
+
 .ant-picker-dropdown {
-  z-index: 1050 !important; /* Asegurarse de que esté encima de todo */
+  z-index: 1050 !important;
 }
 
-/* Hacer el panel de meses más grande y más fácil de hacer clic */
+
 .ant-picker-panel-container {
   pointer-events: auto !important;
 }
