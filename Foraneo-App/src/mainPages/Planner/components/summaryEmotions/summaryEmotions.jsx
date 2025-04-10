@@ -63,12 +63,12 @@ const SummaryEmotions = () => {
 				<div className='food-column'>
 					<div className='row'>
 						{selectedIcons.slice(0, 5).map((icon, idx) => (
-							<IconCircle2 icon={icon} key={idx} />
+							<IconCircle2 icon={icon} key={idx} onClick={() => handlerIconClick} />
 						))}
 					</div>
 					<div className='row'>
 						{selectedIcons.slice(5, 10).map((icon, idx) => (
-							<IconCircle2 icon={icon} key={idx + 5} />
+							<IconCircle2 icon={icon} key={idx + 5} onClick={() => handlerIconClick} />
 						))}
 					</div>
 				</div>
