@@ -3,7 +3,7 @@ import { PieChart } from '@mui/x-charts/PieChart';
 import {
   Utensils, Bus, PartyPopper, Home, BookOpenCheck, User, Gamepad2, Heart,
   BanknoteArrowDown, Gift, AlertTriangle, MoreHorizontal, Banknote, BriefcaseBusiness, ChartNoAxesCombined
-} from "lucide-react"; // Importando los iconos de Lucide
+} from "lucide-react";
 import './statistics.css';
 
 const Statistics = ({ filteredData }) => {
@@ -68,10 +68,10 @@ const Statistics = ({ filteredData }) => {
     }
   }, [filteredData]);
 
-  // Colores para los gráficos
+
   const colors = ['#808080', '#A9A9A9', '#C0C0C0', '#D3D3D3', '#DCDCDC'];
 
-  // Mapeo de categorías con iconos de Lucide
+
   const categoryIcons = {
     'Salary': <Banknote />,
     'Investment': <ChartNoAxesCombined />,
@@ -93,19 +93,19 @@ const Statistics = ({ filteredData }) => {
 
   if (expenses.length === 0 && incomes.length === 0) {
     return (
-      <div className="no-data-message">
+      <section className="no-data-message">
         <p>No statistics available for this month.</p>
-      </div>
+      </section>
     );
   }
 
   return (
-    <div className="statistics-container">
-      <div className="statistics-section">
+    <section className="statistics-container">
+      <section className="statistics-section">
         <h2>Expenses <span className="month-indicator">Mon</span></h2>
         {expenses.length > 0 ? (
           <>
-            <div className="chart-container">
+            <section className="chart-container">
               <PieChart
                 series={[{
                   data: expenseCategories,
@@ -118,46 +118,46 @@ const Statistics = ({ filteredData }) => {
                 height={200}
                 colors={colors}
               />
-              <div className="chart-legend">
+              <section className="chart-legend">
                 {expenseCategories.map((category, index) => (
-                  <div key={index} className="legend-item">
-                    <div className="color-box" style={{ backgroundColor: colors[index % colors.length] }}></div>
+                  <section key={index} className="legend-item">
+                    <section className="color-box" style={{ backgroundColor: colors[index % colors.length] }}></section>
                     <span>{category.label}</span>
                     <span className="percentage">{category.percentage}%</span>
-                  </div>
+                  </section>
                 ))}
-              </div>
-            </div>
-            <div className="category-list">
+              </section>
+            </section>
+            <section className="category-list">
               {expenseCategories.map((category, index) => (
-                <div key={index} className="category-item">
-                  <div className="category-icon">
+                <section key={index} className="category-item">
+                  <section className="category-icon">
                     {categoryIcons[category.label] || <MoreHorizontal />}
-                  </div>
-                  <div className="category-name">{category.label}</div>
-                  <div className="category-bar">
-                    <div
+                  </section>
+                  <section className="category-name">{category.label}</section>
+                  <section className="category-bar">
+                    <section
                       className="bar-fill"
                       style={{ width: `${category.percentage}%`, backgroundColor: colors[index % colors.length] }}
-                    ></div>
-                  </div>
-                  <div className="category-amount">${category.value.toLocaleString()}</div>
-                </div>
+                    ></section>
+                  </section>
+                  <section className="category-amount">${category.value.toLocaleString()}</section>
+                </section>
               ))}
-            </div>
+            </section>
           </>
         ) : (
-          <div className="no-data-chart">
+          <section className="no-data-chart">
             <p>No expense data for this month</p>
-          </div>
+          </section>
         )}
-      </div>
+      </section>
 
-      <div className="statistics-section">
+      <section className="statistics-section">
         <h2>Incomes <span className="month-indicator">Mon</span></h2>
         {incomes.length > 0 ? (
           <>
-            <div className="chart-container">
+            <section className="chart-container">
               <PieChart
                 series={[{
                   data: incomeCategories,
@@ -170,36 +170,36 @@ const Statistics = ({ filteredData }) => {
                 height={200}
                 colors={colors}
               />
-              <div className="chart-legend">
+              <section className="chart-legend">
                 {incomeCategories.map((category, index) => (
-                  <div key={index} className="legend-item">
-                    <div className="color-box" style={{ backgroundColor: colors[index % colors.length] }}></div>
+                  <section key={index} className="legend-item">
+                    <section className="color-box" style={{ backgroundColor: colors[index % colors.length] }}></section>
                     <span>{category.label}</span>
-                  </div>
+                  </section>
                 ))}
-              </div>
-            </div>
-            <div className="category-list">
+              </section>
+            </section>
+            <section className="category-list">
               {incomeCategories.map((category, index) => (
-                <div key={index} className="category-item">
-                  <div className="category-icon">
+                <section key={index} className="category-item">
+                  <section className="category-icon">
                     {categoryIcons[category.label] || <MoreHorizontal />}
-                  </div>
-                  <div className="category-name">{category.label}</div>
-                  <div className="category-bar">
-                    <div
+                  </section>
+                  <section className="category-name">{category.label}</section>
+                  <section className="category-bar">
+                    <section
                       className="bar-fill"
                       style={{ width: `${category.percentage}%`, backgroundColor: colors[index % colors.length] }}
-                    ></div>
-                  </div>
-                  <div className="category-amount">${category.value.toLocaleString()}</div>
-                </div>
+                    ></section>
+                  </section>
+                  <section className="category-amount">${category.value.toLocaleString()}</section>
+                </section>
               ))}
-            </div>
+            </section>
           </>
         ) : (
-          <div className="no-data-chart">
-            <div className="empty-pie-chart">
+          <section className="no-data-chart">
+            <section className="empty-pie-chart">
               <PieChart
                 series={[{
                   data: [{ id: 0, value: 1, label: 'No incomes today', percentage: 0 }],
@@ -209,18 +209,18 @@ const Statistics = ({ filteredData }) => {
                 height={200}
                 colors={['#D3D3D3']}
               />
-              <div className="chart-legend">
-                <div className="legend-item">
-                  <div className="color-box" style={{ backgroundColor: '#D3D3D3' }}></div>
+              <section className="chart-legend">
+                <section className="legend-item">
+                  <section className="color-box" style={{ backgroundColor: '#D3D3D3' }}></section>
                   <span>No incomes today</span>
                   <span className="amount">$0</span>
-                </div>
-              </div>
-            </div>
-          </div>
+                </section>
+              </section>
+            </section>
+          </section>
         )}
-      </div>
-    </div>
+      </section>
+    </section>
   );
 };
 
