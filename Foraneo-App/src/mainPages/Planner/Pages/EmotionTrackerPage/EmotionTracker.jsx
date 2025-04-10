@@ -54,6 +54,7 @@ const EmotionTracker = () => {
 			setShowModal(true);
 		} else {
 			alert('Emotion updated successfully for this day ✅');
+			navigate('/to-do');
 		}
 	};
 
