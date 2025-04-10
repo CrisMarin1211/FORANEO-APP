@@ -1,0 +1,23 @@
+.button-chevro1 {
+	background: none;
+	border: none;
+	margin-top: 30px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	color: #02565f;
+	transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.button-chevro1:hover {
+	color: #00a0b2;
+	transform: scale(1.5);
+}
+
+.button-chevro1 {
+	color: black;
+	margin-top: 30px;
+	margin-left: 20px;
+	cursor: pointer;
+}
