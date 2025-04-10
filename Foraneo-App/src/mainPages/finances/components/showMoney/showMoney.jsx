@@ -6,10 +6,9 @@ import './showMoney.css';
 const ShowMoney = ({ totalExpenses, totalIncomes, balance }) => {
   const navigate = useNavigate();
 
-  // Aseguramos que el balance no sea negativo
-  const totalAvailable = Math.max(balance, 0); // Si balance es negativo, se mostrará 0
 
-  // Definir la clase de fondo para el balance
+  const totalAvailable = Math.max(balance, 0);
+
   const balanceClass = totalAvailable === 0 ? 'balance-zero' : 'balance-positive';
 
   return (
@@ -22,7 +21,7 @@ const ShowMoney = ({ totalExpenses, totalIncomes, balance }) => {
           <p>Expense</p>
           <button
             className="add-btn"
-            onClick={() => navigate('/add?tab=Expenses')}  // Enviar parámetro de tab
+            onClick={() => navigate('/add?tab=Expenses')}
           >
             <PlusOutlined /> Add
           </button>
@@ -35,18 +34,17 @@ const ShowMoney = ({ totalExpenses, totalIncomes, balance }) => {
           <p>Income</p>
           <button
             className="add-btn"
-            onClick={() => navigate('/add?tab=Incomes')}  // Enviar parámetro de tab
+            onClick={() => navigate('/add?tab=Incomes')}
           >
             <PlusOutlined /> Add
           </button>
         </section>
       </section>
 
-      {/* Cambiar el fondo de money-card-balance según el balance */}
       <section className={`money-card-balance ${balanceClass}`}>
         <p className='ptotal' >✦ Total available: </p>
         <br></br>
-        <h2 className={`h2text1`}> ${totalAvailable.toLocaleString()}</h2> {/* Mostramos totalAvailable */}
+        <h2 className={`h2text1`}> ${totalAvailable.toLocaleString()}</h2>
       </section>
     </section>
   );
