@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 const ToDoPage = () => {
 	const navigate = useNavigate();
 	const handlerBackClick = () => {
-		navigate('/to-do');
+		navigate('/emotions');
 	};
 	return (
 		<>
