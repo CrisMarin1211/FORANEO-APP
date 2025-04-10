@@ -2,9 +2,9 @@ import React from 'react';
 
 import './iconCircle.css';
 
-const IconCircle2 = ({ icon }) => {
+const IconCircle2 = ({ icon, onClick }) => {
 	return (
-		<section className='icon-circle'>
+		<section className='icon-circle' onClick={onClick}>
 			<div className='icon-content'>{icon}</div>
 		</section>
 	);
