@@ -71,7 +71,7 @@ const Calendar = () => {
 		<>
 			<section className='calendar-container'>
 				<h2 className='calendar-title'>Mood Tracker</h2>
-				<div className='calendar-controls'>
+				<section className='calendar-controls'>
 					<button onClick={goToPrevMonth}>←</button>
 					<span>
 						{new Date(currentYear, currentMonth).toLocaleString('default', {
@@ -80,12 +80,12 @@ const Calendar = () => {
 						})}
 					</span>
 					<button onClick={goToNextMonth}>→</button>
-				</div>
-				<div className='calendar-grid'>
+				</section>
+				<section className='calendar-grid'>
 					{daysOfWeek.map((d) => (
-						<div key={d} className='calendar-day-header'>
+						<section key={d} className='calendar-day-header'>
 							{d}
-						</div>
+						</section>
 					))}
 
 					{daysInMonth.map((day, index) => {
@@ -94,24 +94,24 @@ const Calendar = () => {
 						const faceSrc = getFaceByLabel(mood);
 
 						return (
-							<div
+							<section
 								key={index}
 								className={`calendar-day ${day ? 'clickable' : 'empty'}`}
 								onClick={() => handleDayClick(day)}
 							>
 								{day && (
-									<div className='calendar-item'>
+									<section className='calendar-item'>
 										<svg className='calendar-svg' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
 											<circle cx='50' cy='50' r='45' stroke='#79CFD9' strokeWidth='5' fill='white' />
 											{faceSrc && <image href={faceSrc} x='12' y='12' width='80' height='80' />}
 										</svg>
-										<div className='calendar-day-number'>{day}</div>
-									</div>
+										<section className='calendar-day-number'>{day}</section>
+									</section>
 								)}
-							</div>
+							</section>
 						);
 					})}
-				</div>
+				</section>
 			</section>
 		</>
 	);
