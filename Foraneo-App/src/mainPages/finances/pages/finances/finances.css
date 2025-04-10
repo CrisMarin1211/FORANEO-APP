@@ -1,0 +1,70 @@
+.Financescontainer {
+	width: 430px;
+	max-width: 100%;
+}
+
+.WelcomeMessage {
+	max-width: fit-content;
+	display: flex;
+	flex-direction: column;
+}
+.youCanTittle {
+	color: black;
+	font-size: 18px;
+	font-style: italic;
+	font-weight: 800;
+	margin: 5px 0;
+	display: flex;
+	width: fit-content;
+	align-items: center;
+}
+
+.keepTrackTittle {
+	max-width: 140px;
+	color: black;
+	font-size: 16px;
+	margin: 0;
+}
+
+.financesHeader {
+	justify-self: center;
+	width: 380px;
+
+	margin-bottom: 20px;
+	margin-top: 40px;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.showMoneySection {
+	color: black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.progressBarSection {
+	height: 100x;
+	margin-top: 20px;
+	margin-bottom: 70px;
+	align-self: center;
+	justify-self: center;
+	justify-items: center;
+	overflow: hidden;
+	position: relative;
+}
+
+.goalTittle {
+	color: black;
+	font-size: medium;
+	justify-self: baseline;
+	align-self: baseline;
+	margin-bottom: 10px;
+	margin: 5px 0;
+	display: flex;
+	align-items: center;
+}

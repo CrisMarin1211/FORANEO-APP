@@ -1,0 +1,68 @@
+.valueInputGeneralContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  align-self: center;
+
+justify-self: center;
+width: 250px;
+
+}
+
+.valueInputAll{
+  margin-bottom: 20px;
+}
+
+.valueInputTittle {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.valueInputContainer {
+  display: flex;
+  align-items: center;
+}
+
+.valueInputButton {
+  background-color: #cccccc57;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 15px;
+  margin: 0 10px;
+}
+
+.valueInputButton:hover {
+  background-color: #00A0B2;
+  color: white;
+}
+
+.valueInputWrapper {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.valueInputCurrencySymbol {
+  position: absolute;
+  left: 10px;
+  color: #888;
+  font-size: 18px;
+}
+
+.valueInputInput {
+  font-size: 18px;
+  width: 200px;
+  padding: 10px 10px 10px 40px;
+  border: 1px solid #02565F;
+  color: #333;
+  background-color: transparent;
+  border-radius: 15px;
+  text-align: right;
+  transition: border-color 0.3s;
+}

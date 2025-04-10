@@ -1,0 +1,85 @@
+.big-info-container {
+  color: #333;
+  margin: 40px 15px 20px;
+  border-radius: 16px;
+  padding: 0;
+  position: relative;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: visible;}
+
+.tabs {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: flex-end;
+  top: -25px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  z-index: 10;
+}
+
+.tab {
+  color: #555;
+  background-color: #f0f0f0;
+  margin-bottom: 0;
+  padding: 8px 16px 10px;
+  cursor: pointer;
+  border-radius: 12px 12px 0 0;
+  font-weight: bold;
+  margin-right: 4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
+  font-size: 14px;
+  border-bottom: none;
+  height: 25px;
+  display: flex;
+  align-items: center;
+}
+
+
+.Timeline-tab {
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+.Statistics-tab {
+  background: #ffffff;
+  color: #000000;
+}
+
+.Goal-tab {
+  background: #ffffff;
+  color: #000000;
+}
+
+
+.active {
+  transform: translateY(-5px);
+  font-weight: 600;
+  padding: 8px 16px 10px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.12);
+  height: 40px;
+  font-size: 18px;
+}
+
+.tab-content {
+  margin-top: 20px;
+  padding: 20px 16px;
+  background: white;
+  border-radius: 16px;
+  min-height: 300px;
+}
+
+
+.tab:not(.active):hover {
+  transform: translateY(-3px);
+}
+
+
+.tab span, .tab svg {
+  color: black;
+  margin-right: 5px;
+}
+
