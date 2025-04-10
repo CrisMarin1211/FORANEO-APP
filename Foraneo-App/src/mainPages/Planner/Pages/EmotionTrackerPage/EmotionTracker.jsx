@@ -89,11 +89,11 @@ const EmotionTracker = () => {
 			<ListEmotions title='Hobbies' emotions={hobbiesData} onSelectionChange={handlerSelectionChange} />
 			<ListEmotions title='Events' emotions={eventsData} onSelectionChange={handlerSelectionChange} />
 			<ListEmotions title='Health' emotions={healthData} onSelectionChange={handlerSelectionChange} />
-			<div className='save-emotions-wrapper'>
+			<section className='save-emotions-wrapper'>
 				<button className='save-emotions-btn' onClick={handlerSaveAll}>
 					Confirm
 				</button>
-			</div>
+			</section>
 			{showModal && <ModalSaveEmotions onClose={() => setShowModal(false)} />}
 		</>
 	);
