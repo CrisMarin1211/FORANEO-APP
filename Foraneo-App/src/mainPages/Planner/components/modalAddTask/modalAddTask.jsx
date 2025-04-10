@@ -22,7 +22,7 @@ const ModalAddTask = ({ onClose, onAdd }) => {
 	return (
 		<>
 			<section className='modal-overlay'>
-				<div className='modal-content'>
+				<section className='modal-content'>
 					<h2>Add Task</h2>
 					<form onSubmit={handlerSubmit}>
 						<input
@@ -31,14 +31,14 @@ const ModalAddTask = ({ onClose, onAdd }) => {
 							value={task}
 							onChange={(e) => setTask(e.target.value)}
 						></input>
-						<div className='modal-buttons'>
+						<section className='modal-buttons'>
 							<button type='submit'>Save</button>
 							<button type='button' onClick={onClose} className='cancel-btn'>
 								Cancel
 							</button>
-						</div>
+						</section>
 					</form>
-				</div>
+				</section>
 			</section>
 		</>
 	);
