@@ -16,9 +16,9 @@ function CardsEditRecipes({ mealTime, recipe, day, showPencil = true }) {
 	};
 
 	return (
-		<section className='recipe-card'>
+		<section className='recipe-card-let'>
 			<h3>{mealTime}</h3>
-			<img src={recipe.image} alt={recipe.name} className='recipe-image' />
+			<img src={recipe.image} alt={recipe.name} className='recipe-image-edit' />
 			<p>{recipe.name}</p>
 
 			{recipe.ingredients && (
