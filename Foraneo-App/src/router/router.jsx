@@ -22,6 +22,7 @@ function Router() {
 	return (
 		<Routes>
 			<Route path='/plancreate' element={<PlanCreateView />} />
+			<Route path='/welcome' element={<WelcomeView />} />
 			<Route path='/weeklyplan' element={<WeeklyPlanView />} />
 			<Route path='/editrecipe/:day' element={<EditRecipeView />} />
 			<Route path='/unlockedrecipes/:day/:mealTime' element={<UnlockedRecipesView />} />
