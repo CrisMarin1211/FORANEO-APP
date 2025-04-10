@@ -20,21 +20,21 @@ const ListEmotions = ({ title, emotions, onSelectionChange }) => {
 	return (
 		<>
 			<section className={`emotion-container ${isOpen ? 'open' : ''}`}>
-				<div className='emotion-header' onClick={() => setIsOpen(!isOpen)}>
+				<section className='emotion-header' onClick={() => setIsOpen(!isOpen)}>
 					<h2 className='emotion-title'>{title}</h2>
 					<span className={`arrow ${isOpen ? 'open' : ''}`}>▼</span>
-				</div>
+				</section>
 				{isOpen && (
-					<div className='emotion-list'>
+					<section className='emotion-list'>
 						{emotions.map((emotion, index) => (
-							<div key={index} className='emotion-item' onClick={() => toggleEmotion(emotion.name)}>
-								<div className={`emotion-icon ${selected.includes(emotion.name) ? 'selected' : ''}`}>
+							<section key={index} className='emotion-item' onClick={() => toggleEmotion(emotion.name)}>
+								<section className={`emotion-icon ${selected.includes(emotion.name) ? 'selected' : ''}`}>
 									{emotion.icon}
-								</div>
+								</section>
 								<span className='emotion-name'>{emotion.name}</span>
-							</div>
+							</section>
 						))}
-					</div>
+					</section>
 				)}
 			</section>
 		</>
