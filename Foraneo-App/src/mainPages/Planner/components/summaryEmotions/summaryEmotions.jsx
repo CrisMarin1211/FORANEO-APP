@@ -54,24 +54,24 @@ const SummaryEmotions = () => {
 	return (
 		<>
 			<section className='summary-card'>
-				<div className='icon-column'>
-					<div className='icon-wrapper'>
+				<section className='icon-column'>
+					<section className='icon-wrapper'>
 						{currentFace && <img src={currentFace.src} alt={currentFace.label}></img>}
 						<span className='icon-text'>{today}</span>
-					</div>
-				</div>
-				<div className='food-column'>
-					<div className='row'>
+					</section>
+				</section>
+				<section className='food-column'>
+					<section className='row'>
 						{selectedIcons.slice(0, 5).map((icon, idx) => (
 							<IconCircle2 icon={icon} key={idx} onClick={() => handlerIconClick()} />
 						))}
-					</div>
-					<div className='row'>
+					</section>
+					<section className='row'>
 						{selectedIcons.slice(5, 10).map((icon, idx) => (
 							<IconCircle2 icon={icon} key={idx + 5} onClick={() => handlerIconClick()} />
 						))}
-					</div>
-				</div>
+					</section>
+				</section>
 			</section>
 		</>
 	);
