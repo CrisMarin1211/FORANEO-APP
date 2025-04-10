@@ -13,7 +13,7 @@ function WeeklyPlan() {
 	const [todaysPlan, setTodaysPlan] = useState(null);
 
 	const getCurrentDay = () => {
-		const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+		const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 		const today = new Date();
 		return days[today.getDay()];
 	};
@@ -31,7 +31,13 @@ function WeeklyPlan() {
 
 			const currentDay = getCurrentDay();
 			const todayPlan = parsedPlans.find((plan) => plan.day === currentDay);
-			setTodaysPlan(todayPlan);
+			if (todayPlan) {
+				setTodaysPlan(todayPlan);
+			} else {
+				setTodaysPlan(null);
+			}
+		} else {
+			console.error('No plans found in localStorage.');
 		}
 	}, []);
 
