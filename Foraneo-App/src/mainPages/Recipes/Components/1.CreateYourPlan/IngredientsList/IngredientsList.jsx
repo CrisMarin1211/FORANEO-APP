@@ -2,9 +2,11 @@ import './IngredientsList.css';
 
 const IngredientsList = ({ selectedIngredients, setSelectedIngredients }) => {
 	const handleSelectIngredient = (ingredient) => {
-		if (!selectedIngredients.includes(ingredient)) {
-			setSelectedIngredients([...selectedIngredients, ingredient]);
-		}
+		setSelectedIngredients((prevSelected) =>
+			prevSelected.includes(ingredient)
+				? prevSelected.filter((item) => item !== ingredient)
+				: [...prevSelected, ingredient]
+		);
 	};
 
 	const handleAddIngredient = (e) => {
@@ -30,7 +32,7 @@ const IngredientsList = ({ selectedIngredients, setSelectedIngredients }) => {
 			<section className='suggestions-container'>
 				{selectedIngredients.map((ingredient, index) => (
 					<button key={index} onClick={() => handleSelectIngredient(ingredient)} className='suggestion-button'>
-						{ingredient}
+						{ingredient} <span className='remove-icon'>X</span>
 					</button>
 				))}
 			</section>
