@@ -28,37 +28,35 @@ const EmotionTracker = () => {
 	};
 
 	const handlerSaveAll = () => {
-    if (!dayMood) {
-      alert("It is mandatory to select an emotion");
-      return;
-    }
+		if (!dayMood) {
+			alert('It is mandatory to select an emotion');
+			return;
+		}
 
-    Object.entries(allSelections).forEach(([title, items]) => {
-      const key = emotions_${title};
-      if (items.length > 0) {
-        localStorage.setItem(key, JSON.stringify(items));
-      } else {
-        localStorage.removeItem(key);
-      }
-    });
+		Object.entries(allSelections).forEach(([title, items]) => {
+			const key = `emotions_${title}`;
+			if (items.length > 0) {
+				localStorage.setItem(key, JSON.stringify(items));
+			} else {
+				localStorage.removeItem(key);
+			}
+		});
 
-    const existingFeedbacksRaw = localStorage.getItem("day-feedbacks");
-    const existingFeedbacks = existingFeedbacksRaw
-      ? JSON.parse(existingFeedbacksRaw)
-      : {};
+		const existingFeedbacksRaw = localStorage.getItem('day-feedbacks');
+		const existingFeedbacks = existingFeedbacksRaw ? JSON.parse(existingFeedbacksRaw) : {};
 
-    const isFirstTimeEver = !existingFeedbacksRaw;
-    const isFirstTimeForDate = !existingFeedbacks[selectedDate];
+		const isFirstTimeEver = !existingFeedbacksRaw;
+		const isFirstTimeForDate = !existingFeedbacks[selectedDate];
 
-    existingFeedbacks[selectedDate] = dayMood;
-    localStorage.setItem("day-feedbacks", JSON.stringify(existingFeedbacks));
+		existingFeedbacks[selectedDate] = dayMood;
+		localStorage.setItem('day-feedbacks', JSON.stringify(existingFeedbacks));
 
-    if (isFirstTimeEver || isFirstTimeForDate) {
-      setShowModal(true);
-    } else {
-      alert("Emotion updated successfully for this day ✅");
-    }
-  };
+		if (isFirstTimeEver || isFirstTimeForDate) {
+			setShowModal(true);
+		} else {
+			alert('Emotion updated successfully for this day ✅');
+		}
+	};
 
 	const goToCalendar = () => {
 		navigate('/calendar');
