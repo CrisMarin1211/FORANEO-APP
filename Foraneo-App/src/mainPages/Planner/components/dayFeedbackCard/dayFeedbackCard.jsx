@@ -23,9 +23,9 @@ const DayFeedbackCard = ({ date, onSelect }) => {
 
 	return (
 		<>
-			<div className='day-feedback-container'>
+			<section className='day-feedback-container'>
 				<h2 className='day-feedback-title'>How was your day?</h2>
-				<div className='image-row'>
+				<section className='image-row'>
 					{faces.map((face) => (
 						<img
 							src={face.src}
@@ -35,8 +35,8 @@ const DayFeedbackCard = ({ date, onSelect }) => {
 							onClick={() => handlerSelect(face.label)}
 						></img>
 					))}
-				</div>
-			</div>
+				</section>
+			</section>
 		</>
 	);
 };
