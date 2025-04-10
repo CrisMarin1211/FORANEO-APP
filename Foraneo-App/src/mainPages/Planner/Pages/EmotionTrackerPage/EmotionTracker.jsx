@@ -52,6 +52,10 @@ const EmotionTracker = () => {
 
 	if (!selectedDate) return null;
 
+	const handlerBackClick = () => {
+		navigate('/to-do');
+	};
+
 	return (
 		<>
 			<Menu />
