@@ -3,8 +3,8 @@ import './TitleEditBLD.css';
 
 function TitleEditBLD({ day, mealTime }) {
 	return (
-		<section className='title-edit-bld'>
-			<h1>
+		<section>
+			<h1 className='title-edit-bld'>
 				Edit {day} {mealTime}
 			</h1>
 		</section>
