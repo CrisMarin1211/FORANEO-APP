@@ -1,28 +1,28 @@
 
 import React from 'react';
 import { Input } from 'antd';
-import './AddInputs.css'; // Import the CSS file
+import './AddInputs.css';
 
 const { TextArea } = Input;
 
 const AddInputs = ({ setName, setDetails, name, details }) => {
   return (
     <section>
-      {/* Campo para el nombre */}
+
       <Input
         value={name}
-        onChange={(e) => setName(e.target.value)} // Actualiza el nombre
+        onChange={(e) => setName(e.target.value)}
         placeholder="Expense Name"
-        className="input-style" // Apply input styles
+        className="input-style"
       />
 
-      {/* Campo para los detalles */}
+
       <TextArea
         value={details}
-        onChange={(e) => setDetails(e.target.value)} // Actualiza los detalles
+        onChange={(e) => setDetails(e.target.value)}
         placeholder="Enter Details"
         autoSize={{ minRows: 3, maxRows: 5 }}
-        className="text-area-style" // Apply text area styles
+        className="text-area-style" 
       />
     </section>
   );
