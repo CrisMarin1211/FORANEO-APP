@@ -3,8 +3,8 @@ import './TitleEditRecipes.css';
 
 function TitleEditRecipes({ day }) {
 	return (
-		<section className='TitleEditRecipes'>
-			<h1>{day} Recipes</h1>
+		<section>
+			<h1 className='title-edit-recipes'>{day} Recipes</h1>
 		</section>
 	);
 }
