@@ -18,11 +18,11 @@ const Menu = () => {
 					<button className='btn'>
 						<IconFood />
 					</button>
-					<div className='home-container'>
+					<section className='home-container'>
 						<Link className='btn home' to='/'>
 							<IconHome />
 						</Link>
-					</div>
+					</section>
 					<Link className='btn' to='/calendar'>
 						<IconCalendar />
 					</Link>
