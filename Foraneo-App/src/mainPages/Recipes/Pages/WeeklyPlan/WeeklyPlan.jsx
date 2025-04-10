@@ -13,7 +13,7 @@ function WeeklyPlan() {
 	const [todaysPlan, setTodaysPlan] = useState(null);
 
 	const getCurrentDay = () => {
-		const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+		const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 		const today = new Date();
 		return days[today.getDay()];
 	};
@@ -73,7 +73,6 @@ function WeeklyPlan() {
 						/>
 					)}
 
-					{/* Dinner Card */}
 					{todaysPlan.dinner && (
 						<CardsRecipe
 							mealTime='Dinner'
