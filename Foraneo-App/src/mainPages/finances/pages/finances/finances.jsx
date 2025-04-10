@@ -15,53 +15,52 @@ const Finances = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Cargar datos guardados
+
     const storedData = JSON.parse(localStorage.getItem('savedData')) || [];
     setSavedData(storedData);
 
-    // Obtener el parámetro del mes de la URL (si existe)
+
     const params = new URLSearchParams(location.search);
     const monthParam = params.get('month');
 
-    // Si se proporciona un mes en la URL, usarlo; de lo contrario, usar el mes actual
     let targetMonth;
     if (monthParam) {
       targetMonth = monthParam;
     } else {
-      // Establecer el mes actual como seleccionado
+
       const now = new Date();
       const currentYear = now.getFullYear();
       const currentMonth = (now.getMonth() + 1).toString().padStart(2, '0');
       targetMonth = `${currentYear}-${currentMonth}`;
     }
 
-    // Actualizar el mes seleccionado
+
     setSelectedMonth(targetMonth);
 
-    // Formatear el nombre del mes para mostrar
+
     const [year, monthIndex] = targetMonth.split('-');
     const date = new Date(parseInt(year), parseInt(monthIndex) - 1);
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
                         'July', 'August', 'September', 'October', 'November', 'December'];
     setDisplayMonth(`${monthNames[date.getMonth()]}, ${date.getFullYear()}`);
 
-    // Filtrar datos con el mes objetivo
-    filterDataByMonth(storedData, targetMonth);
-  }, [location.search]); // Reaccionar a cambios en la URL
 
-  // Función para filtrar los datos por mes
+    filterDataByMonth(storedData, targetMonth);
+  }, [location.search]);
+
+
   const filterDataByMonth = (data, month) => {
     if (!month || !data.length) {
       setFilteredData([]);
       return;
     }
 
-    const [selectedYear, selectedMonthIndex] = month.split('-'); // Formato 'YYYY-MM'
+    const [selectedYear, selectedMonthIndex] = month.split('-');
 
     const filtered = data.filter(item => {
       const itemDate = new Date(item.date);
       const itemYear = itemDate.getFullYear();
-      const itemMonth = itemDate.getMonth(); // 0-11
+      const itemMonth = itemDate.getMonth();
 
       return itemYear === parseInt(selectedYear) && itemMonth === parseInt(selectedMonthIndex) - 1;
     });
@@ -69,28 +68,27 @@ const Finances = () => {
     setFilteredData(filtered);
   };
 
-  // Manejador para cuando se selecciona un mes
+
   const handleMonthSelection = (month) => {
     setSelectedMonth(month);
 
     if (month) {
-      // Actualizar el nombre del mes para mostrar en el botón
+
       const [year, monthIndex] = month.split('-');
       const date = new Date(parseInt(year), parseInt(monthIndex) - 1);
       const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
                          'July', 'August', 'September', 'October', 'November', 'December'];
       setDisplayMonth(`${monthNames[date.getMonth()]}, ${date.getFullYear()}`);
 
-      // Filtrar los datos
+
       filterDataByMonth(savedData, month);
     }
   };
 
-  // Filtramos los datos de gastos e ingresos
+
   const expenses = filteredData.filter(item => item.type === 'Expense');
   const incomes = filteredData.filter(item => item.type === 'Income');
 
-  // Calculamos el total de ingresos y gastos
   const totalExpenses = expenses.reduce((sum, item) => sum + Number(item.value), 0);
   const totalIncomes = incomes.reduce((sum, item) => sum + Number(item.value), 0);
   const balance = totalIncomes - totalExpenses;
