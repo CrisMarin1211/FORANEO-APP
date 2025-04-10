@@ -28,25 +28,34 @@ const EmotionTracker = () => {
 	};
 
 	const handlerSaveAll = () => {
-		if (!dayMood) {
-			alert('It is mandatory to select an emotion');
-			return;
-		}
-		Object.entries(allSelections).forEach(([title, items]) => {
-			const key = `emotions_${title}`;
-			if (items.length > 0) {
-				localStorage.setItem(key, JSON.stringify(items));
-			} else {
-				localStorage.removeItem(key);
-			}
-		});
+    if (!dayMood) {
+      alert("It is mandatory to select an emotion");
+      return;
+    }
 
-		const existingFeedbacks = JSON.parse(localStorage.getItem('day-feedbacks')) || {};
-		existingFeedbacks[selectedDate] = dayMood;
-		localStorage.setItem('day-feedbacks', JSON.stringify(existingFeedbacks));
+    Object.entries(allSelections).forEach(([title, items]) => {
+      const key = emotions_${title};
+      if (items.length > 0) {
+        localStorage.setItem(key, JSON.stringify(items));
+      } else {
+        localStorage.removeItem(key);
+      }
+    });
 
-		setShowModal(true);
-	};
+    const existingFeedbacks =
+      JSON.parse(localStorage.getItem("day-feedbacks")) || {};
+
+    const isFirstTime = !existingFeedbacks[selectedDate];
+
+    existingFeedbacks[selectedDate] = dayMood;
+    localStorage.setItem("day-feedbacks", JSON.stringify(existingFeedbacks));
+
+    if (isFirstTime) {
+      setShowModal(true);
+    } else {
+      alert("Emotion updated successfully for this day ✅");
+    }
+  };
 
 	const goToCalendar = () => {
 		navigate('/calendar');
