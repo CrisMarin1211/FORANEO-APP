@@ -21,14 +21,6 @@
 	font-weight: bold;
 }
 
-.recipe-card p:nth-of-type(1) {
-	font-size: 28px;
-	text-align: center;
-	margin-top: 0;
-	margin-bottom: 15px;
-	font-weight: bold;
-}
-
 .recipe-card .content-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -95,8 +87,7 @@
 	}
 }
 
-/* Media query para cuando hay muchos ingredientes */
-@media (max-width: 400px), (min-height: 300px) {
+/* @media (max-width: 400px), (min-height: 300px) {
 	.content-container {
 		flex-direction: column;
 	}
@@ -112,4 +103,4 @@
 	.ingredients-container {
 		width: 100%;
 	}
-}
+} */
