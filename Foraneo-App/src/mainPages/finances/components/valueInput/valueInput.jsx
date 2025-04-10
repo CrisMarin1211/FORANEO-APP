@@ -17,7 +17,7 @@ const ValueInput = ({ setValue, value }) => {
             <input
               type="number"
               value={value}
-              onChange={(e) => setValue(parseInt(e.target.value))} // Actualiza el valor correctamente
+              onChange={(e) => setValue(parseInt(e.target.value))} 
               className='valueInputInput'
             />
           </section>
