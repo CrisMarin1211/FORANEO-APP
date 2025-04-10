@@ -5,6 +5,10 @@ import ToDoList from '../../components/toDoList/toDoList';
 import SummaryEmotions from '../../components/summaryEmotions/summaryEmotions';
 
 const ToDoPage = () => {
+	const navigate = useNavigate();
+	const handlerBackClick = () => {
+		navigate('/to-do');
+	};
 	return (
 		<>
 			<Menu />
