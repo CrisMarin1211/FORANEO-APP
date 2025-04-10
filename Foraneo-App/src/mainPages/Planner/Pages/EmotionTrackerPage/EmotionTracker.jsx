@@ -55,6 +55,11 @@ const EmotionTracker = () => {
 	return (
 		<>
 			<Menu />
+			<section className='emotion-tracker-back-container'>
+				<button className='back-button' onClick={handlerBackClick}>
+					<FontAwesomeIcon icon={faChevronLeft} className='icon-arrow' />
+				</button>
+			</section>
 			<section className='selected-date-header'>
 				<span>{selectedDate}</span>
 				<span className='date-arrow-icon' onClick={goToCalendar}>
