@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './bigInfoSection.css';
 import Timeline from '../timeline/timeline';
+import Statistics from '../statistics/statistics';
 
 const BigInfoSection = ({ selectedMonth, hasNoData }) => {
   const [activeTab, setActiveTab] = useState('Timeline');
@@ -52,7 +53,7 @@ const BigInfoSection = ({ selectedMonth, hasNoData }) => {
       case 'Timeline':
         return <Timeline data={filteredData} selectedMonth={selectedMonth} />;
       case 'Statistics':
-        return <p>Data Statistics Lorem Ipsum.</p>;
+        return <Statistics filteredData={filteredData} />;
       case 'Goal':
         return <p>Data Goal Lorem Ipsum.</p>;
       default:
