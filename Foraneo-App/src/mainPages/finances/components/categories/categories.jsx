@@ -29,7 +29,7 @@ const Categories = ({ isIncome, setSelectedCategory }) => {
 
   const handleSelect = (type) => {
     setCategory(type);
-    setSelectedCategory(type); // Pasar la categoría seleccionada al componente principal
+    setSelectedCategory(type); 
   };
 
   return (
