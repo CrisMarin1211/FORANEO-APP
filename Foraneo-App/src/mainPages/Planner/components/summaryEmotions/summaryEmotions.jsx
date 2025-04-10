@@ -3,6 +3,7 @@ import './summaryEmotions.css';
 import { faces } from '../../data/imagesData';
 import IconCircle2 from '../iconCircle/iconCircle';
 import { emotionsData, hobbiesData, eventsData, peopleData, weatherData, healthData } from '../../data/iconsData';
+import { useNavigate } from 'react-router-dom';
 
 const SummaryEmotions = () => {
 	const [currentFace, setCurrentFace] = useState(null);
