@@ -10,7 +10,7 @@ function CardsRecipe({ mealTime, recipe }) {
 			</section>
 
 			<section className='recipe-image-container'>
-				<img src={recipe.image} alt={recipe.name} className='recipe-image' />
+				<img src={recipe.image} alt={recipe.name} className='recipe-image-weekly' />
 			</section>
 
 			<h4 className='recipe-name'>{recipe.name}</h4>
