@@ -7,6 +7,10 @@ import './CardsEditRecipes.css';
 function CardsEditRecipes({ mealTime, recipe, day, showPencil = true }) {
 	const navigate = useNavigate();
 
+	const handleViewAllClick = () => {
+		navigate(`/recipedetail/${day}/${mealTime}/${recipe.name}`);
+	};
+
 	const handlePencilClick = () => {
 		navigate(`/unlockedrecipes/${day}/${mealTime}`);
 	};
@@ -24,7 +28,8 @@ function CardsEditRecipes({ mealTime, recipe, day, showPencil = true }) {
 					))}
 				</ul>
 			)}
-			<ButtonViewAll />
+
+			<ButtonViewAll onClick={handleViewAllClick} />
 
 			{showPencil && (
 				<section className='pencil-button' onClick={handlePencilClick}>
