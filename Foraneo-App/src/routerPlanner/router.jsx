@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
-import CalendarPage from './mainPages/Planner/Pages/CalendarPage/CalendarPage';
-import ToDoPage from './mainPages/Planner/Pages/ToDoPage/ToDoPage';
-import EmotionTracker from './mainPages/Planner/Pages/EmotionTrackerPage/EmotionTracker';
+import CalendarPage from '../mainPages/Planner/Pages/CalendarPage/CalendarPage';
+import ToDoPage from '../mainPages/Planner/Pages/ToDoPage/ToDoPage';
+import EmotionTracker from '../mainPages/Planner/Pages/EmotionTrackerPage/EmotionTracker';
 
 function Router() {
 	return (
