@@ -30,9 +30,9 @@ const ToDoList = () => {
 		<>
 			<section className='todo-container'>
 				<h2 className='todo-title'>TO-DO</h2>
-				<div className='task-list'>
+				<section className='task-list'>
 					{tasks.map((task, index) => (
-						<div className='task-item' key={index}>
+						<section className='task-item' key={index}>
 							<span className='delete-task' key={index} onClick={() => handlerDeleteTask(index)} title='delete-task'>
 								x
 							</span>
@@ -50,9 +50,9 @@ const ToDoList = () => {
 								<option value='In Progress'>In Progress</option>
 								<option value='Completed'>Completed</option>
 							</select>
-						</div>
+						</section>
 					))}
-				</div>
+				</section>
 				<button className='new-task-btn' onClick={() => setShowModal(true)}>
 					+ New Task
 				</button>
