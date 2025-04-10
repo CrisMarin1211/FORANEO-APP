@@ -6,7 +6,7 @@ import EmotionTracker from './mainPages/Planner/Pages/EmotionTrackerPage/Emotion
 function Router() {
 	return (
 		<Routes>
-			<Route path='/' element={<EmotionTracker />} />
+			<Route path='/emotions' element={<EmotionTracker />} />
 			<Route path='/calendar' element={<CalendarPage />} />
 			<Route path='/to-do' element={<ToDoPage />} />
 		</Routes>
