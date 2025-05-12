@@ -5,6 +5,9 @@ import ValueInput from '../valueInput/valueInput';
 import AddInputs from '../addInputs/addInputs';
 import CalendarInput from '../calendarInput/calendarInput';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addTransaction } from '../../../../redux/finances/financesSlice'; // Importamos la acción
+import { saveTransactionToFirestore } from '../../../../services/firebaseUtils'; // Firebase utils
 
 const AddSection = () => {
   const [savedData, setSavedData] = useState([]);
@@ -17,22 +20,19 @@ const AddSection = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-
+  const dispatch = useDispatch();
 
   const isIncome = activeTab === 'Incomes';
 
-
+  // Log the saved data (this could be used for debugging or analytics)
   const logSavedData = (data) => {
-
-
     const expenses = data.filter(item => item.type === 'Expense');
     const incomes = data.filter(item => item.type === 'Income');
-
 
     const totalExpenses = expenses.reduce((sum, item) => sum + Number(item.value), 0);
     const totalIncomes = incomes.reduce((sum, item) => sum + Number(item.value), 0);
 
-
+    // You can log this information or use it elsewhere
   };
 
   useEffect(() => {
@@ -54,46 +54,49 @@ const AddSection = () => {
   };
 
   const handleSave = () => {
-
     if (!selectedCategory || !value || !name || !details || !date) {
       alert('Please fill in all fields!');
       return;
     }
 
-    const data = {
+    const transactionData = {
       category: selectedCategory,
       value,
       name,
       details,
       date,
       type: isIncome ? 'Income' : 'Expense',
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     };
 
+    // Guardar la transacción en Firestore
+    saveTransactionToFirestore(transactionData);
 
-    const updatedData = [...savedData, data];
+    // Guardar en Redux
+    dispatch(addTransaction({ transaction: transactionData }));
+
+    // Actualizar los datos guardados en localStorage
+    const updatedData = [...savedData, transactionData];
     setSavedData(updatedData);
-
-
     localStorage.setItem('savedData', JSON.stringify(updatedData));
 
-
+    // Log the saved data (optional)
     logSavedData(updatedData);
 
-
+    // Formatear la fecha para el mes
     const entryDate = new Date(date);
     const entryYear = entryDate.getFullYear();
     const entryMonth = (entryDate.getMonth() + 1).toString().padStart(2, '0');
     const monthParam = `${entryYear}-${entryMonth}`;
 
-
+    // Limpiar el formulario
     setSelectedCategory('');
     setValue(10000);
     setName('');
     setDetails('');
     setDate('');
 
-
+    // Navegar a la página de finanzas con el mes seleccionado
     navigate(`/finances?month=${monthParam}`);
   };
 
