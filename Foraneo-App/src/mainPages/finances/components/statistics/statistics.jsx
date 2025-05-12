@@ -28,23 +28,27 @@ const categoryIcons = {
 
 
 const categoryColors = {
-  'Salary': '#4361ee',
-  'Investment': '#3a86ff',
-  'Business': '#38b000',
-  'Other Income': '#fb5607',
-  'Food': '#ff006e',
-  'Transport': '#8338ec',
-  'Fun': '#ff5400',
-  'Study': '#3a0ca3',
-  'Personal': '#4cc9f0',
-  'Games': '#7209b7',
-  'Health': '#06d6a0',
-  'Debt & Loans': '#d90429',
-  'Home': '#118ab2',
-  'Gifts': '#ffbe0b',
-  'Urgency': '#ef476f',
-  'Other': '#073b4c',
+  // Expenses (Gastos)
+  'Food': '#ff6600',
+  'Transport': '#ff3300',
+  'Fun': '#ff9933',
+  'Study': '#ffcc99',
+  'Personal': '#ff3333',
+  'Games': '#ff1a00',
+  'Health': '#ff9999',
+  'Debt & Loans': '#ff1a1a',
+  'Home': '#ff8000',
+  'Gifts': '#ffb84d',
+  'Urgency': '#ff4d00',
+  'Other': '#ff7518',
+
+  // Incomes (Ingresos)
+  'Investment': '#28a745',
+  'Salary': '#34c759',
+  'Business': '#2d862d',  
+  'Other Income': '#1c7d1c',
 };
+
 
 const Statistics = ({ filteredData }) => {
   const [expenses, setExpenses] = useState([]);
