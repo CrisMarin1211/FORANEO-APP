@@ -1,7 +1,7 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';  
+import { useNavigate } from 'react-router-dom';
 import './Add.css';
-import AddSection from '../../components/AddSection/addSection';
+import AddSection from '../../../finances/components/addSection/addSection';
 import ValueInput from '../../components/valueInput/valueInput';
 import { ChevronLeft } from 'lucide-react';
 
