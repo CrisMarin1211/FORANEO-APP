@@ -22,7 +22,7 @@ function UnlockedRecipes() {
 		}
 	}, [day]);
 
-	if (!recipes) return <div>Loading...</div>;
+	if (!recipes) return <section>Loading...</section>;
 
 	const getIngredients = (recipe) => {
 		if (recipe.ingredients) return recipe.ingredients;
