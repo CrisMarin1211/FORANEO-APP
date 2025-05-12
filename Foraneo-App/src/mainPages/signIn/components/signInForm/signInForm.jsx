@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Button, Form, Input, Select } from 'antd';
+import { Button, Form, Input, Select, message } from 'antd';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { setDoc, doc } from 'firebase/firestore';
+import { auth, db } from '../../../../services/firebaseConfig'
 
 const { Option } = Select;
 
@@ -19,14 +22,46 @@ const Register = () => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
 
-  const onFinish = values => {
-    console.log('Received values:', values);
+const onFinish = async (values) => {
+  try {
+    // Verificar que el correo y la contraseña sean válidos
+    if (!values.email || !values.password || !values.confirm) {
+      message.error("Email, password, and confirm password are required!");
+      return;
+    }
+
+    // Crea el usuario con email y password
+    const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
+    const user = userCredential.user;
+
+    // Guarda los datos adicionales en Firestore
+    await setDoc(doc(db, 'users', user.uid), {
+      name: values.name,
+      email: values.email,
+      currency: values.currency
+    });
+
+    // Guardar la información del usuario en el localStorage
+    localStorage.setItem('user', JSON.stringify({
+      uid: user.uid,
+      email: user.email,
+      name: values.name,
+      currency: values.currency
+    }));
+
+    // Enviar un mensaje de éxito y navegar al dashboard
+    message.success('Registration successful!');
     navigate('/main');
-  };
+  } catch (error) {
+    // Manejo de errores
+    console.error("Error during registration:", error);
+    message.error("Error during registration: " + error.message);
+  }
+};
+
 
   return (
     <section>
-
       <Form
         form={form}
         name="register"
