@@ -18,7 +18,7 @@ const CalendarMonth = ({ onSelectMonth }) => {
         onChange={handleMonthChange}
         format={monthFormat}
         allowClear={false}
-        variant={false}
+        variant={false} 
         suffixIcon={null}
         className="month-picker-visible"
         popupClassName="custom-month-dropdown"
