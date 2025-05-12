@@ -1,4 +1,4 @@
-
+/* progressBar.css */
 .progressBarContainer {
   width: 100%;
   margin-top: 60px;
@@ -8,13 +8,12 @@
   align-items: center;
   justify-content: center;
   color: black;
-
 }
 
 .floatingNumber {
   position: absolute;
   margin-bottom: 90px;
-  margin-left: -15px;
+
   background: #e6e0ff;
   color: black;
   padding: 6px 12px;
@@ -25,3 +24,9 @@
   transition: left 0.3s ease-in-out;
 }
 
+.progressBarTitle {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+}
