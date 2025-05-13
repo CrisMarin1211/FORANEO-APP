@@ -4,6 +4,7 @@ export { default as WeeklyPlanView } from './Recipes/Pages/WeeklyPlan/WeeklyPlan
 export { default as EditRecipeView } from './Recipes/Pages/EditRecipe/EditRecipe';
 export { default as UnlockedRecipesView } from './Recipes/Pages/UnlockedRecipes/UnlockedRecipes';
 export { default as RecipeDetailView } from './Recipes/Pages/RecipeDetail/RecipeDetail';
+export { default as StepsRecipeView } from './Recipes/Pages/StepsRecipe/StepsRecipe';
 export { default as CongratulationView } from './Recipes/Pages/Congratulation/Congratulation';
 export { default as SignInView } from './signIn/signin';
 export { default as LogInView } from './logIn/login';
