@@ -12,13 +12,13 @@ const Menu = () => {
 		<>
 			<section>
 				<nav className='menu'>
-					<button className='btn'>
+					<Link className='btn' to='/finances'>
 						<IconMoney />
-					</button>
-					<button className='btn'>
+					</Link>
+					<Link className='btn' to='/welcome'>
 						<IconFood />
-					</button>
-					<section className='home-container'>
+					</Link>
+					<section className='main'>
 						<Link className='btn home' to='/'>
 							<IconHome />
 						</Link>
@@ -26,7 +26,7 @@ const Menu = () => {
 					<Link className='btn' to='/calendar'>
 						<IconCalendar />
 					</Link>
-					<Link className='btn' to='/'>
+					<Link className='btn' to='/profile'>
 						<IconUser />
 					</Link>
 				</nav>
