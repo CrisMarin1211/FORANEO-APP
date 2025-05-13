@@ -1,4 +1,4 @@
-// Finances.jsx
+
 import React, { useEffect, useState } from 'react';
 import './finances.css';
 import ShowMoney from '../../components/showMoney/showMoney';
@@ -6,7 +6,8 @@ import ProgressBar from '../../components/progressBar/progressBar';
 import BigInfoSection from '../../components/bigInfoSection/bigInfoSection';
 import FloatingButton from '../../components/buttonMonth/buttonMonth';
 import { useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';  // Usamos useSelector para obtener la meta
+import Menu from '../../../Planner/components/navBar/navBar';
+import { useSelector } from 'react-redux';
 
 const Finances = () => {
   const [savedData, setSavedData] = useState([]);
@@ -16,7 +17,7 @@ const Finances = () => {
 
   const location = useLocation();
 
-  // Obtener la meta desde Redux
+
   const goal = useSelector((state) => state.finances.goal);
 
   useEffect(() => {
@@ -87,10 +88,10 @@ const Finances = () => {
   const totalIncomes = incomes.reduce((sum, item) => sum + Number(item.value), 0);
   const balance = totalIncomes - totalExpenses;
 
-  // Calcular el porcentaje de progreso de la meta (si existe)
+
   const progressPercent = goal
-    ? Math.min(100, (goal.totalContributed / goal.value) * 100)  // Si la meta existe, calculamos el porcentaje
-    : 0;  // Si no hay meta, el porcentaje es 0
+    ? Math.min(100, (goal.totalContributed / goal.value) * 100)
+    : 0;
 
   return (
     <section className='Financescontainer'>
@@ -100,14 +101,14 @@ const Finances = () => {
           <h4 className='keepTrackTittle' >💰 Keep track of your finances!</h4>
         </section>
         <FloatingButton
-          onClick={handleMonthSelection}  // Usamos la función definida aquí
+          onClick={handleMonthSelection}
           displayMonth={displayMonth}
         />
       </section>
 
       <section className='showMoneySection'>
         <ShowMoney
-          selectedMonth={selectedMonth}  // Pasamos selectedMonth a ShowMoney
+          selectedMonth={selectedMonth}
           totalExpenses={totalExpenses}
           totalIncomes={totalIncomes}
           balance={balance}
@@ -127,6 +128,11 @@ const Finances = () => {
           hasNoData={filteredData.length === 0}
         />
       </section>
+
+      <section className='spaceiwi'>
+        </section>
+
+      <Menu></Menu>
     </section>
   );
 };
