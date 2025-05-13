@@ -7,6 +7,9 @@ function ButtonCreatePlan({ onClick, text = 'Create Plan' }) {
 			<button className='Create-Plan' onClick={onClick}>
 				{text}
 			</button>
+			<section className='spaceiwi'>
+      </section>
+
 		</section>
 	);
 }
