@@ -29,7 +29,6 @@ function StepsRecipe() {
       console.error('No plan found for the day:', day);
     }
 
-    // Obtener los precios de los ingredientes desde el localStorage
     const storedPrices = JSON.parse(localStorage.getItem('ingredientPrices')) || {};
     setIngredientPrices(storedPrices);
   }, [day, mealTime, recipeName]);
@@ -40,28 +39,32 @@ function StepsRecipe() {
     navigate('/weeklyplan');
   };
 
-const handleFinish = () => {
-  // Crear un objeto con toda la información de la receta y los precios
-  const completedRecipe = {
-    name: recipe.name,
-    description: recipe.description,
-    ingredients: recipe.ingredients,
-    steps: recipe.steps,
-    ingredientPrices: ingredientPrices,
-    totalCost: recipe.ingredients.reduce((total, ingredient) => {
-      const price = parseFloat(ingredientPrices[ingredient]) || 0;
-      return total + price;
-    }, 0),
-    image: recipe.image, // Asegúrate de incluir la imagen aquí
+  const handleFinish = () => {
+    const completedRecipe = {
+      name: recipe.name,
+      description: recipe.description,
+      ingredients: recipe.ingredients,
+      steps: recipe.steps,
+      ingredientPrices: ingredientPrices,
+      totalCost: recipe.ingredients.reduce((total, ingredient) => {
+        const price = parseFloat(ingredientPrices[ingredient]) || 0;
+        return total + price;
+      }, 0),
+      image: recipe.image,
+    };
+
+    // Recuperar las recetas completadas desde localStorage
+    const completedRecipes = JSON.parse(localStorage.getItem('completedRecipes')) || [];
+
+    // Agregar la nueva receta completada
+    completedRecipes.push(completedRecipe);
+
+    // Guardar las recetas completadas en localStorage
+    localStorage.setItem('completedRecipes', JSON.stringify(completedRecipes));
+
+    // Redirigir a la página de congratulaciones
+    navigate('/congratulation');
   };
-
-  // Guardar el objeto con la receta completa en el localStorage
-  localStorage.setItem('completedRecipe', JSON.stringify(completedRecipe));
-
-  // Redirigir a la página de congratulaciones
-  navigate('/congratulation');
-};
-
 
   return (
     <section>
@@ -71,10 +74,10 @@ const handleFinish = () => {
       <CardImageRecipes name={recipe.name} image={recipe.image} description={recipe.description} />
       <IngredientsRecipes ingredients={recipe.ingredients} />
 
-      {/* Agregar el componente Steps para mostrar los pasos de la receta */}
+      {/* Mostrar los pasos de la receta */}
       <Steps steps={recipe.steps} />
 
-      {/* Botón de Finish para guardar y redirigir */}
+      {/* Botón para finalizar la receta */}
       <button className="finish-button" onClick={handleFinish}>
         Finish
       </button>
