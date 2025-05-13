@@ -178,3 +178,34 @@ export const saveFinishedGoalToFirestore = async (goalData) => {
     console.error("Error saving finished goal to Firestore:", error);
   }
 };
+
+// Función para obtener los datos del usuario desde Firestore
+// firebaseUtils.js
+// Función para obtener los datos del usuario y las metas completadas desde Firestore
+export const getUserDataFromFirestore = async () => {
+  try {
+    if (auth.currentUser) {
+      const userId = auth.currentUser.uid;  // Obtener el UID del usuario autenticado
+      const userRef = doc(db, 'users', userId);  // Referencia al documento del usuario
+      const docSnap = await getDoc(userRef);  // Obtener el documento del usuario
+
+      if (docSnap.exists()) {
+        const userData = docSnap.data();
+        // Devolvemos los datos del usuario y las metas completadas
+        return {
+          ...userData,
+          finishedGoals: userData.finishedGoals || []  // Si no hay metas completadas, devolvemos un array vacío
+        };
+      } else {
+        console.log("No user data found in Firestore.");
+        return null;
+      }
+    } else {
+      console.log("No user is logged in.");
+      return null;
+    }
+  } catch (error) {
+    console.error("Error fetching user data from Firestore:", error);
+    return null;
+  }
+};
