@@ -21,3 +21,17 @@
 	margin-left: 20px;
 	cursor: pointer;
 }
+
+.menucontaiiner{
+	left: 0;
+	margin-right: 430px;
+}
+
+.spaceiwi{
+  height: 150px;
+}
+
+.bigContainerEditrecipe{
+			width: 430px;
+	max-width: 100%;
+}
