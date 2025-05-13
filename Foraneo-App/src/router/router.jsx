@@ -1,8 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import { useSelector } from 'react-redux'; // Accedemos al estado global de Redux
+import { useSelector } from 'react-redux';
 import { WelcomeView, PlanCreateView, WeeklyPlanView, EditRecipeView, UnlockedRecipesView, RecipeDetailView, CongratulationView } from '../mainPages/export';
-import { SignInView, LogInView, MainView, FinancesView, AddView, EmotionTrackerView, CalendarPageView, ToDoPageView } from '../mainPages/export';
+import { SignInView, LogInView, MainView, FinancesView, AddView, EmotionTrackerView, CalendarPageView, ToDoPageView, ProfileView } from '../mainPages/export';
 import ProtectedRoute from '../mainPages/ProtectedRoute.jsX';
+
+
 
 function Router() {
   return (
@@ -75,6 +77,12 @@ function Router() {
       <Route path="/to-do" element={
         <ProtectedRoute>
           <ToDoPageView />
+        </ProtectedRoute>
+      } />
+
+      <Route path="/profile" element={
+        <ProtectedRoute>
+          <ProfileView />
         </ProtectedRoute>
       } />
     </Routes>
