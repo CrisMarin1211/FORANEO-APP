@@ -7,6 +7,7 @@ import DateDay from '../../Components/2.MyWeeklyPlan/DateDay/DateDay';
 import CardsRecipe from '../../Components/CardsRecipe/CardsRecipe';
 import ContainerAdjustPlan from '../../Components/2.MyWeeklyPlan/ContainerAdjustPlan/ContainerAdjustPlan';
 import './WeeklyPlan.css';
+import Menu from '../../../Planner/components/navBar/navBar';
 
 function WeeklyPlan() {
 	const [plans, setPlans] = useState([]);
@@ -55,44 +56,54 @@ function WeeklyPlan() {
 
 			<DateDay currentDate={getCurrentDate()} />
 
-			{todaysPlan ? (
-				<section className='today-meals-container'>
-					{todaysPlan.breakfast && (
-						<CardsRecipe
-							mealTime='Breakfast'
-							recipe={{
-								name: todaysPlan.breakfast.name,
-								description: todaysPlan.breakfast.description || 'Perfect to start your day!',
-								image: todaysPlan.breakfast.image || 'default-breakfast.jpg',
-							}}
-						/>
-					)}
 
-					{todaysPlan.lunch && (
-						<CardsRecipe
-							mealTime='Lunch'
-							recipe={{
-								name: todaysPlan.lunch.name,
-								description: todaysPlan.lunch.description || 'Energize your afternoon!',
-								image: todaysPlan.lunch.image || 'default-lunch.jpg',
-							}}
-						/>
-					)}
+{todaysPlan ? (
+	<section className='today-meals-container'>
+		{todaysPlan.breakfast && (
+			<CardsRecipe
+				mealTime='Breakfast'
+				recipe={{
+					name: todaysPlan.breakfast.name,
+					description: todaysPlan.breakfast.description || 'Perfect to start your day!',
+					image: todaysPlan.breakfast.image || 'default-breakfast.jpg',
+				}}
+				day={getCurrentDay()}  // Pasamos el día aquí
+			/>
+		)}
 
-					{todaysPlan.dinner && (
-						<CardsRecipe
-							mealTime='Dinner'
-							recipe={{
-								name: todaysPlan.dinner.name,
-								description: todaysPlan.dinner.description || 'End your day deliciously!',
-								image: todaysPlan.dinner.image || 'default-dinner.jpg',
-							}}
-						/>
-					)}
-				</section>
-			) : (
-				<p className='no-plan-message'>No meal plan found for today. Create one by clicking "Edit your Plan".</p>
-			)}
+		{todaysPlan.lunch && (
+			<CardsRecipe
+				mealTime='Lunch'
+				recipe={{
+					name: todaysPlan.lunch.name,
+					description: todaysPlan.lunch.description || 'Energize your afternoon!',
+					image: todaysPlan.lunch.image || 'default-lunch.jpg',
+				}}
+				day={getCurrentDay()}  // Pasamos el día aquí
+			/>
+		)}
+
+		{todaysPlan.dinner && (
+			<CardsRecipe
+				mealTime='Dinner'
+				recipe={{
+					name: todaysPlan.dinner.name,
+					description: todaysPlan.dinner.description || 'End your day deliciously!',
+					image: todaysPlan.dinner.image || 'default-dinner.jpg',
+				}}
+				day={getCurrentDay()}  // Pasamos el día aquí
+			/>
+		)}
+	</section>
+) : (
+	<p className='no-plan-message'>No meal plan found for today. Create one by clicking "Edit your Plan".</p>
+)}
+
+
+			<section className='spaceiwi'></section>
+
+			<Menu style={{marginleft: "200px"}} className='menucontainerr'></Menu>
+
 		</section>
 	);
 }
