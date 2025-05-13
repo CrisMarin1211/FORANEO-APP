@@ -5,6 +5,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import CardsEditRecipes from '../../Components/4.MyEditRecipe/CardsEditRecipes/CardsEditRecipes.JSX';
 import TitleUnlockedFoods from '../../Components/5.UnlockedFoods/TitleUnlockedFoods/TitleUnlockedFoods';
 import { ChevronLeft } from 'lucide-react';
+import Menu from '../../../Planner/components/navBar/navBar';
 
 function UnlockedRecipes() {
 	const { day, mealTime } = useParams();
@@ -84,6 +85,12 @@ function UnlockedRecipes() {
 			)}
 
 			<TitleUnlockedFoods />
+
+		<section className='spaceiwi'></section>
+			<section className='menuconttainer'>
+			<Menu></Menu>
+			</section>
+
 		</section>
 	);
 }
