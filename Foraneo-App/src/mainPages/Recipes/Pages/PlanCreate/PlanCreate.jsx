@@ -10,6 +10,7 @@ import BreakfastBowls from '../../Data/BreakfastBowls';
 import LunchBowls from '../../Data/LunchBowls';
 import DinnerBowls from '../../Data/DinnerBowls';
 import './PlanCreate.css';
+import Menu from '../../../Planner/components/navBar/navBar';
 
 function PlanCreate() {
 	const [budget, setBudget] = useState('');
@@ -106,6 +107,12 @@ function PlanCreate() {
 			<IngredientsList selectedIngredients={selectedIngredients} setSelectedIngredients={setSelectedIngredients} />
 			<DaySelectorCook selectedDays={selectedDays} setSelectedDays={setSelectedDays} />
 			<ButtonCreatePlan onClick={handleCreatePlan} />
+
+
+
+		<section className='menusectionplan'>
+			<Menu ></Menu>
+			</section>
 		</section>
 	);
 }
