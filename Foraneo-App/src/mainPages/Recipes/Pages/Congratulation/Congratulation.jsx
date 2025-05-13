@@ -6,27 +6,32 @@ import MealPlanPhrase from '../../Components/3.CongratsPlan/MealPlanPhrase/MealP
 import NameRecipe from '../../Components/3.CongratsPlan/NameRecipe/NameRecipe';
 
 function Congratulation() {
-  const [completedRecipe, setCompletedRecipe] = useState(null);
+  const [completedRecipes, setCompletedRecipes] = useState(null);
 
   useEffect(() => {
-    // Recuperar los datos de la receta completada desde localStorage
-    const savedRecipe = JSON.parse(localStorage.getItem('completedRecipe'));
-    if (savedRecipe) {
-      setCompletedRecipe(savedRecipe);
+    // Recuperar todas las recetas completadas desde localStorage
+    const savedRecipes = JSON.parse(localStorage.getItem('completedRecipes')) || [];
+    if (savedRecipes.length > 0) {
+      setCompletedRecipes(savedRecipes); // Establecer todas las recetas completadas
     }
   }, []);
 
-  if (!completedRecipe) return <div>Loading...</div>; // Mientras se carga la receta
+  if (!completedRecipes || completedRecipes.length === 0) {
+    return <div>Loading...</div>; // Mientras se carga o no hay recetas completadas
+  }
+
+  // Mostrar la receta más reciente completada
+  const recentRecipe = completedRecipes[completedRecipes.length - 1];
 
   return (
     <section>
       <TitleCongrats />
       <ImageEmotions />
       {/* Mostrar el mensaje de receta desbloqueada */}
-      <UnlockedMessage recipeName={completedRecipe.name} />
+      <UnlockedMessage recipeName={recentRecipe.name} />
       <MealPlanPhrase />
       {/* Mostrar el nombre de la receta y la imagen */}
-      <NameRecipe recipeName={completedRecipe.name} recipeImage={completedRecipe.image} />
+      <NameRecipe recipeName={recentRecipe.name} recipeImage={recentRecipe.image} />
     </section>
   );
 }
