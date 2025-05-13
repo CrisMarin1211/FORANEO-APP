@@ -1,26 +1,15 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import PlanYet from '../../Components/PlanYetPhrase/PlanYetPhrase';
-import Title from '../../Components/TitleWelcome/TitleWelcome';
-import ImageSad from '../../Components/imageSad/imageSad';
-import ButtonCreatePlan from '../../Components/ButtonCreatePlan/ButtonCreatePlan';
 import './Welcome.css';
+import WelcomeNoData from '../../Components/Welcome Component/welcomeComp';
+import Menu from '../../../Planner/components/navBar/navBar';
 
 function Welcome() {
-	const navigate = useNavigate();
-
-	const handleCreatePlanClick = () => {
-		navigate('/plancreate');
-	};
 
 	return (
-		<section className='container-welcome'>
-			<section className='tittle-welcome'>
-				<Title />
-			</section>
-			<ImageSad />
-			<PlanYet />
-			<ButtonCreatePlan onClick={handleCreatePlanClick} />
+		<section className='welcomeContainer'>
+		<WelcomeNoData />
+
+		<Menu className='menusection'></Menu>
 		</section>
 	);
 }
