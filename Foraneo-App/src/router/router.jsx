@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { WelcomeView, PlanCreateView, WeeklyPlanView, EditRecipeView, UnlockedRecipesView, RecipeDetailView, CongratulationView } from '../mainPages/export';
-import { SignInView, LogInView, MainView, FinancesView, AddView, EmotionTrackerView, CalendarPageView, ToDoPageView, ProfileView } from '../mainPages/export';
+import { SignInView, LogInView, MainView, FinancesView, AddView, EmotionTrackerView, CalendarPageView, ToDoPageView, ProfileView, StepsRecipeView } from '../mainPages/export';
 import ProtectedRoute from '../mainPages/ProtectedRoute.jsX';
 
 
@@ -49,6 +49,14 @@ function Router() {
           <RecipeDetailView />
         </ProtectedRoute>
       } />
+
+
+      <Route path="/steps/:day/:mealTime/:recipeName" element={
+        <ProtectedRoute>
+          <StepsRecipeView />
+        </ProtectedRoute>
+      } />
+
       <Route path="/congratulation" element={
         <ProtectedRoute>
           <CongratulationView />
