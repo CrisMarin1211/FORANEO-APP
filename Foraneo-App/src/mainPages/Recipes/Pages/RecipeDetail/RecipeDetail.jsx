@@ -5,6 +5,7 @@ import CardImageRecipes from '../../Components/6.DetailsRecipes/CardImageRecipes
 import IngredientsRecipes from '../../Components/6.DetailsRecipes/IngredientsRecipes/IngredientsRecipes';
 import ButtonLetsCook from '../../Components/ButtonLetsCook/ButtonLetsCook';
 import { ChevronLeft } from 'lucide-react';
+import Menu from '../../../Planner/components/navBar/navBar';
 import './RecipeDetail.css';
 
 function RecipeDetail() {
@@ -42,6 +43,11 @@ function RecipeDetail() {
 			<CardImageRecipes name={recipe.name} image={recipe.image} description={recipe.description} />
 			<IngredientsRecipes ingredients={recipe.ingredients} />
 			<ButtonLetsCook />
+
+					<section className='spaceiwi'></section>
+			<section className='menuconnttainer'>
+			<Menu></Menu>
+			</section>
 		</section>
 	);
 }
