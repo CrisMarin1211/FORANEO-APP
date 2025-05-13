@@ -3,6 +3,7 @@ import { ChevronLeft } from 'lucide-react';
 import { useNavigate, useParams } from 'react-router-dom';
 import CardsEditRecipes from '../../Components/4.MyEditRecipe/CardsEditRecipes/CardsEditRecipes.JSX';
 import TitleEditRecipes from '../../Components/4.MyEditRecipe/TitleEditRecipes/TitleEditRecipes';
+import Menu from '../../../Planner/components/navBar/navBar';
 import './EditRecipe.css';
 
 function EditRecipe() {
@@ -34,7 +35,7 @@ function EditRecipe() {
 	};
 
 	return (
-		<section>
+		<section className='bigContainerEditrecipe'>
 			<section className='button-chevro' onClick={handleGoBack}>
 				<ChevronLeft />
 			</section>
@@ -77,6 +78,11 @@ function EditRecipe() {
 					day={day}
 				/>
 			)}
+
+				<section className='spaceiwi'></section>
+			<section className='menucontaiiner'>
+			<Menu></Menu>
+			</section>
 		</section>
 	);
 }
