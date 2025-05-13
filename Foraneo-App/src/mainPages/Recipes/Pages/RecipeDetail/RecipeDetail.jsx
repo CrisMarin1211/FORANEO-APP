@@ -6,50 +6,67 @@ import IngredientsRecipes from '../../Components/6.DetailsRecipes/IngredientsRec
 import ButtonLetsCook from '../../Components/ButtonLetsCook/ButtonLetsCook';
 import { ChevronLeft } from 'lucide-react';
 import Menu from '../../../Planner/components/navBar/navBar';
+import IngredientPriceInput from '../../Components/6.DetailsRecipes/IngredientPrice/IngredientPrice';
 import './RecipeDetail.css';
 
 function RecipeDetail() {
-	const { day, mealTime, recipeName } = useParams();
-	const [recipe, setRecipe] = useState(null);
-	const navigate = useNavigate();
+  const { day, mealTime, recipeName } = useParams();
+  const [recipe, setRecipe] = useState(null);
+  const [showPriceInput, setShowPriceInput] = useState(false); // Estado para mostrar los inputs
+  const navigate = useNavigate();
 
-	useEffect(() => {
-		const storedPlans = JSON.parse(localStorage.getItem('weeklyPlan')) || [];
-		const selectedDayPlan = storedPlans.find((plan) => plan.day === day);
+  useEffect(() => {
+    const storedPlans = JSON.parse(localStorage.getItem('weeklyPlan')) || [];
+    const selectedDayPlan = storedPlans.find((plan) => plan.day === day);
 
-		if (selectedDayPlan) {
-			const mealPlan = selectedDayPlan[mealTime.toLowerCase()];
-			if (mealPlan && mealPlan.name === recipeName) {
-				setRecipe(mealPlan);
-			} else {
-				console.error('Recipe not found:', recipeName);
-			}
-		} else {
-			console.error('No plan found for the day:', day);
-		}
-	}, [day, mealTime, recipeName]);
+    if (selectedDayPlan) {
+      const mealPlan = selectedDayPlan[mealTime.toLowerCase()];
+      if (mealPlan && mealPlan.name === recipeName) {
+        setRecipe(mealPlan);
+      } else {
+        console.error('Recipe not found:', recipeName);
+      }
+    } else {
+      console.error('No plan found for the day:', day);
+    }
+  }, [day, mealTime, recipeName]);
 
-	if (!recipe) return <div>Loading...</div>;
+  if (!recipe) return <div>Loading...</div>;
 
-	const handleGoBack = () => {
-		navigate('/weeklyplan');
-	};
+  const handleGoBack = () => {
+    navigate('/weeklyplan');
+  };
 
-	return (
-		<section>
-			<ChevronLeft className='button-chevro2' onClick={handleGoBack} />
+  const handleLetsCookClick = () => {
+    setShowPriceInput(true); // Mostrar los inputs cuando se haga clic en "Let's Cook"
+  };
 
-			<TitleMealTime mealTime={mealTime} />
-			<CardImageRecipes name={recipe.name} image={recipe.image} description={recipe.description} />
-			<IngredientsRecipes ingredients={recipe.ingredients} />
-			<ButtonLetsCook />
+  return (
+    <section>
+      <ChevronLeft className='button-chevro2' onClick={handleGoBack} />
 
-					<section className='spaceiwi'></section>
-			<section className='menuconnttainer'>
-			<Menu></Menu>
-			</section>
-		</section>
-	);
+      <TitleMealTime mealTime={mealTime} />
+      <CardImageRecipes name={recipe.name} image={recipe.image} description={recipe.description} />
+      <IngredientsRecipes ingredients={recipe.ingredients} />
+
+      <ButtonLetsCook onClick={handleLetsCookClick} />
+
+      {/* Mostrar el componente de precios solo cuando se haya hecho clic en el botón */}
+      {showPriceInput && (
+        <IngredientPriceInput
+          ingredients={recipe.ingredients}
+          day={day}
+          mealTime={mealTime}
+          recipeName={recipeName}
+        />
+      )}
+
+      <section className='spaceiwi'></section>
+      <section className='menuconnttainer'>
+        <Menu />
+      </section>
+    </section>
+  );
 }
 
 export default RecipeDetail;
