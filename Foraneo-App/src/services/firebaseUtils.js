@@ -1,22 +1,35 @@
-
-import { getFirestore, doc, updateDoc, arrayRemove, Timestamp, getDoc, arrayUnion, increment } from 'firebase/firestore';
-import { auth } from './firebaseConfig';
+import {
+  getFirestore,
+  doc,
+  updateDoc,
+  arrayRemove,
+  Timestamp,
+  getDoc,
+  arrayUnion,
+  increment,
+} from "firebase/firestore";
+import { auth } from "./firebaseConfig";
 
 const db = getFirestore();
 
-// Función para agregar un ingreso o gasto
+
 export const saveTransactionToFirestore = async (transactionData) => {
   try {
     if (auth.currentUser) {
       const userId = auth.currentUser.uid;
-      const userRef = doc(db, 'users', userId); // Documento del usuario
+      const userRef = doc(db, "users", userId);
 
-      const collectionField = transactionData.type === 'Income' ? 'incomes' : 'expenses';
+      const collectionField =
+        transactionData.type === "Income" ? "incomes" : "expenses";
 
-      // Agregar la transacción al campo correspondiente y actualizar el total disponible
+
       await updateDoc(userRef, {
-        [collectionField]: arrayUnion(transactionData), // Agregar la transacción al array de ingresos o gastos
-        totalAvailable: increment(transactionData.type === 'Income' ? transactionData.value : -transactionData.value), // Actualizar totalAvailable
+        [collectionField]: arrayUnion(transactionData),
+        totalAvailable: increment(
+          transactionData.type === "Income"
+            ? transactionData.value
+            : -transactionData.value
+        ),
       });
 
       console.log(`${transactionData.type} successfully added to Firestore!`);
@@ -26,12 +39,11 @@ export const saveTransactionToFirestore = async (transactionData) => {
   }
 };
 
-// Función para obtener los gastos e ingresos de un usuario
 export const getTransactionsFromFirestore = async () => {
   try {
     if (auth.currentUser) {
       const userId = auth.currentUser.uid;
-      const userRef = doc(db, 'users', userId); // Documento del usuario
+      const userRef = doc(db, "users", userId);
       const docSnap = await getDoc(userRef);
 
       if (docSnap.exists()) {
@@ -39,7 +51,7 @@ export const getTransactionsFromFirestore = async () => {
         return {
           expenses: userData.expenses || [],
           incomes: userData.incomes || [],
-          totalAvailable: userData.totalAvailable || 0
+          totalAvailable: userData.totalAvailable || 0,
         };
       } else {
         return { expenses: [], incomes: [], totalAvailable: 0 };
@@ -50,48 +62,59 @@ export const getTransactionsFromFirestore = async () => {
   }
 };
 
-// Función para eliminar una transacción
 export const removeTransactionFromFirestore = async (transactionData) => {
   try {
     if (auth.currentUser) {
       const userId = auth.currentUser.uid;
-      const userRef = doc(db, 'users', userId); // Documento del usuario
+      const userRef = doc(db, "users", userId);
 
-      const collectionField = transactionData.type === 'Income' ? 'incomes' : 'expenses';
+      const collectionField =
+        transactionData.type === "Income" ? "incomes" : "expenses";
 
-      // Eliminar la transacción y actualizar el total disponible
+
       await updateDoc(userRef, {
-        [collectionField]: arrayRemove(transactionData), // Eliminar de los arrays de ingresos/gastos
-        totalAvailable: increment(transactionData.type === 'Income' ? -transactionData.value : transactionData.value), // Actualizar el total disponible
+        [collectionField]: arrayRemove(transactionData),
+        totalAvailable: increment(
+          transactionData.type === "Income"
+            ? -transactionData.value
+            : transactionData.value
+        ),
       });
 
-      console.log(`${transactionData.type} successfully removed from Firestore!`);
+      console.log(
+        `${transactionData.type} successfully removed from Firestore!`
+      );
     }
   } catch (error) {
     console.error("Error removing transaction from Firestore:", error);
   }
 };
-// firebaseUtils.js
 
-// Función para guardar la meta en Firestore
+
 export const saveGoalToFirestore = async (goalData) => {
   try {
     if (auth.currentUser) {
       const userId = auth.currentUser.uid;
-      const userRef = doc(db, 'users', userId);
+      const userRef = doc(db, "users", userId);
 
-      // Asegúrate de que startDate y endDate sean Timestamp
+
       const goalDataToSave = {
         ...goalData,
-        startDate: goalData.startDate instanceof Date ? Timestamp.fromDate(goalData.startDate) : null,
-        endDate: goalData.endDate instanceof Date ? Timestamp.fromDate(goalData.endDate) : null,
+        startDate:
+          goalData.startDate instanceof Date
+            ? Timestamp.fromDate(goalData.startDate)
+            : null,
+        endDate:
+          goalData.endDate instanceof Date
+            ? Timestamp.fromDate(goalData.endDate)
+            : null,
         totalContributed: goalData.totalContributed || 0,
         remaining: goalData.value - (goalData.totalContributed || 0),
-        weeklySavings: goalData.weeklySavings,  // Asegurarnos de guardar weeklySavings
+        weeklySavings: goalData.weeklySavings,
       };
 
       await updateDoc(userRef, {
-        goal: goalDataToSave
+        goal: goalDataToSave,
       });
 
       console.log("Goal saved successfully to Firestore!");
@@ -101,15 +124,15 @@ export const saveGoalToFirestore = async (goalData) => {
   }
 };
 
-// Función para actualizar la meta en Firestore
+
 export const updateGoalInFirestore = async (goalData) => {
   try {
     if (auth.currentUser) {
       const userId = auth.currentUser.uid;
-      const userRef = doc(db, 'users', userId);
+      const userRef = doc(db, "users", userId);
 
       await updateDoc(userRef, {
-        goal: goalData
+        goal: goalData,
       });
 
       console.log("Goal updated successfully in Firestore!");
@@ -119,15 +142,15 @@ export const updateGoalInFirestore = async (goalData) => {
   }
 };
 
-// Función para eliminar la meta en Firestore
+
 export const removeGoalFromFirestore = async () => {
   try {
     if (auth.currentUser) {
       const userId = auth.currentUser.uid;
-      const userRef = doc(db, 'users', userId);
+      const userRef = doc(db, "users", userId);
 
       await updateDoc(userRef, {
-        goal: null
+        goal: null,
       });
 
       console.log("Goal removed successfully from Firestore!");
@@ -137,15 +160,14 @@ export const removeGoalFromFirestore = async () => {
   }
 };
 
-
 export const updateTotalAvailableInFirestore = async (amount) => {
   try {
     if (auth.currentUser) {
       const userId = auth.currentUser.uid;
-      const userRef = doc(db, 'users', userId); // Documento del usuario
+      const userRef = doc(db, "users", userId);
 
       await updateDoc(userRef, {
-        totalAvailable: increment(-amount)  // Resta el monto al total disponible
+        totalAvailable: increment(-amount),
       });
 
       console.log("Total available updated successfully in Firestore!");
@@ -155,20 +177,20 @@ export const updateTotalAvailableInFirestore = async (amount) => {
   }
 };
 
-// Función para guardar la meta completada en Firestore
+
 export const saveFinishedGoalToFirestore = async (goalData) => {
   try {
     if (auth.currentUser) {
       const userId = auth.currentUser.uid;
-      const userRef = doc(db, 'users', userId);
+      const userRef = doc(db, "users", userId);
 
-      // Guarda la meta completada en un array "finishedGoals"
+
       await updateDoc(userRef, {
         finishedGoals: arrayUnion({
           name: goalData.name,
           value: goalData.value,
           totalContributed: goalData.totalContributed,
-          completedAt: Timestamp.now(), // Fecha en que se completó la meta
+          completedAt: Timestamp.now(),
         }),
       });
 
@@ -179,22 +201,20 @@ export const saveFinishedGoalToFirestore = async (goalData) => {
   }
 };
 
-// Función para obtener los datos del usuario desde Firestore
-// firebaseUtils.js
-// Función para obtener los datos del usuario y las metas completadas desde Firestore
+
 export const getUserDataFromFirestore = async () => {
   try {
     if (auth.currentUser) {
-      const userId = auth.currentUser.uid;  // Obtener el UID del usuario autenticado
-      const userRef = doc(db, 'users', userId);  // Referencia al documento del usuario
-      const docSnap = await getDoc(userRef);  // Obtener el documento del usuario
+      const userId = auth.currentUser.uid;
+      const userRef = doc(db, "users", userId);
+      const docSnap = await getDoc(userRef);
 
       if (docSnap.exists()) {
         const userData = docSnap.data();
-        // Devolvemos los datos del usuario y las metas completadas
+
         return {
           ...userData,
-          finishedGoals: userData.finishedGoals || []  // Si no hay metas completadas, devolvemos un array vacío
+          finishedGoals: userData.finishedGoals || [],
         };
       } else {
         console.log("No user data found in Firestore.");
@@ -207,5 +227,45 @@ export const getUserDataFromFirestore = async () => {
   } catch (error) {
     console.error("Error fetching user data from Firestore:", error);
     return null;
+  }
+};
+
+
+export const saveWeeklyPlanToFirestore = async (weeklyPlan) => {
+  try {
+    if (auth.currentUser) {
+      const userId = auth.currentUser.uid;
+      const userRef = doc(db, "users", userId);
+      await updateDoc(userRef, {
+        weeklyPlan: weeklyPlan,
+      });
+      console.log("Weekly plan saved to Firestore!");
+    } else {
+      throw new Error("No user authenticated");
+    }
+  } catch (error) {
+    console.error("Error saving weekly plan to Firestore:", error);
+  }
+};
+
+
+export const getWeeklyPlanFromFirestore = async () => {
+  try {
+    if (auth.currentUser) {
+      const userId = auth.currentUser.uid;
+      const userRef = doc(db, "users", userId);
+      const docSnap = await getDoc(userRef);
+      if (docSnap.exists()) {
+        const userData = docSnap.data();
+        return userData.weeklyPlan || [];
+      } else {
+        return [];
+      }
+    } else {
+      throw new Error("No user authenticated");
+    }
+  } catch (error) {
+    console.error("Error fetching weekly plan from Firestore:", error);
+    return [];
   }
 };
