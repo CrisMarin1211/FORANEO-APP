@@ -1,22 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import TitleEditBLD from '../../Components/5.UnlockedFoods/TitleEditBLD/TitleEditBLD';
-import './UnlockedRecipes.css';
-import { useParams, useNavigate } from 'react-router-dom';
-import CardsEditRecipes from '../../Components/4.MyEditRecipe/CardsEditRecipes/CardsEditRecipes.JSX';
-import TitleUnlockedFoods from '../../Components/5.UnlockedFoods/TitleUnlockedFoods/TitleUnlockedFoods';
-import { ChevronLeft } from 'lucide-react';
-import Menu from '../../../Planner/components/navBar/navBar';
-import CardsUnlocked from '../../Components/5.UnlockedFoods/CardsUnlocked/CardsUnlocked';  // Componente de tarjetas desbloqueadas
+import React, { useState, useEffect } from "react";
+import TitleEditBLD from "../../Components/5.UnlockedFoods/TitleEditBLD/TitleEditBLD";
+import "./UnlockedRecipes.css";
+import { useParams, useNavigate } from "react-router-dom";
+import CardsEditRecipes from "../../Components/4.MyEditRecipe/CardsEditRecipes/CardsEditRecipes.JSX";
+import TitleUnlockedFoods from "../../Components/5.UnlockedFoods/TitleUnlockedFoods/TitleUnlockedFoods";
+import { ChevronLeft } from "lucide-react";
+import Menu from "../../../Planner/components/navBar/navBar";
+import CardsUnlocked from "../../Components/5.UnlockedFoods/CardsUnlocked/CardsUnlocked";
+import { getDoc, doc } from "firebase/firestore";
+import { auth, db } from "../../../../services/firebaseConfig";
+import { useDispatch } from "react-redux";
+import { setWeeklyPlan } from "../../../../redux/recipes/recipesSlice";
+import { saveWeeklyPlanToFirestore } from "../../../../services/firebaseUtils";
 
 function UnlockedRecipes() {
   const { day, mealTime } = useParams();
   const [recipes, setRecipes] = useState(null);
   const [completedRecipes, setCompletedRecipes] = useState([]);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    // Recuperar el plan semanal desde localStorage
-    const storedPlans = JSON.parse(localStorage.getItem('weeklyPlan'));
+    
+    const storedPlans = JSON.parse(localStorage.getItem("weeklyPlan"));
     if (storedPlans) {
       const selectedDayPlan = storedPlans.find((plan) => plan.day === day);
       if (selectedDayPlan) {
@@ -24,9 +30,26 @@ function UnlockedRecipes() {
       }
     }
 
-    // Recuperar las recetas completadas desde localStorage
-    const completedRecipes = JSON.parse(localStorage.getItem('completedRecipes')) || [];
-    setCompletedRecipes(completedRecipes);
+
+    const fetchCompletedRecipes = async () => {
+      if (auth.currentUser) {
+        const userId = auth.currentUser.uid;
+        const userRef = doc(db, "users", userId);
+        const docSnap = await getDoc(userRef);
+        if (docSnap.exists()) {
+          const userData = docSnap.data();
+          setCompletedRecipes(userData.completedRecipes || []);
+        } else {
+          setCompletedRecipes([]);
+        }
+      } else {
+
+        const completedRecipes =
+          JSON.parse(localStorage.getItem("completedRecipes")) || [];
+        setCompletedRecipes(completedRecipes);
+      }
+    };
+    fetchCompletedRecipes();
   }, [day]);
 
   if (!recipes) return <section>Loading...</section>;
@@ -41,39 +64,47 @@ function UnlockedRecipes() {
   };
 
   const handleAddRecipe = (newRecipe) => {
-    const storedPlans = JSON.parse(localStorage.getItem('weeklyPlan')) || [];
+
+    const storedPlans = JSON.parse(localStorage.getItem("weeklyPlan")) || [];
     const selectedDayPlan = storedPlans.find((plan) => plan.day === day);
 
     if (selectedDayPlan) {
-      if (mealTime === 'Breakfast') {
+      if (mealTime === "Breakfast") {
         selectedDayPlan.breakfast = newRecipe;
-      } else if (mealTime === 'Lunch') {
+      } else if (mealTime === "Lunch") {
         selectedDayPlan.lunch = newRecipe;
-      } else if (mealTime === 'Dinner') {
+      } else if (mealTime === "Dinner") {
         selectedDayPlan.dinner = newRecipe;
       }
-
-      localStorage.setItem('weeklyPlan', JSON.stringify(storedPlans));
-      navigate(`/editrecipe/${day}`);
+      localStorage.setItem("weeklyPlan", JSON.stringify(storedPlans));
     }
+
+
+    dispatch(setWeeklyPlan(storedPlans));
+
+
+    saveWeeklyPlanToFirestore(storedPlans);
+
+    navigate(`/editrecipe/${day}`);
   };
 
   return (
     <section>
-      <button className='button-chevro1' onClick={handleGoBack}>
+      <button className="button-chevro1" onClick={handleGoBack}>
         <ChevronLeft />
       </button>
 
       <TitleEditBLD day={day} mealTime={mealTime} />
 
-      {/* Mostrar la receta seleccionada */}
-      {mealTime === 'Breakfast' && recipes.breakfast && (
+
+      {mealTime === "Breakfast" && recipes.breakfast && (
         <CardsEditRecipes
-          mealTime='Breakfast'
+          mealTime="Breakfast"
           recipe={{
             name: recipes.breakfast.name,
-            description: recipes.breakfast.description || 'Perfect to start your day!',
-            image: recipes.breakfast.image || 'default-breakfast.jpg',
+            description:
+              recipes.breakfast.description || "Perfect to start your day!",
+            image: recipes.breakfast.image || "default-breakfast.jpg",
             ingredients: getIngredients(recipes.breakfast),
           }}
           day={day}
@@ -81,13 +112,14 @@ function UnlockedRecipes() {
         />
       )}
 
-      {mealTime === 'Lunch' && recipes.lunch && (
+      {mealTime === "Lunch" && recipes.lunch && (
         <CardsEditRecipes
-          mealTime='Lunch'
+          mealTime="Lunch"
           recipe={{
             name: recipes.lunch.name,
-            description: recipes.lunch.description || 'Energize your afternoon!',
-            image: recipes.lunch.image || 'default-lunch.jpg',
+            description:
+              recipes.lunch.description || "Energize your afternoon!",
+            image: recipes.lunch.image || "default-lunch.jpg",
             ingredients: getIngredients(recipes.lunch),
           }}
           day={day}
@@ -95,13 +127,14 @@ function UnlockedRecipes() {
         />
       )}
 
-      {mealTime === 'Dinner' && recipes.dinner && (
+      {mealTime === "Dinner" && recipes.dinner && (
         <CardsEditRecipes
-          mealTime='Dinner'
+          mealTime="Dinner"
           recipe={{
             name: recipes.dinner.name,
-            description: recipes.dinner.description || 'End your day deliciously!',
-            image: recipes.dinner.image || 'default-dinner.jpg',
+            description:
+              recipes.dinner.description || "End your day deliciously!",
+            image: recipes.dinner.image || "default-dinner.jpg",
             ingredients: getIngredients(recipes.dinner),
           }}
           day={day}
@@ -111,7 +144,7 @@ function UnlockedRecipes() {
 
       <TitleUnlockedFoods />
 
-      {/* Mostrar las recetas completadas */}
+
       <section>
         {completedRecipes.map((recipe, index) => (
           <CardsUnlocked
@@ -122,8 +155,8 @@ function UnlockedRecipes() {
         ))}
       </section>
 
-      <section className='spaceiwi'></section>
-      <section className='menuconttainer'>
+      <section className="spaceiwi"></section>
+      <section className="menuconttainer">
         <Menu />
       </section>
     </section>
