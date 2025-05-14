@@ -1,17 +1,17 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // Asegúrate de importar Link aquí
 import LogInForm from './components/logInForm/logInForm';
-import { login } from '../../utils/auth'; 
 import './login.css';
 
 const Login = () => {
   const navigate = useNavigate();
 
   const onFinish = (user) => {
-    login();
-
-    navigate('/main');
+    if (user) {
+      
+      navigate('/main');
+    }
   };
 
   const onFinishFailed = (errorInfo) => {
