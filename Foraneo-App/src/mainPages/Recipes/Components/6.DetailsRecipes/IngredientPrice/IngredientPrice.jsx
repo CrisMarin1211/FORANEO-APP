@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './IngredientPrice.css';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./IngredientPrice.css";
+import { updateDoc, doc, arrayUnion } from "firebase/firestore";
+import { auth, db } from "../../../../../services/firebaseConfig";
 
 function IngredientPriceInput({ ingredients, day, mealTime, recipeName }) {
   const [ingredientPrices, setIngredientPrices] = useState(
     ingredients.reduce((acc, ingredient) => {
-      acc[ingredient] = ''; // Inicializa el precio como vacío
+      acc[ingredient] = ""; 
       return acc;
     }, {})
   );
 
-  const [newIngredient, setNewIngredient] = useState('');
-  const [newIngredientPrice, setNewIngredientPrice] = useState('');
+  const [newIngredient, setNewIngredient] = useState("");
+  const [newIngredientPrice, setNewIngredientPrice] = useState("");
   const [allIngredients, setAllIngredients] = useState(ingredients);
   const navigate = useNavigate();
 
@@ -25,19 +27,44 @@ function IngredientPriceInput({ ingredients, day, mealTime, recipeName }) {
   const handleAddIngredient = () => {
     if (newIngredient && newIngredientPrice) {
       setAllIngredients((prev) => [...prev, newIngredient]);
-      setIngredientPrices((prev) => ({ ...prev, [newIngredient]: newIngredientPrice }));
-      setNewIngredient('');
-      setNewIngredientPrice('');
+      setIngredientPrices((prev) => ({
+        ...prev,
+        [newIngredient]: newIngredientPrice,
+      }));
+      setNewIngredient("");
+      setNewIngredientPrice("");
     }
   };
 
-  const handleConfirm = () => {
-    // Guardar el estado de ingredientPrices en localStorage
-    localStorage.setItem('ingredientPrices', JSON.stringify(ingredientPrices));
+  const handleConfirm = async () => {
 
-    // Redirigir a la página de pasos
+    localStorage.setItem("ingredientPrices", JSON.stringify(ingredientPrices));
+
+
+    if (auth.currentUser) {
+      const userId = auth.currentUser.uid;
+      const userRef = doc(db, "users", userId);
+      try {
+        await updateDoc(userRef, {
+          ingredientPricesArray: arrayUnion({
+            day,
+            mealTime,
+            recipeName,
+            prices: ingredientPrices,
+            timestamp: new Date().toISOString(),
+          }),
+        });
+        alert("Ingredient prices saved successfully!");
+      } catch (error) {
+        alert("Error saving ingredient prices to Firebase");
+        console.error(error);
+      }
+    } else {
+      alert("Ingredient prices saved locally!");
+    }
+
+
     navigate(`/steps/${day}/${mealTime}/${recipeName}`);
-    alert("Ingredient prices saved successfully!");
   };
 
   return (
@@ -73,7 +100,11 @@ function IngredientPriceInput({ ingredients, day, mealTime, recipeName }) {
         />
       </section>
 
-      <button className="buttonAddIngredient" onClick={handleAddIngredient} disabled={!newIngredient || !newIngredientPrice}>
+      <button
+        className="buttonAddIngredient"
+        onClick={handleAddIngredient}
+        disabled={!newIngredient || !newIngredientPrice}
+      >
         Add Ingredient
       </button>
 
