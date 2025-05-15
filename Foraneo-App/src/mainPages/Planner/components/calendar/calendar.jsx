@@ -70,17 +70,20 @@ const Calendar = () => {
 	return (
 		<>
 			<section className='calendar-container'>
-				<h2 className='calendar-title'>Mood Tracker</h2>
+
 				<section className='calendar-controls'>
-					<button onClick={goToPrevMonth}>←</button>
-					<span>
+					<button className='arrowbu' onClick={goToPrevMonth}>←</button>
+					<span className='calendarSpan'>
 						{new Date(currentYear, currentMonth).toLocaleString('default', {
 							month: 'long',
 							year: 'numeric',
 						})}
 					</span>
-					<button onClick={goToNextMonth}>→</button>
+					<button className='arrowbu' onClick={goToNextMonth}>→</button>
 				</section>
+
+
+
 				<section className='calendar-grid'>
 					{daysOfWeek.map((d) => (
 						<section key={d} className='calendar-day-header'>
