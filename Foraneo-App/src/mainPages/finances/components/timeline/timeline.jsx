@@ -39,7 +39,7 @@ const Timeline = ({ data, selectedMonth }) => {
           <section key={index}>
             <Day date={adjustedDate.toISOString().split('T')[0]} />
             {groupedTickets[date].map((ticket, ticketIndex) => (
-              <div key={ticketIndex} onClick={() => setSelectedTicket(ticket)}>
+              <section key={ticketIndex} onClick={() => setSelectedTicket(ticket)}>
                 <Ticket
                   category={ticket.category}
                   value={ticket.value}
@@ -47,7 +47,7 @@ const Timeline = ({ data, selectedMonth }) => {
                   details={ticket.details}
                   type={ticket.type}
                 />
-              </div>
+              </section>
             ))}
           </section>
         );
