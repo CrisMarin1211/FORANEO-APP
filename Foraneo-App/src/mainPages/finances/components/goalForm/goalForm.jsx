@@ -1,8 +1,8 @@
-// GoalForm.js
+
 import React, { useState } from 'react';
 import { Form, Input, Button, message } from 'antd';
-import GoalDate from '../goalDate/goalDate'; // Asegúrate de tener el componente GoalDate
-import './goalForm.css'; // Importamos el CSS
+import GoalDate from '../goalDate/goalDate';
+import './goalForm.css';
 
 const GoalForm = ({ onSubmit }) => {
   const [name, setName] = useState('');
@@ -11,22 +11,20 @@ const GoalForm = ({ onSubmit }) => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
 
-  // Calcular el ahorro semanal solo cuando se crea la meta
   const calculateWeeklySavings = (startDate, endDate, goalValue) => {
     if (startDate && endDate && goalValue) {
       const start = new Date(startDate);
       const end = new Date(endDate);
-      const timeDifference = end - start;  // Diferencia de tiempo en milisegundos
-      const daysInWeeks = 7;  // Número de días por semana
-      const weeks = Math.ceil(timeDifference / (1000 * 3600 * 24 * daysInWeeks));  // Convertir días a semanas
-      const weeklySavings = goalValue / weeks;  // Calcular cuánto debe ahorrar por semana
+      const timeDifference = end - start;
+      const daysInWeeks = 7;
+      const weeks = Math.ceil(timeDifference / (1000 * 3600 * 24 * daysInWeeks));
+      const weeklySavings = goalValue / weeks;
       return weeklySavings;
     }
     return 0;
   };
 
   const handleFormSubmit = () => {
-    // Calcular weeklySavings solo cuando se crea la meta, no al añadir dinero
     const weeklySavings = calculateWeeklySavings(startDate, endDate, value);
 
     const goalData = {
@@ -37,10 +35,10 @@ const GoalForm = ({ onSubmit }) => {
       endDate,
       totalContributed: 0,
       remaining: value,
-      weeklySavings: weeklySavings // Agregar weekly savings a la meta
+      weeklySavings: weeklySavings
     };
 
-    onSubmit(goalData);  // Enviamos los datos al componente principal
+    onSubmit(goalData);
 
     message.success('Goal saved!');
   };
@@ -81,7 +79,7 @@ const GoalForm = ({ onSubmit }) => {
         <GoalDate setStartDate={setStartDate} setEndDate={setEndDate} />
 
         <section>
-        <Button type="primary" htmlType="submit" className="submit-button">Save Goal</Button>
+        <Button type="primary" htmlType="submit" className="submittt-button">Save Goal</Button>
         </section>
       </Form>
     </section>
