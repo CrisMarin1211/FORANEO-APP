@@ -1,5 +1,4 @@
-// GoalInfo.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, Modal, Input } from 'antd';
 import { useDispatch } from 'react-redux';
 import { setGoal, removeGoal } from '../../../../redux/finances/financesSlice';
@@ -16,17 +15,10 @@ const GoalInfo = ({ goal, onRemove }) => {
   };
 
   const handleEditGoal = async () => {
-    // Actualizar la meta en Redux
     dispatch(setGoal({ goal: editedGoal }));
 
-    // Actualizar la meta en Firestore
     await updateGoalInFirestore(editedGoal);
 
-    // Cerrar el modal
-    setIsModalVisible(false);
-  };
-
-  const handleCancelEdit = () => {
     setIsModalVisible(false);
   };
 
@@ -39,41 +31,41 @@ const GoalInfo = ({ goal, onRemove }) => {
   };
 
   const handleDeleteGoal = async () => {
-    // Eliminar la meta en Redux
     dispatch(removeGoal());
 
-    // Eliminar la meta en Firestore
     await removeGoalFromFirestore();
   };
 
   const remaining = goal ? (goal.value - (goal.totalContributed || 0)) : 0;
 
-  // Cálculo de ahorro semanal
-
-
   return (
     <section className="goal-container">
       <h3>{goal.name}</h3>
-      <p>Goal Amount: ${goal.value}</p>
-      <p>Remaining: ${remaining.toFixed(2)}</p>
-      <p>Start Date: {new Date(goal.startDate).toLocaleDateString()}</p>
-      <p>End Date: {new Date(goal.endDate).toLocaleDateString()}</p>
-      <p>Details: {goal.details}</p>
-      <p>Amount Added: ${goal.totalContributed}</p>
+      <h4>💰Amount: ${goal.value}</h4>
+      <p><strong>📥Remaining:</strong> ${remaining.toFixed(2)}</p>
+      <p><strong>Start Date:</strong> {new Date(goal.startDate).toLocaleDateString()}</p>
+      <p><strong>End Date:</strong> {new Date(goal.endDate).toLocaleDateString()}</p>
+      <p><strong>Details:</strong> {goal.details}</p>
+      <p><strong>📈Amount Added:</strong> ${goal.totalContributed}</p>
 
       <section className="goal-actions">
-        <Button onClick={handleEditClick} type="primary" style={{ marginRight: '1rem' }}>Edit Goal</Button>
-        <Button onClick={handleDeleteGoal} type="danger" style={{ backgroundColor: '#ffb0b0' }} >Delete Goal</Button>
+        <Button onClick={handleEditClick} className='editGoalButton' type="primary" style={{ marginRight: '1rem' }}>Edit Goal</Button>
+        <Button onClick={handleDeleteGoal} type="danger" className='deletegoalButton' >Delete Goal</Button>
       </section>
 
-      {/* Modal para editar la meta */}
       <Modal
+        className="edit-goal-modal"
         title="Edit Goal"
         visible={isModalVisible}
         onOk={handleEditGoal}
-        onCancel={handleCancelEdit}
+        onCancel={() => setIsModalVisible(false)} // Cierra el modal cuando se hace clic en la X
+        footer={[
+          <Button key="ok" type="primary" onClick={handleEditGoal}>
+            OK
+          </Button>
+        ]}
       >
-        <div>
+        <section>
           <label>Name: </label>
           <Input
             name="name"
@@ -81,8 +73,8 @@ const GoalInfo = ({ goal, onRemove }) => {
             onChange={handleInputChange}
             placeholder="Goal name"
           />
-        </div>
-        <div>
+        </section>
+        <section>
           <label>Value: </label>
           <Input
             name="value"
@@ -91,8 +83,8 @@ const GoalInfo = ({ goal, onRemove }) => {
             onChange={handleInputChange}
             placeholder="Goal value"
           />
-        </div>
-        <div>
+        </section>
+        <section>
           <label>Start Date: </label>
           <Input
             name="startDate"
@@ -100,8 +92,8 @@ const GoalInfo = ({ goal, onRemove }) => {
             value={editedGoal.startDate}
             onChange={handleInputChange}
           />
-        </div>
-        <div>
+        </section>
+        <section>
           <label>End Date: </label>
           <Input
             name="endDate"
@@ -109,8 +101,8 @@ const GoalInfo = ({ goal, onRemove }) => {
             value={editedGoal.endDate}
             onChange={handleInputChange}
           />
-        </div>
-        <div>
+        </section>
+        <section>
           <label>Details: </label>
           <Input
             name="details"
@@ -118,7 +110,7 @@ const GoalInfo = ({ goal, onRemove }) => {
             onChange={handleInputChange}
             placeholder="Goal details"
           />
-        </div>
+        </section>
       </Modal>
     </section>
   );
