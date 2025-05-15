@@ -13,6 +13,11 @@
 	color: #333;
 }
 
+.calendarSpan{
+	font-size: 20px;
+	margin: 20px;
+}
+
 .calendar-controls {
 	display: flex;
 	gap: 10px;
@@ -25,7 +30,9 @@
 .calendar-controls button {
 	background-color: #79cfd9;
 	border: none;
+	width: 80px;
 	padding: 8px 14px;
+	margin: 0;
 	cursor: pointer;
 	font-size: 16px;
 	border-radius: 5px;
@@ -73,6 +80,16 @@
 	font-weight: bold;
 	margin-top: 6px;
 	text-align: center;
+}
+
+.calendar-controls{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	justify-items: center;
+	width: 380px;
 }
 
 @media (max-width: 480px) {
