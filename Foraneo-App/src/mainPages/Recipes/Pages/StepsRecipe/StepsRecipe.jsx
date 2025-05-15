@@ -36,7 +36,7 @@ function StepsRecipe() {
     setIngredientPrices(storedPrices);
   }, [day, mealTime, recipeName]);
 
-  if (!recipe) return <div>Loading...</div>;
+  if (!recipe) return <section>Loading...</section>;
 
   const handleGoBack = () => {
     navigate("/weeklyplan");

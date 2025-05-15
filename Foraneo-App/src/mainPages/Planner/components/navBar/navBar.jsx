@@ -26,13 +26,13 @@ const Menu = () => {
         }
 
         const db = getFirestore();
-        // Suponiendo que la info está en users/{uid} y campo weeklyPlan (boolean)
+        
         const userDocRef = doc(db, "users", user.uid);
         const userDocSnap = await getDoc(userDocRef);
 
         if (userDocSnap.exists()) {
           const data = userDocSnap.data();
-          setHasWeeklyPlan(!!data.weeklyPlan); // si tienes campo booleano weeklyPlan
+          setHasWeeklyPlan(!!data.weeklyPlan);
         } else {
           setHasWeeklyPlan(false);
         }
@@ -48,7 +48,6 @@ const Menu = () => {
   }, []);
 
   if (loading) {
-    // Opcional: mientras carga puedes mostrar algo o nada
     return null;
   }
 

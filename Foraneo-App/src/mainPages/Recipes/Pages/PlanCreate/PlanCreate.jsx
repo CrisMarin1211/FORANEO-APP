@@ -141,7 +141,7 @@ function PlanCreate() {
   };
 
   if (loadingRecipes) {
-    return <div>Cargando recetas...</div>;
+    return <section>Cargando recetas...</section>;
   }
 
   return (
@@ -163,7 +163,7 @@ function PlanCreate() {
       <ButtonCreatePlan onClick={handleCreatePlan} />
 
       <section className="spaccceiwi">
-        
+
       </section>
       <section className="menusectionplan">
 

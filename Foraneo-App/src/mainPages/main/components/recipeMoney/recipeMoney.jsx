@@ -2,7 +2,6 @@ import React from 'react';
 import './recipeMoney.css';
 
 const RecipesMoney = ({ savings, totalIngredientCost }) => {
-  // If no savings or recipes, show the 'no recipes' message
   if (savings <= 0) {
     return (
       <section className='RecipeMoney'>

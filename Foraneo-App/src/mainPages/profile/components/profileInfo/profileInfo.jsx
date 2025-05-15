@@ -13,7 +13,6 @@ const ProfileInfo = () => {
 
       if (data) {
         setUserInfo(data);
-        // Aquí extraemos completedRecipes si vienen en el doc:
         setCompletedRecipes(data.completedRecipes || []);
       }
 
@@ -60,10 +59,10 @@ const ProfileInfo = () => {
 <h3>Finished Recipes</h3>
 <section className="finished-recipes">
   {completedRecipes.length > 0 ? (
-    <div className="cards-container">
+    <section className="cards-container">
       {completedRecipes.map((recipe, index) => (
-        <div key={index} className="recipe-card">
-        
+        <section key={index} className="recipe-card">
+
           {recipe.image && (
             <img
               src={recipe.image}
@@ -78,9 +77,9 @@ const ProfileInfo = () => {
 
 
           {recipe.description && <p className="recipe-description">{recipe.description}</p>}
-        </div>
+        </section>
       ))}
-    </div>
+    </section>
   ) : (
     <p>No finished recipes yet.</p>
   )}

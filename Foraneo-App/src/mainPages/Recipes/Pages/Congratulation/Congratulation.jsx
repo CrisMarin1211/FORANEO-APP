@@ -20,7 +20,7 @@ function Congratulation() {
   }, []);
 
   if (!completedRecipes || completedRecipes.length === 0) {
-    return <div>Loading...</div>; // Mientras se carga o no hay recetas completadas
+    return <section>Loading...</section>; // Mientras se carga o no hay recetas completadas
   }
 
   // Mostrar la receta más reciente completada

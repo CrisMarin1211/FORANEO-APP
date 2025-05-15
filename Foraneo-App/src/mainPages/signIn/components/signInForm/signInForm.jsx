@@ -24,24 +24,20 @@ const Register = () => {
 
 const onFinish = async (values) => {
   try {
-    // Verificar que el correo y la contraseña sean válidos
     if (!values.email || !values.password || !values.confirm) {
       message.error("Email, password, and confirm password are required!");
       return;
     }
 
-    // Crea el usuario con email y password
     const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
     const user = userCredential.user;
 
-    // Guarda los datos adicionales en Firestore
     await setDoc(doc(db, 'users', user.uid), {
       name: values.name,
       email: values.email,
       currency: values.currency
     });
 
-    // Guardar la información del usuario en el localStorage
     localStorage.setItem('user', JSON.stringify({
       uid: user.uid,
       email: user.email,
@@ -49,11 +45,9 @@ const onFinish = async (values) => {
       currency: values.currency
     }));
 
-    // Enviar un mensaje de éxito y navegar al dashboard
     message.success('Registration successful!');
     navigate('/main');
   } catch (error) {
-    // Manejo de errores
     console.error("Error during registration:", error);
     message.error("Error during registration: " + error.message);
   }
@@ -132,8 +126,8 @@ const onFinish = async (values) => {
         </Form.Item>
       </Form>
 
-      <p style={{ textAlign: 'center' }}>
-        Already have an account? <Link to="/login">Log in</Link>
+      <p className='plogin' style={{ textAlign: 'center' }}>
+        Already have an account? <Link className='linkLogin' to="/login">Log in</Link>
       </p>
     </section>
   );

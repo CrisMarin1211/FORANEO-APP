@@ -12,7 +12,7 @@ import './RecipeDetail.css';
 function RecipeDetail() {
   const { day, mealTime, recipeName } = useParams();
   const [recipe, setRecipe] = useState(null);
-  const [showPriceInput, setShowPriceInput] = useState(false); // Estado para mostrar los inputs
+  const [showPriceInput, setShowPriceInput] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,7 +31,7 @@ function RecipeDetail() {
     }
   }, [day, mealTime, recipeName]);
 
-  if (!recipe) return <div>Loading...</div>;
+  if (!recipe) return <section>Loading...</section>;
 
   const handleGoBack = () => {
     navigate('/weeklyplan');
