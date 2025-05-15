@@ -1,11 +1,21 @@
-/* GoalDate.css */
-/* GoalDate.css */
-.ant-picker {
-  width: 100%;  /* Aseguramos que el calendario ocupe el 100% del contenedor */
-  margin-bottom: 20px; /* Espacio abajo del calendario */
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
+
+
+:where(.css-dev-only-do-not-override-1d4w9r2).ant-picker-dropdown .ant-picker-header >button {
+    width: 20px;
+    min-width: 1.6em;
+    font-size: 14px;
 }
 
+:where(.css-dev-only-do-not-override-1d4w9r2).ant-picker-dropdown .ant-picker-header-view >button {
+    color: inherit;
+    font-weight: inherit;
+    vertical-align: top;
+    height: 10px;
+}
+
+:where(.css-dev-only-do-not-override-1d4w9r2).ant-picker-dropdown .ant-picker-header-view >button:not(:first-child) {
+    margin-inline-start: 8px;
+    width: 10px;
+
+    margin: 10px;
+}
