@@ -59,27 +59,3 @@
 	margin: 20px 0;
 	padding: 0 15px;
 }
-
-/*
-@media (max-width: 767px) {
-	.Cards-Plans {
-		width: 280px;
-		height: 230px;
-	}
-}
-
-@media (max-width: 480px) {
-	.Cards-Plans {
-		width: 250px;
-		height: 200px;
-	}
-
-	.Card-day {
-		font-size: 18px;
-		padding: 12px 0;
-	}
-
-	.plan-header {
-		padding: 0 10px;
-	}
-} */
