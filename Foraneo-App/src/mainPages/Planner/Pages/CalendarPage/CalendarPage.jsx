@@ -13,12 +13,14 @@ const CalendarPage = () => {
 	};
 	return (
 		<>
-			<Menu />
 			<section className='calendar-back-container'>
+
 				<button className='back-button' onClick={handlerBackClick}>
 					<FontAwesomeIcon icon={faChevronLeft} className='icon-arrow' />
+					<h2 className='calendar-title'>Mood Tracker</h2>
 				</button>
 			</section>
+			<Menu />
 			<Calendar />
 		</>
 	);
