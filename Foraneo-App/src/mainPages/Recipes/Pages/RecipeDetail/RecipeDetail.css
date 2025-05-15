@@ -146,3 +146,14 @@ button:disabled {
 .lets-eat-button:hover {
   background-color: #006f8a;
 }
+
+.sapaceiwi{
+  height: 140px;
+}
+
+.ingredient-price-inputSection{
+  justify-self: center;
+  align-self: center;
+
+
+}

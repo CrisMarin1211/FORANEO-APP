@@ -129,7 +129,7 @@ const Finances = () => {
         />
       </section>
 
-      <section className='spaceiwi'>
+      <section className='spaceiwwi'>
         </section>
 
       <Menu></Menu>

@@ -1,89 +1,106 @@
 .menu {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	width: 100vw;
-	position: fixed;
-	background-color: #02565f;
-	padding: 15px 0;
-	z-index: 1000;
-	border-top-left-radius: 30px;
-	border-top-right-radius: 30px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 96px; /* igual que el alto del SVG */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: transparent; /* fondo transparente para que se vea el SVG */
+  z-index: 1000;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  overflow: visible; /* para que el SVG no se recorte */
 }
 
+/* El SVG de fondo, se posiciona detrás */
+.menu-bg-svg {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  pointer-events: none; /* para que no interfiera con clicks */
+  user-select: none;
+  width: 393px; /* tamaño original o ajusta para responsividad */
+  height: 96px;
+}
+
+/* Asegúrate que los botones estén en front */
+.menu > a,
+.menu .main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mantén tus estilos de botones, ej: */
 .btn {
-	background: transparent;
-	border: none;
-	padding: 10px 15px;
-	border-radius: 8px;
-	font-size: 16px;
-	cursor: pointer;
-	transition: 0.3s;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
 .btn svg {
-	fill: white;
-	width: 20px;
-	height: 20px;
+  fill: white;
+  width: 30px;   /* Aumentado de 20px a 32px */
+  height: 30px;  /* Aumentado de 20px a 32px */
 }
 
 .btn:hover {
-	background: rgba(255, 255, 255, 0.2);
-	border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
 }
 
-.home-container {
-	position: relative;
-	width: 60px;
-	height: 0;
+/* Estilos para el botón home (central) */
+.main {
+  position: relative;
+  z-index: 1;
 }
 
 .home {
-	background-color: rgb(34, 158, 127);
-	border-radius: 50%;
-	width: 50px;
-	height: 50px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-weight: bold;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgb(34, 158, 127);
+  border-radius: 50%;
+  width: 60px;  /* Aumentado de 60px a 70px */
+  height: 60px; /* Aumentado de 60px a 70px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 100px;
 }
 
 .home svg {
-	fill: white;
-	width: 35px;
-	height: 35px;
+  fill: white;
+  width: 45px;  /* Aumentado de 35px a 45px */
+  height: 45px; /* Aumentado de 35px a 45px */
 }
 
 @media (min-width: 768px) {
-	.menu {
-		top: 0;
-		bottom: auto;
-		height: 60px;
-		clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 48% 80%, 52% 80%, 50% 100%, 0 100%);
-	}
-
-	.home {
-		top: -27px;
-	}
+  .menu {
+    height: 96px;
+  }
+  .menu-bg-svg {
+    width: 393px;
+    height: 96px;
+  }
 }
 
 @media (max-width: 767px) {
-	.menu {
-		bottom: 0;
-		top: auto;
-		height: 70px;
-		clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 48% 120%, 52% 120%, 50% 100%, 0 100%);
-	}
-
-	.home {
-		bottom: 10px;
-	}
+  .menu {
+    height: 96px;
+  }
+  .menu-bg-svg {
+    width: 100%;
+    height: auto;
+  }
 }

@@ -4,6 +4,9 @@ import ImageEmotions from '../../Components/3.CongratsPlan/ImageEmotions/ImageEm
 import UnlockedMessage from '../../Components/3.CongratsPlan/UnlockedMessage/UnlockedMessage';
 import MealPlanPhrase from '../../Components/3.CongratsPlan/MealPlanPhrase/MealPlanPhrase';
 import NameRecipe from '../../Components/3.CongratsPlan/NameRecipe/NameRecipe';
+import './Congratulation.css'
+import Menu from '../../../Planner/components/navBar/navBar';
+import { Button } from 'antd';
 
 function Congratulation() {
   const [completedRecipes, setCompletedRecipes] = useState(null);
@@ -24,14 +27,19 @@ function Congratulation() {
   const recentRecipe = completedRecipes[completedRecipes.length - 1];
 
   return (
-    <section>
+    <section className='CongratsContainerPage '>
       <TitleCongrats />
       <ImageEmotions />
-      {/* Mostrar el mensaje de receta desbloqueada */}
+
+      <section className='unlockedmessageee'>
       <UnlockedMessage recipeName={recentRecipe.name} />
       <MealPlanPhrase />
-      {/* Mostrar el nombre de la receta y la imagen */}
+      </section>
+
       <NameRecipe recipeName={recentRecipe.name} recipeImage={recentRecipe.image} />
+      <section className='spaceesp'></section>
+      <Menu></Menu>
+
     </section>
   );
 }

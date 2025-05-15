@@ -4,6 +4,7 @@ import { Button } from 'antd';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../services/firebaseConfig';
 import Menu from '../Planner/components/navBar/navBar';
+import './profilePage.css'
 
 const Profile = () => {
 
@@ -23,11 +24,11 @@ const Profile = () => {
 
   return (
     <section className='ProfileContainerPage'>
-      <h1>Profile</h1>
+
       <ProfileInfo></ProfileInfo>
 
-      <Button onClick={handleLogout}>CERRAR SESION</Button>
-
+      <Button className='logoout' onClick={handleLogout}>LOG OUT</Button>
+      <section className='spacesp'></section>
       <Menu></Menu>
     </section>
   );

@@ -11,7 +11,7 @@ function CardsUnlocked({ recipe, onAddRecipe }) {
           <li key={index}>{ingredient}</li>
         ))}
       </ul>
-      <button onClick={() => onAddRecipe(recipe)}>+ Add</button>
+      <button className='buttonAdd1' onClick={() => onAddRecipe(recipe)}>+ Add</button>
     </section>
   );
 }

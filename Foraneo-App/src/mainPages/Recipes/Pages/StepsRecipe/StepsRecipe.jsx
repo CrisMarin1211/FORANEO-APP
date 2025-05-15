@@ -90,15 +90,16 @@ function StepsRecipe() {
       />
       <IngredientsRecipes ingredients={recipe.ingredients} />
 
-
+      <section className="stepscont">
       <Steps steps={recipe.steps} />
+      </section>
 
 
       <button className="finish-button" onClick={handleFinish}>
         Finish
       </button>
 
-      <section className="spaceiwi"></section>
+      <section className="sspaceiwi"></section>
       <section className="menuconnttainer">
         <Menu />
       </section>

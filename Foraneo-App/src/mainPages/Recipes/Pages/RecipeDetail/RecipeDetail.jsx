@@ -41,32 +41,37 @@ function RecipeDetail() {
     setShowPriceInput(true); // Mostrar los inputs cuando se haga clic en "Let's Cook"
   };
 
-  return (
-    <section>
-      <ChevronLeft className='button-chevro2' onClick={handleGoBack} />
 
-      <TitleMealTime mealTime={mealTime} />
-      <CardImageRecipes name={recipe.name} image={recipe.image} description={recipe.description} />
-      <IngredientsRecipes ingredients={recipe.ingredients} />
 
-      <ButtonLetsCook onClick={handleLetsCookClick} />
+return (
+  <section>
+    <ChevronLeft className='button-chevro2' onClick={handleGoBack} />
 
-      {/* Mostrar el componente de precios solo cuando se haya hecho clic en el botón */}
-      {showPriceInput && (
-        <IngredientPriceInput
-          ingredients={recipe.ingredients}
-          day={day}
-          mealTime={mealTime}
-          recipeName={recipeName}
-        />
-      )}
+    <TitleMealTime mealTime={mealTime} />
+    <CardImageRecipes name={recipe.name} image={recipe.image} description={recipe.description} />
+    <IngredientsRecipes ingredients={recipe.ingredients} />
 
-      <section className='spaceiwi'></section>
-      <section className='menuconnttainer'>
-        <Menu />
+    {/* Mostrar el botón solo si showPriceInput es falso */}
+    {!showPriceInput && <ButtonLetsCook onClick={handleLetsCookClick} />}
+
+    {showPriceInput && (
+      <section className='ingredient-price-inputSection'>
+      <IngredientPriceInput
+        ingredients={recipe.ingredients}
+        day={day}
+        mealTime={mealTime}
+        recipeName={recipeName}
+      />
       </section>
+    )}
+
+    <section className='sapaceiwi'></section>
+    <section className='menuconnttainer'>
+      <Menu />
     </section>
-  );
+  </section>
+);
+
 }
 
 export default RecipeDetail;

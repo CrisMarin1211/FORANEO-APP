@@ -36,7 +36,7 @@ function WeeklyPlan() {
     return new Date().toLocaleDateString("en-US", options);
   };
 
-  
+
   useEffect(() => {
     const fetchPlan = async () => {
       if (!plans || plans.length === 0) {
@@ -123,7 +123,7 @@ function WeeklyPlan() {
         </p>
       )}
 
-      <section className="spaceiwi"></section>
+      <section className="spaceeiwi"></section>
 
       <Menu style={{ marginleft: "200px" }} className="menucontainerr"></Menu>
     </section>

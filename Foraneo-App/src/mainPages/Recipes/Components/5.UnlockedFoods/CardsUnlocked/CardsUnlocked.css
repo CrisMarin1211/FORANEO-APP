@@ -3,7 +3,7 @@
 	border: 2px dashed #4aafbc; /* Línea de borde punteada */
 	border-radius: 12px;
 	padding: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 60px;
 	max-width: 450px;
 	position: relative;
 	color: black;
@@ -35,7 +35,7 @@
 	line-height: 1.6;
 }
 
-button {
+.buttonAdd1 {
 	background-color: #4aafbc;
 	color: white;
 	border: none;
@@ -44,6 +44,9 @@ button {
 	font-size: 16px;
 	cursor: pointer;
 	transition: background-color 0.3s;
+	width: 200px;
+	align-self: center;
+	justify-self: center;
 }
 
 button:hover {

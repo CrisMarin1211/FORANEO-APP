@@ -161,7 +161,12 @@ function PlanCreate() {
         setSelectedDays={setSelectedDays}
       />
       <ButtonCreatePlan onClick={handleCreatePlan} />
+
+      <section className="spaccceiwi">
+        
+      </section>
       <section className="menusectionplan">
+
         <Menu />
       </section>
     </section>

@@ -7,7 +7,7 @@ import { auth, db } from "../../../../../services/firebaseConfig";
 function IngredientPriceInput({ ingredients, day, mealTime, recipeName }) {
   const [ingredientPrices, setIngredientPrices] = useState(
     ingredients.reduce((acc, ingredient) => {
-      acc[ingredient] = ""; 
+      acc[ingredient] = "";
       return acc;
     }, {})
   );
@@ -90,7 +90,7 @@ function IngredientPriceInput({ ingredients, day, mealTime, recipeName }) {
           type="text"
           value={newIngredient}
           onChange={(e) => setNewIngredient(e.target.value)}
-          placeholder="Ingredient name"
+          placeholder="Ingredient"
         />
         <input
           type="number"

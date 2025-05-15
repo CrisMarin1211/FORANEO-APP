@@ -13,6 +13,16 @@
 	font-size: 24px;
 	color: #000000;
 	margin: 0;
-	padding: 60px;
+	margin-bottom: 40px;
 	text-align: center;
+}
+
+.recipe-image{
+	width: 70%;
+	height: 70%;
+	justify-self: center;
+	align-self: center;
+	display: flex;
+	border-radius: 20px;
+
 }
