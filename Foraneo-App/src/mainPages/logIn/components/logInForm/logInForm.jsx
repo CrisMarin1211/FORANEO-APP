@@ -23,7 +23,7 @@ const LogInForm = ({ onFinish, onFinishFailed }) => {
       }
 
 
-      onFinish(user); 
+      onFinish(user);
     } catch (error) {
       console.error('Error durante el login:', error);
       message.error(`Login failed: ${error.message}`);
@@ -56,10 +56,6 @@ const LogInForm = ({ onFinish, onFinishFailed }) => {
         rules={[{ required: true, message: 'Please input your password!' }]}
       >
         <Input.Password />
-      </Form.Item>
-
-      <Form.Item name="remember" valuePropName="checked">
-        <Checkbox>Remember me</Checkbox>
       </Form.Item>
 
       <Form.Item>

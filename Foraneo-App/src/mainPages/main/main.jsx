@@ -31,7 +31,6 @@ const Main = () => {
     fetchUserDataAndRecipes();
   }, []);
 
-  // Call the function that calculates savings
   const { totalIngredientCost, savings } = calculateRecipeSavings(completedRecipes);
 
   return (
