@@ -1,4 +1,3 @@
-// ShowMoney.jsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PlusOutlined, ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
@@ -8,10 +7,8 @@ import './showMoney.css';
 const ShowMoney = ({ selectedMonth }) => {
   const navigate = useNavigate();
 
-  // Obtener los valores del estado de Redux
   const { totalAvailable, expenses, incomes } = useSelector((state) => state.finances);
 
-  // Filtrar ingresos y gastos por el mes seleccionado
   const filteredExpenses = expenses.filter((item) => {
     const itemDate = new Date(item.date);
     const itemMonth = itemDate.getMonth();
@@ -34,7 +31,6 @@ const ShowMoney = ({ selectedMonth }) => {
   const balance = validTotalIncomes - validTotalExpenses;
   const balanceClass = balance === 0 ? 'balance-zero' : 'balance-positive';
 
-  // Fondo rojo si totalAvailable es 0 o negativo
   const totalAvailableClass = totalAvailable <= 0 ? 'balance-zero' : 'balance-positive';
 
   return (

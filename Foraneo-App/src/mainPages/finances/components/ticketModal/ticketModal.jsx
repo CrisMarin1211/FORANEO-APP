@@ -1,7 +1,6 @@
 import React from 'react';
 import './ticketModal.css';
 
-// Íconos Lucide
 import {
   Banknote, ChartNoAxesCombined, BriefcaseBusiness, MoreHorizontal, Utensils, Bus,
   PartyPopper, BookOpenCheck, User, Gamepad2, Heart, BanknoteArrowDown,

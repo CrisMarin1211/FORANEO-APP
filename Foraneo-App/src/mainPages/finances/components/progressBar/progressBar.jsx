@@ -1,34 +1,33 @@
-// ProgressBar.jsx
 import React from "react";
 import { Progress } from "antd";
 import "./progressBar.css";
 
 const twoColors = {
-  "0%": "#79CFD9",
+  "0%": "#6E6AD3",
   "100%": "#CEA8FC",
 };
 
 const ProgressBar = ({ goal, percent }) => {
-  // Limitar el porcentaje a dos decimales
-  const roundedPercent = parseFloat(percent.toFixed(2));  // Redondeamos a 2 decimales
 
-  const raisedAmount = Math.round((roundedPercent / 100) * goal.value); // Recalcular el monto recaudado
+  const roundedPercent = parseFloat(percent.toFixed(2));
+
+  const raisedAmount = goal.totalContributed || 0;
 
   return (
     <section className="progressBarContainer">
       <section
         className="floatingNumber"
         style={{
-          left: `min(90%, max(10%, ${roundedPercent}%))`, // Mueve la burbuja en función del porcentaje redondeado
-          transform: "translateX(-50%)",  // Ajuste para centrar la burbuja
+          left: `min(90%, max(10%, ${roundedPercent}%))`,
+          transform: "translateX(-50%)",
         }}
       >
-        ${raisedAmount.toLocaleString()} {/* Muestra la cantidad recaudada */}
+        ${raisedAmount.toLocaleString()}
       </section>
 
       <Progress
         className="progressbar"
-        percent={roundedPercent}  // Usamos el porcentaje redondeado
+        percent={roundedPercent} 
         percentPosition={{ align: "end", type: "inner", justify: "center" }}
         strokeColor={twoColors}
         size={[390, 40]}
