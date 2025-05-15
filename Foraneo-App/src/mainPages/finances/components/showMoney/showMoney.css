@@ -133,16 +133,11 @@ p {
   margin-right: 20px;
 }
 
-/* showMoney.css */
-
-/* Fondo rojo cuando el totalAvailable es negativo o cero */
 .balance-zero {
-  background-color: #f9b6b6; /* Fondo rojo */
-  color: rgb(0, 0, 0); /* Para que el texto sea legible */
+  background-color: #f9b6b6;
+  color: rgb(0, 0, 0);
 }
 
 .balance-positive {
-  background-color: #96debd; /* Fondo verde claro para positivo */
+  background-color: #96debd; 
 }
-
-/* Otros estilos siguen igual */

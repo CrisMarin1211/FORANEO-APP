@@ -5,6 +5,13 @@
 	cursor: pointer;
 	transition: color 0.2s;
 	font-weight: bold;
+	display: flex;
+	flex-direction: row;
+}
+
+.calendar-title{
+	margin-left: 60px;
+
 }
 
 .calendar-back-container {
