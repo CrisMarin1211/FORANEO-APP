@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { WelcomeView, PlanCreateView, WeeklyPlanView, EditRecipeView, UnlockedRecipesView, RecipeDetailView, CongratulationView } from '../mainPages/export';
-import { SignInView, LogInView, MainView, FinancesView, AddView, EmotionTrackerView, CalendarPageView, ToDoPageView, ProfileView, StepsRecipeView } from '../mainPages/export';
-import ProtectedRoute from '../mainPages/ProtectedRoute.jsX';
+import { SignInView, LogInView, MainView, FinancesView, AddView, EtmotionTrackerView, CalendarPageView, ToDoPageView, ProfileView, StepsRecipeView } from '../mainPages/export';
+import ProtectedRoute from '../mainPages/ProtectedRoute.jsx';
 
 
 
