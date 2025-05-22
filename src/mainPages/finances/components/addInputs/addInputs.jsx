@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Input } from 'antd';
-import './AddInputs.css';
+import './addInputs.css';
 
 const { TextArea } = Input;
 
@@ -22,7 +22,7 @@ const AddInputs = ({ setName, setDetails, name, details }) => {
         onChange={(e) => setDetails(e.target.value)}
         placeholder="Enter Details"
         autoSize={{ minRows: 3, maxRows: 5 }}
-        className="text-area-style" 
+        className="text-area-style"
       />
     </section>
   );
