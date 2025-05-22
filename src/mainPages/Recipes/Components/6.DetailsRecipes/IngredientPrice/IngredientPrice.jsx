@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./IngredientPrice.css";
+import "./ingredientPrice.css";
 import { updateDoc, doc, arrayUnion } from "firebase/firestore";
 import { auth, db } from "../../../../../services/firebaseConfig";
 
