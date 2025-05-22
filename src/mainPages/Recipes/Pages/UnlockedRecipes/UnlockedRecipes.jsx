@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import TitleEditBLD from "../../Components/5.UnlockedFoods/TitleEditBLD/TitleEditBLD";
 import "./UnlockedRecipes.css";
 import { useParams, useNavigate } from "react-router-dom";
-import CardsEditRecipes from "../../Components/4.MyEditRecipe/CardsEditRecipes/CardsEditRecipes.JSX";
+import CardsEditRecipes from "../../Components/4.MyEditRecipe/CardsEditRecipes/CardsEditRecipes";
 import TitleUnlockedFoods from "../../Components/5.UnlockedFoods/TitleUnlockedFoods/TitleUnlockedFoods";
 import { ChevronLeft } from "lucide-react";
 import Menu from "../../../Planner/components/navBar/navBar";
@@ -21,7 +21,7 @@ function UnlockedRecipes() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    
+
     const storedPlans = JSON.parse(localStorage.getItem("weeklyPlan"));
     if (storedPlans) {
       const selectedDayPlan = storedPlans.find((plan) => plan.day === day);
