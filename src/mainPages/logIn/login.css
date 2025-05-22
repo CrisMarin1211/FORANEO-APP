@@ -1,0 +1,124 @@
+/* Estilo general para la sección de login */
+.login {
+  width: 100%;
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.275);
+  text-align: center;
+
+}
+
+
+.ContainerLoginn{
+  align-self: center;
+  justify-self: center;
+  height: 800px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+
+.welcomeMessageLogin {
+  color: #1192a6; /* Color del texto de bienvenida */
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  width: 320px;
+  text-align: center;
+}
+
+
+.welcomeMessageLogin1{
+    color: #006a7a;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin: 0;
+  width: 320px;
+  text-align: center;
+}
+/* Estilo para el formulario */
+.ant-form {
+  width: 100%;
+}
+
+/* Estilo para los campos de input */
+.ant-input {
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.ant-input-password{
+    border-radius: 8px;
+  padding: 4px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+
+}
+
+.ant-input:focus, .ant-input-password:focus {
+  border-color: #1192a6;
+  box-shadow: 0 0 0 2px rgba(17, 146, 166, 0.2);
+}
+
+.ant-btn-primary {
+  background-color: #1192a6;
+  border-color: #1192a6;
+  border-radius: 20px;
+  padding: 10px 0;
+  width: 70%;
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.ant-btn-primary:hover {
+  background-color: #ff5722;
+  border-color: #ff5722;
+}
+
+.plogin {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.linkLogin {
+  color: #1192a6;
+  text-decoration: none;
+}
+
+.linkLogin:hover {
+  text-decoration: underline;
+}
+
+.ant-checkbox-wrapper {
+  font-size: 14px;
+  color: #333;
+}
+
+button > .ant-btn {
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+button > .ant-btn:hover {
+  background-color: #eeeeee;
+  border-color: #ccc;
+}

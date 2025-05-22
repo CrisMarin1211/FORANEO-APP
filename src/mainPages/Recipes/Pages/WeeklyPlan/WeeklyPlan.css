@@ -1,0 +1,18 @@
+.plan-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-left: 25px;
+	width: 390px;
+	max-width: 100%;
+}
+
+.spaceeiwi{
+  height: 150px;
+}
+
+.menucontainerr{
+	background-color: red ;
+	margin-right: 290px;
+	margin-left: 200px;
+}

@@ -1,0 +1,174 @@
+.button-chevro2 {
+  background: none;
+  border: none;
+  margin-top: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #02565f;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.button-chevro2:hover {
+  color: #00a0b2;
+  transform: scale(1.5);
+}
+
+.button-chevro2 {
+  color: black;
+  margin-top: 30px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.menuconnttainer {
+  left: 0;
+  margin-right: 430px;
+}
+
+.spaceiwi {
+  height: 150px;
+}
+
+.ingredient-price-input {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h4 {
+  font-size: 18px;
+  color: #333333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.ingredients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ingredient-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ingredient-item label {
+  font-size: 16px;
+  color: #555555;
+}
+
+.ingredient-item input {
+  padding: 10px;
+  font-size: 14px;
+  width: 100px;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.ingredient-item input:focus {
+  border-color: #0081a7;
+}
+
+.other-ingredient {
+  font-size: 14px;
+  color: #0081a7;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0081a7;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #006f8a;
+}
+
+button:disabled {
+  background-color: #d0d0d0;
+  cursor: not-allowed;
+}
+
+.steps-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.steps-container h4 {
+  font-size: 18px;
+  color: #333333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.steps-container ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+.steps-container ol li {
+  font-size: 16px;
+  color: #555555;
+  margin-bottom: 10px;
+}
+
+.lets-eat-button {
+  background-color: #0081a7;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.lets-eat-button:hover {
+  background-color: #006f8a;
+}
+
+
+.stepscont{
+  align-self: center;
+  justify-self: center;
+}
+
+.sspaceiwi{
+  height: 165px;
+}
+
+.finish-button {
+  display: flex;
+  flex-direction: column;
+  background-color: #1d9cc2;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 150px;
+  align-self: center;
+  justify-self: center;
+}

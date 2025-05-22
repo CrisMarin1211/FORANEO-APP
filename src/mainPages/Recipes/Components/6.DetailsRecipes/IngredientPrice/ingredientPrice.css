@@ -1,0 +1,93 @@
+.ingredient-price-input {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+h4 {
+  font-size: 18px;
+  color: #333333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.ingredients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ingredient-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.ingredient-item label {
+  font-size: 16px;
+  color: #555555;
+}
+
+.ingredient-item input {
+  color: #333333;
+  padding: 10px;
+  font-size: 14px;
+  width: 10PX;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  outline: none;
+  transition: border 0.3s ease;
+  background-color: #d0d0d0;
+}
+
+.ingredient-item input:focus {
+  border-color: #0081a7;
+}
+
+.other-ingredient {
+  font-size: 14px;
+  color: #0081a7;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0081a7;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #006f8a;
+}
+
+button:disabled {
+  background-color: #688fa8;
+  cursor: not-allowed;
+  border-radius: 20px;
+}
+
+.buttonconfirmm{
+  background-color: #006f8a;
+  border-radius: 20px;
+}
+
+.buttonAddIngredient{
+  align-self: center;
+  justify-self: center;
+  width: 180px;
+  margin-bottom: 30px;
+}
