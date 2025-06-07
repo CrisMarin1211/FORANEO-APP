@@ -1,9 +1,57 @@
-.tittlesteps{
+/* Título de los pasos */
+.tittlesteps {
   font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
-.S{
+/* Contenedor de la lista de pasos */
+.S {
   color: black;
-  width: 300px;
-  flex-wrap: nowrap;
+  padding-left: 20px; /* Alineación a la izquierda */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0;
+}
+
+/* Estilo de cada paso */
+.S li {
+  font-size: 16px;
+  color: #555555;
+  margin-bottom: 10px;
+  text-align: left; /* Alineación a la izquierda */
+  list-style-type: decimal; /* Numeración de lista */
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .tittlesteps {
+    font-size: 20px;
+  }
+
+  .S {
+    padding-left: 15px; /* Menos margen en pantallas pequeñas */
+  }
+
+  .S li {
+    font-size: 18px; /* Aumenta el tamaño de los pasos en pantallas móviles */
+  }
+}
+
+/* Media queries para pantallas grandes */
+@media (min-width: 1024px) {
+  .tittlesteps {
+    font-size: 28px; /* Aumento el tamaño del título en pantallas grandes */
+  }
+
+  .S {
+    padding-left: 30px; /* Más margen a la izquierda para pantallas grandes */
+  }
+
+  .S li {
+    font-size: 20px; /* Aumento el tamaño de los pasos en pantallas grandes */
+  }
 }

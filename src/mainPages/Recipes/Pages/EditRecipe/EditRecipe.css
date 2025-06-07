@@ -1,37 +1,129 @@
+.bigContainerEditrecipe {
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+
 .button-chevro {
-	background: none;
-	border: none;
-	margin-top: 30px;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	color: #02565f;
-	transition: transform 0.3s ease, color 0.3s ease;
+  background: none;
+  border: none;
+  margin-top: 60px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: black;
+  font-size: 20px;
+  transition: none;
 }
 
 .button-chevro:hover {
-	color: #00a0b2;
-	transform: scale(1.5);
+  color: #00a0b2;
+  transform: none;
 }
 
-.button-chevro {
-	color: black;
-	margin-top: 30px;
-	margin-left: 20px;
-	cursor: pointer;
+/* Ajustes del menú */
+.menucontaiiner {
+  margin: 20px auto 0;
+  max-width: 430px;
+  box-sizing: border-box;
 }
 
-.menucontaiiner{
-	left: 0;
-	margin-right: 430px;
-}
-
-.spaceiwi{
+/* Espacio extra */
+.spaceiwi {
   height: 150px;
 }
 
-.bigContainerEditrecipe{
-			width: 430px;
-	max-width: 100%;
+/* Media queries para tablets en adelante */
+@media screen and (min-width: 768px) {
+  .bigContainerEditrecipe {
+    padding: 0 20px;
+  }
+
+  .button-chevro {
+    margin-left: 20px;
+    margin-top: 40px;
+    height: 40px;
+    font-size: 26px;
+  }
+
+  .menucontaiiner {
+    max-width: 700px;
+  }
+}
+
+/* Para pantallas grandes */
+@media screen and (min-width: 1024px) {
+  .bigContainerEditrecipe {
+    padding: 0 30px;
+  }
+
+  .button-chevro {
+    margin-left: 30px;
+    margin-top: 50px;
+    font-size: 30px;
+  }
+
+  .menucontaiiner {
+    max-width: 900px;
+  }
+}
+
+/* Para pantallas muy grandes */
+@media screen and (min-width: 1440px) {
+  .bigContainerEditrecipe {
+    padding: 0 40px;
+  }
+
+  .button-chevro {
+    margin-left: 40px;
+    margin-top: 60px;
+    font-size: 34px;
+  }
+
+  .menucontaiiner {
+    max-width: 1100px;
+  }
+}
+.cards-edit-wrapper {
+  display: flex;
+  flex-direction: row; /* FILA por defecto */
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+
+/* Solo en pantallas MUY PEQUEÑAS apilar en columna */
+@media (max-width: 600px) {
+  .cards-edit-wrapper {
+    flex-direction: column; /* COLUMN en móviles */
+    gap: 20px;
+    padding: 0 10px;
+  }
+}
+
+
+/* Pantallas medianas */
+@media (min-width: 601px) and (max-width: 1023px) {
+  .cards-edit-wrapper {
+    max-width: 700px;
+    padding: 0 10px;
+  }
+}
+
+/* Pantallas extra grandes */
+@media (min-width: 1440px) {
+  .cards-edit-wrapper {
+
+    padding: 0 20px;
+		display: flex;
+		flex-direction: row;
+		width: 1600px;
+  }
 }
