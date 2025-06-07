@@ -1,8 +1,21 @@
 .titlemealtime {
-	font-size: 25px;
-	text-align: center;
-	margin-top: 20px;
-	font-weight: bolder;
-	font-weight: bold;
-	color: #000000;
+  font-size: 30px; /* Aumentado el tamaño de la fuente */
+  text-align: center;
+  margin-top: 30px;
+  font-weight: bold;
+  color: #02565f;
+  padding: 10px;
+  transition: font-size 0.3s ease; /* Transición suave para cambios de tamaño */
+}
+
+@media (max-width: 768px) {
+  .titlemealtime {
+    font-size: 24px; /* Tamaño más pequeño para pantallas móviles */
+  }
+}
+
+@media (min-width: 1024px) {
+  .titlemealtime {
+    font-size: 35px; /* Tamaño mayor para pantallas grandes */
+  }
 }

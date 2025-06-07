@@ -1,18 +1,136 @@
+.weekly-plan-container {
+
+  margin: 0 auto;
+  padding: 20px 10px;
+  font-family: 'Satoshi', sans-serif, sans-serif;
+  text-align: center;
+}
+
+/* Título - lo asumo viene del componente Title */
+/* .title { ... } */
+
+/* Encabezado con TakeLook */
 .plan-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-left: 25px;
-	width: 390px;
-	max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 30px;
+  max-width: 100%;
+  gap: 10px;
 }
 
-.spaceeiwi{
-  height: 150px;
+/* Contenedor tarjetas preview semana */
+.week-preview-cards {
+    display: flex
+;
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 30px;
 }
 
-.menucontainerr{
-	background-color: red ;
-	margin-right: 290px;
-	margin-left: 200px;
+/* Contenedor comidas del día */
+.today-meals-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  max-width: 100%;
+}
+
+/* Mensaje si no hay plan */
+.no-plan-message {
+  font-size: 18px;
+  color: #666;
+  margin: 30px 0;
+}
+
+/* Espacio extra al final */
+.spaceeiwi {
+  height: 100px;
+}
+
+/* Menú */
+.menucontainerr {
+  margin: 20px auto 0;
+  max-width: 430px;
+}
+
+/* MEDIA QUERIES */
+
+/* Tablets y dispositivos medianos */
+@media screen and (min-width: 768px) {
+  .weekly-plan-container {
+   max-width: 850px;
+    padding: 30px 20px;
+  }
+
+  .plan-header {
+   
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .today-meals-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .no-plan-message {
+    font-size: 22px;
+  }
+
+  .menucontainerr {
+    max-width: 700px;
+  }
+}
+
+/* Computadoras y pantallas grandes */
+@media screen and (min-width: 1024px) {
+  .weekly-plan-container {
+  max-width: 1800px;
+    padding: 40px 30px;
+  }
+
+  .plan-header {
+    max-width: 880px;
+  }
+
+  .today-meals-container {
+    gap: 30px;
+  }
+
+  .no-plan-message {
+    font-size: 24px;
+  }
+
+  .menucontainerr {
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Pantallas muy grandes */
+@media screen and (min-width: 1440px) {
+  .weekly-plan-container {
+
+    padding: 50px 40px;
+  }
+
+  .plan-header {
+    max-width: 1080px;
+  }
+
+  .today-meals-container {
+    gap: 40px;
+  }
+
+  .no-plan-message {
+    font-size: 26px;
+  }
+
+  .menucontainerr {
+    max-width: 1080px;
+  }
 }

@@ -1,25 +1,54 @@
 .Unlocked-Message {
-	font-family: 'Satoshi', sans-serif !important;
-	font-weight: 500 !important;
-	font-size: 24px;
-	color: #000000;
-	margin: 40px;
-	padding: 10px;
-	text-align: center;
-	line-height: 1.3;
-	display: flex;
-	flex-direction: row;
-	background-color: #c6f4f8;
-	width: 250px;
-	height: 100px;
-	border-radius: 20px;
-	align-items: center;
-	align-content: center;
-	align-self: center;
-	justify-self: center;
+  font-family: 'Satoshi', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 24px;
+  color: #000000;
+  margin: 40px;
+  padding: 10px;
+  text-align: center;
+  line-height: 1.3;
+  display: flex;
+  flex-direction: row;
+  background-color: #c6f4f8;
+  width: 250px;
+  height: 100px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  justify-self: center;
 }
 
-.message{
-width: 400px;
+/* Estilo para el mensaje dentro del contenedor */
+.message {
+  font-size: 18px;
+  text-align: center;
+  width: 100%; /* Aseguramos que ocupe todo el espacio disponible */
+  word-wrap: break-word;
+}
 
-font-size: 18px;}
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .Unlocked-Message {
+    width: 90%; /* El contenedor ocupa más espacio en pantallas pequeñas */
+    padding: 15px;
+    margin: 20px 0; /* Menos margen en pantallas pequeñas */
+  }
+
+  .message {
+    font-size: 16px; /* Tamaño de fuente más pequeño en pantallas móviles */
+  }
+}
+
+/* Responsive para pantallas grandes */
+@media (min-width: 1024px) {
+  .Unlocked-Message {
+    width: 350px; /* Ancho más grande en pantallas grandes */
+    height: 120px; /* Un poco más alto en pantallas grandes */
+    padding: 20px;
+  }
+
+  .message {
+    font-size: 20px; /* Aumento del tamaño de la fuente en pantallas grandes */
+  }
+}

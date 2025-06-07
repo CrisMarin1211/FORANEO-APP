@@ -1,28 +1,49 @@
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400&display=swap');
-
 .Name-Recipe {
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	padding: 10px 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
 }
 
 .title-NameRecipe {
-	font-family: 'Satoshi', sans-serif !important;
-	font-weight: 900 !important;
-	font-size: 24px;
-	color: #000000;
-	margin: 0;
-	margin-bottom: 40px;
-	text-align: center;
+  font-family: 'Satoshi', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 24px;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
-.recipe-image{
-	width: 70%;
-	height: 70%;
-	justify-self: center;
-	align-self: center;
-	display: flex;
-	border-radius: 20px;
+.recipe-image {
+  width: 70%;
+  height: 70%;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  border-radius: 20px;
+}
 
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .title-NameRecipe {
+    font-size: 20px; /* Reducción en pantallas pequeñas */
+  }
+
+  .recipe-image {
+    width: 100%; /* Imagen más grande en móviles */
+    height: auto;
+  }
+}
+
+/* Responsive para pantallas grandes */
+@media (min-width: 1024px) {
+  .title-NameRecipe {
+    font-size: 28px; /* Aumento en pantallas grandes */
+  }
+
+  .recipe-image {
+    width: 60%;
+    height: auto;
+  }
 }

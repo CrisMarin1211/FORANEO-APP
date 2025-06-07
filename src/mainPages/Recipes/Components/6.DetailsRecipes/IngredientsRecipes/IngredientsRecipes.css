@@ -1,18 +1,40 @@
 .ingr-details {
-	font-size: 22px;
-	font-weight: bold;
-	margin-bottom: 10px;
-	color: rgb(0, 0, 0);
-	padding-left: 45px;
+  font-size: 24px; /* Aumentado el tamaño de la fuente */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  padding-left: 45px;
 }
 
 .contet-ingre {
-	list-style-type: disc;
-	padding-left: 60px;
-	color: black;
+  list-style-type: disc;
+  padding-left: 60px;
+  color: black;
+  font-size: 18px; /* Aumento en el tamaño de los ingredientes */
 }
 
 .key-ing {
-	font-size: 16px;
-	margin-bottom: 8px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .ingr-details {
+    font-size: 20px; /* Tamaño más pequeño para pantallas móviles */
+  }
+
+  .contet-ingre {
+    font-size: 16px; /* Ingredientes más pequeños en móviles */
+    padding-left: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ingr-details {
+    font-size: 28px; /* Tamaño más grande para pantallas grandes */
+  }
+
+  .contet-ingre {
+    font-size: 20px;
+  }
 }

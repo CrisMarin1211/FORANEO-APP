@@ -1,8 +1,29 @@
 .title-edit-recipes {
-	font-size: 36px;
-	color: #000000;
-	text-align: center;
-	margin: 15px;
-	padding-block-end: 20px;
-	font-weight: bold;
+  font-size: 28px; /* tamaño base para móviles */
+  color: #000000;
+  text-align: center;
+  margin: 15px;
+  padding-block-end: 20px;
+  font-weight: bold;
+}
+
+/* Tablets y dispositivos medianos */
+@media (min-width: 768px) {
+  .title-edit-recipes {
+    font-size: 32px;
+  }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1024px) {
+  .title-edit-recipes {
+    font-size: 36px;
+  }
+}
+
+/* Pantallas muy grandes */
+@media (min-width: 1440px) {
+  .title-edit-recipes {
+    font-size: 40px;
+  }
 }

@@ -4,22 +4,24 @@
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  width: 380px;
+  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
+  margin: 0 auto; /* Centrar el formulario */
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 20px;
   color: #333333;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .ingredients-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .ingredient-item {
@@ -32,18 +34,19 @@ h4 {
 .ingredient-item label {
   font-size: 16px;
   color: #555555;
+  width: 150px; /* Fijo el ancho de la etiqueta */
 }
 
 .ingredient-item input {
   color: #333333;
-  padding: 10px;
-  font-size: 14px;
-  width: 10PX;
+  padding: 12px;
+  font-size: 18px; /* Tamaño más grande de la fuente */
+  width: 180px;
   border: 1px solid #e1e1e1;
   border-radius: 5px;
   outline: none;
+  background-color: #f9f9f9;
   transition: border 0.3s ease;
-  background-color: #d0d0d0;
 }
 
 .ingredient-item input:focus {
@@ -60,10 +63,10 @@ h4 {
 
 button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background-color: #0081a7;
   color: white;
-  font-size: 16px;
+  font-size: 18px; /* Tamaño de fuente de los botones */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -75,19 +78,63 @@ button:hover {
 }
 
 button:disabled {
-  background-color: #688fa8;
+  background-color: #d0d0d0;
   cursor: not-allowed;
-  border-radius: 20px;
 }
 
-.buttonconfirmm{
+.buttonconfirmm {
   background-color: #006f8a;
   border-radius: 20px;
 }
 
-.buttonAddIngredient{
+.buttonAddIngredient {
   align-self: center;
   justify-self: center;
   width: 180px;
   margin-bottom: 30px;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .ingredient-price-input {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .ingredient-item input {
+    width: 150px; /* Más estrecho en pantallas móviles */
+    font-size: 26px; /* Aumentar el tamaño de la fuente en móviles */
+    padding: 14px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  .buttonAddIngredient {
+    width: 150px; /* Botón más pequeño en pantallas pequeñas */
+  }
+
+  button {
+    font-size: 24px;
+    padding: 12px;
+  }
+}
+
+/* Media queries para pantallas grandes */
+@media (min-width: 1024px) {
+  .ingredient-price-input {
+    max-width: 600px;
+    padding: 25px;
+  }
+
+  .ingredient-item input {
+    width: 200px; /* Más ancho en pantallas grandes */
+    font-size: 30px; /* Aumento considerable del tamaño de la fuente */
+    padding: 16px;
+  }
+
+  .buttonAddIngredient {
+    width: 200px; /* Botón más grande en pantallas grandes */
+  }
 }
