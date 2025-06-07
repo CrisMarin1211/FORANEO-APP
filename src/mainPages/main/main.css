@@ -7,22 +7,20 @@
 	max-width: 100%;
 }
 
-.MainContainerr{
-
-	margin-top: 10px ;
+.MainContainerr {
+	margin-top: 10px;
 	width: 390px;
 	height: 350px;
-
 	border-radius: 10px;
 	box-shadow: 0px 0px 10px 0px rgba(75, 75, 75, 0.75);
 }
 
-.MenuBarr{
+.MenuBarr {
 	width: 230px;
 	margin-right: 200px;
 }
 
-.messageWelcome{
+.messageWelcome {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -33,7 +31,8 @@
 	font-weight: 1000;
 	margin-top: 10px;
 }
-.usernameMessage{
+
+.usernameMessage {
 	margin-top: 15px;
 	margin-bottom: 0;
 	font-weight: regular;
@@ -41,12 +40,112 @@
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.wrappedMessage{
+.wrappedMessage {
 	margin-top: 5px;
 	font-weight: regular;
 	font-size: 20px;
+}
+
+.spaceiwii {
+	height: 150px;
+}
+
+/* Media Queries para dispositivos pequeños (móviles) */
+@media (max-width: 480px) {
+	.MainContainerPage {
+		width: 100%;
+		max-width: 100%;
 	}
 
-	.spaceiwii{
-  height: 150px;
+	.MainContainerr {
+		width: 90%;
+		height: auto;
+	}
+
+	.MenuBarr {
+		width: 100%;
+		margin-right: 0;
+	}
+
+	.messageWelcome {
+		font-size: 13px;
+	}
+
+	.usernameMessage {
+		font-size: 20px;
+	}
+
+	.wrappedMessage {
+		font-size: 16px;
+	}
+
+	.spaceiwii {
+		height: 100px;
+	}
+}
+
+/* Media Queries para dispositivos medianos (tabletas) */
+@media (min-width: 481px) and (max-width: 768px) {
+	.MainContainerPage {
+		width: 90%;
+	}
+
+	.MainContainerr {
+		width: 80%;
+		height: 300px;
+	}
+
+	.MenuBarr {
+		width: 200px;
+		margin-right: 50px;
+	}
+
+	.messageWelcome {
+		font-size: 14px;
+	}
+
+	.usernameMessage {
+		font-size: 22px;
+	}
+
+	.wrappedMessage {
+		font-size: 18px;
+	}
+
+	.spaceiwii {
+		height: 120px;
+	}
+}
+
+/* Media Queries para pantallas extra grandes (desktops grandes) */
+@media (min-width: 1025px) {
+	.MainContainerPage {
+		width: 100%;
+	}
+
+	.MainContainerr {
+		width: 60%;
+		height: 350px;
+	}
+
+	.MenuBarr {
+		width: 250px;
+		margin-right: 150px;
+	}
+
+	.messageWelcome {
+		font-size: 16px;
+	}
+
+	.usernameMessage {
+		font-size: 26px;
+	}
+
+	.wrappedMessage {
+		font-size: 22px;
+	}
+
+	.spaceiwii {
+		height: 150px;
+	}
 }

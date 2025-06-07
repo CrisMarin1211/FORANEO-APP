@@ -27,7 +27,7 @@ const ProgressBar = ({ goal, percent }) => {
 
       <Progress
         className="progressbar"
-        percent={roundedPercent} 
+        percent={roundedPercent}
         percentPosition={{ align: "end", type: "inner", justify: "center" }}
         strokeColor={twoColors}
         size={[390, 40]}

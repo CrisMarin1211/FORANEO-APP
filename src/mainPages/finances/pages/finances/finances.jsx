@@ -121,6 +121,7 @@ const Finances = () => {
 
   return (
     <section className="Financescontainer">
+      <section className="LeftColumn">
       <section className="financesHeader">
         <section className="WelcomeMessage">
           <h2 className={`youCanTittle `}>You can do it Cris!</h2>
@@ -141,7 +142,7 @@ const Finances = () => {
         />
       </section>
 
-      <section className="progressBarSection">
+         <section className="progressBarSection">
         <h2 className={`goalTittle`}>
           {goal
             ? `${goal.name} - $${goal.value.toLocaleString()}`
@@ -152,8 +153,14 @@ const Finances = () => {
           percent={progressPercent}
         />
       </section>
+      
+      </section>
 
-      <section>
+
+      <section className="RightColumn">
+
+
+
         <BigInfoSection
           selectedMonth={selectedMonth}
           hasNoData={filteredData.length === 0}
