@@ -1,88 +1,110 @@
-
+/* Contenedor del goal */
 .goal-container {
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 20px; /* reduce margen para evitar mucho espacio */
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-.goal-container h3 {
-  font-size: 24px;
-  font-weight: 600;
-  color: #333;
-  text-align: center;
-  margin-bottom: 0;
-}
+/* Textos centrados */
+.goal-container h3,
 .goal-container h4 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #333;
   text-align: center;
-  margin: 0;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
+/* Texto normal */
 .goal-container p {
   font-size: 16px;
   color: #555;
   margin-bottom: 8px;
+  word-wrap: break-word; /* evita desbordes largos */
 }
 
+/* Botones flexibles y responsive */
 .goal-actions {
   margin-top: 30px;
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap; /* que bajen si no caben */
 }
 
-.editGoalButton{
-  width: 230px;
+.editGoalButton,
+.deletegoalButton {
+  flex: 1 1 45%; /* flexible con mínimo 45% del espacio */
   height: 40px;
+  min-width: 120px; /* mínimo para no quedar muy pequeños */
+  box-sizing: border-box;
 }
 
-.deletegoalButton{
-  font-size: 16px;
+.deletegoalButton {
   font-weight: bold;
-  width: 210px;
   border-radius: 20px;
   color: white;
   background-color: #bb3b3b;
   margin: 0;
-  height: 40px;
 }
 
+/* Modal responsive (Ant Design) */
 :where(.css-dev-only-do-not-override-1d4w9r2).ant-modal .ant-modal-content {
-    position: relative;
-    background-color: #ffffff;
-    background-clip: padding-box;
-    border: 0;
-    border-radius: 8px;
-    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
-    pointer-events: auto;
-    padding: 20px 24px;
-    width: 370px;
-    justify-self: center;
-    align-self: center;
+  width: 90% !important; /* casi todo el ancho en móvil */
+  max-width: 420px !important; /* no muy grande en escritorio */
+  padding: 20px 24px;
+  box-sizing: border-box;
+  margin: 0 auto; /* centra */
 }
 
+/* Modal close button tweaks si quieres */
 :where(.css-dev-only-do-not-override-1d4w9r2).ant-modal .ant-modal-close {
-    position: absolute;
+  color: red;
+  font-weight: 800;
+}
 
-    top: 0;
-    inset-inline-end: 12px;
-    z-index: 1010;
-    padding: 0;
-    color: red;
-    font-weight: 800;
-    line-height: 1;
-    text-decoration: none;
-    background: transparent;
-    border-radius: 4px;
-    width: 32px;
-    height: 32px;
-    border: 0;
-    outline: 0;
-    cursor: pointer;
-    transition: color 0.2s, background-color 0.2s;
+/* Inputs y labels dentro del modal */
+.edit-goal-modal section {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-goal-modal label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+/* Input ancho completo */
+.edit-goal-modal input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Evitar scroll externo */
+.big-info-container {
+  overflow: visible !important;
+}
+
+@media screen and (min-width: 1024px) {
+  .goal-container h3 {
+    font-size: 35px; /* más grande que el base 24px */
+  }
+
+  .goal-container h4 {
+    font-size: 28px; /* más grande que el base 18px */
+    margin-top: 5px;
+  }
+
+  .goal-container p {
+    font-size: 22px; /* más grande que el base 16px */
+  }
+
+  .editGoalButton,
+  .deletegoalButton {
+    height: 45px; /* botones un poco más altos */
+    font-size: 22px;
+  }
 }

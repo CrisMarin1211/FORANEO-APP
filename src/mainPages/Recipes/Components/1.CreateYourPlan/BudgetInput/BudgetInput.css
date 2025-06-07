@@ -1,52 +1,103 @@
+/* BudgetInput.css */
 .budget-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 100%;
-	margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .input-wrapper {
-	display: flex;
-	align-items: center;
-	border: 2px solid #02565f;
-	border-radius: 8px;
-	padding: 10px;
-	width: 280px;
-	background-color: white;
+  display: flex;
+  align-items: center;
+  border: 2px solid #02565f;
+  border-radius: 8px;
+  padding: 10px;
+  width: 280px;
+  background-color: white;
+  transition: width 0.3s ease;
 }
 
 .currency-symbol {
-	font-size: 18px;
-	font-weight: bold;
-	color: #000000;
-	margin-right: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  margin-right: 5px;
+  transition: font-size 0.3s ease;
 }
 
 input#budget-input {
-	font-size: 19px;
-	font-family: 'Satoshi', sans-serif !important;
-	font-weight: 500 !important;
-	border: none;
-	outline: none;
-	width: 100%;
-	font-size: 16px;
-	color: #02565f;
-	background: transparent;
-	text-align: center;
+  font-family: 'Satoshi', sans-serif !important;
+  font-weight: 500 !important;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  color: #02565f;
+  background: transparent;
+  text-align: center;
+  transition: font-size 0.3s ease;
 }
 
 input#budget-input::placeholder {
-	color: #000000;
-	font-size: 16px;
+  color: #000000;
+  font-size: 16px;
 }
 
-.error {
-	border-color: red;
+/* Responsive */
+@media screen and (min-width: 768px) {
+  .input-wrapper {
+    width: 350px;
+    padding: 14px;
+  }
+
+  .currency-symbol {
+    font-size: 22px;
+  }
+
+  input#budget-input {
+    font-size: 20px;
+  }
+
+  input#budget-input::placeholder {
+    font-size: 20px;
+  }
 }
 
-.error-message {
-	color: red;
-	font-size: 14px;
-	margin-top: 5px;
+@media screen and (min-width: 1024px) {
+  .input-wrapper {
+    width: 420px;
+    padding: 18px;
+  }
+
+  .currency-symbol {
+    font-size: 26px;
+  }
+
+  input#budget-input {
+    font-size: 24px;
+  }
+
+  input#budget-input::placeholder {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .input-wrapper {
+    width: 480px;
+    padding: 22px;
+  }
+
+  .currency-symbol {
+    font-size: 30px;
+  }
+
+  input#budget-input {
+    font-size: 28px;
+  }
+
+  input#budget-input::placeholder {
+    font-size: 28px;
+  }
 }

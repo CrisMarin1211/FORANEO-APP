@@ -1,114 +1,223 @@
 .ingredients-container {
-	padding: 5px;
-	font-family: 'Satoshi', sans-serif !important;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 100%;
-	max-width: 400px;
-	margin: 0 auto;
-	text-align: center;
+  padding: 5px;
+  font-family: 'Satoshi', sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  transition: max-width 0.3s ease;
 }
 
 .title {
-	font-size: 19px;
-	font-family: 'Satoshi', sans-serif !important;
-	font-weight: 500 !important;
-	margin-bottom: 16px;
-	color: black;
+  font-size: 19px;
+  font-family: 'Satoshi', sans-serif !important;
+  font-weight: 500 !important;
+  margin-bottom: 16px;
+  color: black;
+  transition: font-size 0.3s ease;
 }
 
 .input-container {
-	width: 100%;
-	display: flex;
-	justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .input-wrapperr {
-	display: flex;
-	align-items: center;
-	width: 100%;
-	max-width: 300px;
-	border: 2px solid #02565f;
-	border-radius: 12px;
-	background-color: white;
-	overflow: hidden;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  border: 2px solid #02565f;
+  border-radius: 12px;
+  background-color: white;
+  overflow: hidden;
+  transition: max-width 0.3s ease, padding 0.3s ease;
 }
 
 .input-field {
-	font-size: 17px;
-	font-family: 'Satoshi', sans-serif !important;
-	font-weight: 500 !important;
-	flex: 1;
-	padding: 13px;
-	border: none;
-	outline: none;
-	text-align: center;
-	color: #02565f;
-	background-color: white;
+  font-size: 17px;
+  font-family: 'Satoshi', sans-serif !important;
+  font-weight: 500 !important;
+  flex: 1;
+  padding: 13px;
+  border: none;
+  outline: none;
+  text-align: center;
+  color: #02565f;
+  background-color: white;
+  transition: font-size 0.3s ease, padding 0.3s ease;
 }
 
 .input-field::placeholder {
-	color: #000000;
-	opacity: 0.8;
+  color: #000000;
+  opacity: 0.8;
+  transition: font-size 0.3s ease;
 }
 
 .add-button {
-	background-color: #4a9dab;
-	color: white;
-	font-size: 1.2rem;
-	font-weight: bold;
-	border: none;
-	border-radius: 8px;
-	padding: 10px 15px;
-	cursor: pointer;
-	transition: background-color 0.3s, transform 0.2s;
-	margin: 10px;
-	outline: none;
-}
-
-.add-button:focus {
-	outline: none;
+  background-color: #4a9dab;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, font-size 0.3s ease;
+  margin: 10px;
+  outline: none;
 }
 
 .add-button:hover {
-	background-color: #3c8a97;
-	transform: scale(1.05);
+  background-color: #3c8a97;
+  transform: scale(1.05);
 }
 
 .suggestions-container {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 12px;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	max-width: 75%;
-	padding: 10px 0;
-	border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 75%;
+  padding: 10px 0;
+  border-radius: 12px;
+  transition: max-width 0.3s ease;
 }
 
 .suggestion-button {
-	padding: 10px 16px;
-	border: 1.5px solid #1f4b52;
-	border-radius: 20px;
-	background-color: #f2feff;
-	color: #000000;
-	font-size: 1rem;
-	cursor: pointer;
-	transition: background 0.3s, transform 0.2s;
-	white-space: nowrap;
-	outline: none;
-}
-.suggestion-button:focus {
-	outline: none;
-	box-shadow: none;
+  padding: 10px 16px;
+  border: 1.5px solid #1f4b52;
+  border-radius: 20px;
+  background-color: #f2feff;
+  color: #000000;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, font-size 0.3s ease;
+  white-space: nowrap;
+  outline: none;
 }
 
-button:hover {
-	border-color: #1f4b52;
+.suggestion-button:hover {
+  border-color: #1f4b52;
 }
 
-.suggestion-button:focus-visible {
-	outline: none;
+/* Responsive media queries */
+@media screen and (min-width: 768px) {
+  .ingredients-container {
+    max-width: 600px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .input-wrapperr {
+    max-width: 400px;
+    padding: 16px;
+  }
+
+  .input-field {
+    font-size: 20px;
+    padding: 16px;
+  }
+
+  .input-field::placeholder {
+    font-size: 20px;
+  }
+
+  .add-button {
+    font-size: 1.4rem;
+    padding: 12px 18px;
+  }
+
+  .suggestions-container {
+    max-width: 85%;
+  }
+
+  .suggestion-button {
+    font-size: 1.2rem;
+    padding: 12px 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .ingredients-container {
+    max-width: 700px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .input-wrapperr {
+    max-width: 500px;
+    padding: 18px;
+  }
+
+  .input-field {
+    font-size: 24px;
+    padding: 18px;
+  }
+
+  .input-field::placeholder {
+    font-size: 24px;
+  }
+
+  .add-button {
+    font-size: 1.6rem;
+    padding: 14px 22px;
+  }
+
+  .suggestions-container {
+    max-width: 90%;
+  }
+
+  .suggestion-button {
+    font-size: 1.4rem;
+    padding: 14px 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .ingredients-container {
+    max-width: 800px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .input-wrapperr {
+    max-width: 600px;
+    padding: 20px;
+  }
+
+  .input-field {
+    font-size: 28px;
+    padding: 20px;
+  }
+
+  .input-field::placeholder {
+    font-size: 28px;
+  }
+
+  .add-button {
+    font-size: 1.8rem;
+    padding: 16px 26px;
+  }
+
+  .suggestions-container {
+    max-width: 95%;
+  }
+
+  .suggestion-button {
+    font-size: 1.6rem;
+    padding: 16px 28px;
+  }
 }

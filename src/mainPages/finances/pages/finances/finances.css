@@ -1,6 +1,10 @@
 .Financescontainer {
-	width: 430px;
-	max-width: 100%;
+	justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 20px; /* para un poco de espacio en los lados */
 }
 
 .WelcomeMessage {
@@ -71,4 +75,23 @@
 
 .spaceiwwi{
   height: 120px;
+}
+
+
+@media screen and (min-width: 768px) {
+
+
+}
+
+
+@media screen and (min-width: 1025px) {
+
+	.Financescontainer{
+			justify-content: space-between;
+		display: flex;
+		flex-direction: row;
+		width: 400%;
+	}
+
+
 }

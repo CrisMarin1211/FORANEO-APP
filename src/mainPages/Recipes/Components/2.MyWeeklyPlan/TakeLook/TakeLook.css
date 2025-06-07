@@ -1,12 +1,35 @@
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@400&display=swap');
 
 .Take-Look {
-	font-family: 'Satoshi', sans-serif !important;
-	font-weight: 500 !important;
-	font-size: 18px;
-	color: #000000;
-	margin: 0;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  font-family: 'Satoshi', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 22px;
+  color: #000000;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+}
+
+/* Tablets en adelante */
+@media screen and (min-width: 768px) {
+  .Take-Look {
+    font-size: 24px;
+  }
+}
+
+/* Computadoras */
+@media screen and (min-width: 1024px) {
+  .Take-Look {
+    font-size: 28px;
+  }
+}
+
+/* Pantallas grandes */
+@media screen and (min-width: 1440px) {
+  .Take-Look {
+    font-size: 30px;
+  }
 }

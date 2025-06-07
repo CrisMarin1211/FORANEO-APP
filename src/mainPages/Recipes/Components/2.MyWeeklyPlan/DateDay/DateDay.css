@@ -1,7 +1,30 @@
 .date-day {
-	font-size: 18px;
-	font-weight: 500;
-	color: #333;
-	margin-bottom: 10px;
-	margin-left: 40px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Tablets en adelante */
+@media screen and (min-width: 768px) {
+  .date-day {
+    font-size: 20px;
+
+  }
+}
+
+/* Computadoras y pantallas grandes */
+@media screen and (min-width: 1024px) {
+  .date-day {
+    font-size: 22px;
+
+  }
+}
+
+/* Pantallas muy grandes */
+@media screen and (min-width: 1440px) {
+  .date-day {
+    font-size: 28px;
+
+  }
 }

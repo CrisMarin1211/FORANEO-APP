@@ -1,3 +1,4 @@
+/* BASE - estilos generales */
 .big-info-container {
   color: #333;
   margin: 40px 15px 20px;
@@ -6,11 +7,12 @@
   position: relative;
   background: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  overflow: visible;}
+  overflow: visible;
+}
 
 .tabs {
   display: flex;
-  position: absolute;
+  
   justify-content: center;
   align-items: flex-end;
   top: -25px;
@@ -18,6 +20,9 @@
   right: 0;
   height: 40px;
   z-index: 10;
+  gap: 6px;
+  padding: 0 10px;
+
 }
 
 .tab {
@@ -36,24 +41,19 @@
   height: 25px;
   display: flex;
   align-items: center;
+  white-space: nowrap;
 }
 
-
-.Timeline-tab {
-  background: #ffffff;
-  color: rgb(0, 0, 0);
+.tab:last-child {
+  margin-right: 0;
 }
 
-.Statistics-tab {
-  background: #ffffff;
-  color: #000000;
-}
-
+.Timeline-tab,
+.Statistics-tab,
 .Goal-tab {
   background: #ffffff;
   color: #000000;
 }
-
 
 .active {
   transform: translateY(-5px);
@@ -70,16 +70,134 @@
   background: white;
   border-radius: 16px;
   min-height: 300px;
+  max-height: 75vh;
+  overflow-y: auto;
 }
-
 
 .tab:not(.active):hover {
   transform: translateY(-3px);
 }
 
-
-.tab span, .tab svg {
+.tab span,
+.tab svg {
   color: black;
   margin-right: 5px;
 }
 
+
+/* -------- MEDIA QUERIES -------- */
+
+/* Tablets 768px - 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .big-info-container {
+    margin: 50px 30px 30px;
+  }
+  .tabs {
+    justify-content: flex-start;
+    padding: 0
+    }
+  .tab {
+    font-size: 16px;
+    padding: 10px 8px 12px;
+    height: 30px;
+  }
+  .active {
+    font-size: 20px;
+    height: 44px;
+  }
+  .tab-content {
+    padding: 30px 24px;
+    width: 110%;
+    min-height: 350px;
+  }
+}
+
+/* Computadoras 1025px - 1440px */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .big-info-container {
+    margin: 60px 40px 40px;
+  }
+  .tabs {
+    justify-content: flex-start;
+    padding: 0 30px;
+  }
+  .tab {
+    font-size: 18px;
+    padding: 12px 22px 14px;
+    height: 36px;
+  }
+  .active {
+    font-size: 22px;
+    height: 48px;
+  }
+  .tab-content {
+    padding: 40px 32px;
+    min-height: 400px;
+    max-height: 80vh;
+  }
+}
+
+/* Pantallas grandes / proyectores 1441px - 2559px */
+@media screen and (min-width: 1441px) and (max-width: 2559px) {
+  .big-info-container {
+    margin: 70px 50px 50px;
+    max-width: 900px;
+  }
+  .tabs {
+    justify-content: flex-start;
+    padding: 0 40px;
+  }
+  .tab {
+    font-size: 20px;
+
+    height: 40px;
+  }
+  .active {
+    font-size: 24px;
+    height: 52px;
+  }
+  .tab-content {
+    padding: 50px 40px;
+    min-height: 450px;
+    width: 130%;
+    max-height: 85vh;
+  }
+}
+
+/* Ultra pantallas 2560px+ */
+@media screen and (min-width: 2560px) {
+  .big-info-container {
+    margin: 80px 80px 60px;
+    max-width: 1100px;
+  }
+  .tabs {
+    padding: 0 50px;
+    justify-self: center;
+  }
+  .tab {
+    font-size: 22px;
+    padding: 16px 30px 18px;
+    height: 44px;
+  }
+  .active {
+    font-size: 28px;
+    height: 56px;
+  }
+  .tab-content {
+    padding: 60px 50px;
+    min-height: 500px;
+
+    width: 150%;
+    max-height: 90vh;
+  }
+}
+
+/* Scroll horizontal para pestañas en pantallas pequeñas */
+.tabs::-webkit-scrollbar {
+  height: 6px;
+}
+
+.tabs::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}

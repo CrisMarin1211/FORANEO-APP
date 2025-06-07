@@ -41,7 +41,7 @@
 
 .ticketInfo {
   flex-grow: 1;
-  MAX-WIDTH: 120px;
+
   overflow: hidden;
   padding-right: 10px;
 }
@@ -81,4 +81,40 @@
 
 .ticket.expense .ticketPrice h2 {
   color: #f44336;
+}
+
+@media screen and (min-width: 1024px) {
+  .ticket {
+    padding: 16px 20px;
+    margin: 12px 0;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  .ticketIconContainer {
+    min-width: 56px;
+    height: 56px;
+    margin-right: 20px;
+  }
+
+
+
+  .ticketName {
+    font-size: 30px;
+
+  }
+
+  .ticketDetails {
+    font-size: 22px;
+  }
+
+  .ticketPrice {
+    min-width: 110px;
+  }
+
+  .ticketPrice h2 {
+    font-size: 20px;
+  }
 }

@@ -1,34 +1,61 @@
 .Button-EditPlan {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
 .Edit-Plan {
-	width: 136px;
-	height: 44px;
-	background-color: #00a0b2;
-	color: white;
-	border-radius: 10px;
-	cursor: pointer;
-	font-weight: 500;
-	font-size: 16px;
-	border: none;
-	outline: none;
-	transition: background-color 0.3s ease;
+  width: 136px;
+  height: 44px;
+  background-color: #00a0b2;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s ease;
 }
 
 .Edit-Plan:hover {
-	background-color: #008c9b;
+  background-color: #008c9b;
 }
 
 .Edit-Plan:focus {
-	outline: none;
-	box-shadow: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .Edit-Plan:focus-visible {
-	outline: 2px solid #00a0b2;
-	outline-offset: 2px;
+  outline: 2px solid #00a0b2;
+  outline-offset: 2px;
+}
+
+/* Tablets en adelante */
+@media screen and (min-width: 768px) {
+  .Edit-Plan {
+    width: 160px;
+    height: 48px;
+    font-size: 18px;
+  }
+}
+
+/* Computadoras */
+@media screen and (min-width: 1024px) {
+  .Edit-Plan {
+    width: 180px;
+    height: 60px;
+    font-size: 24px;
+  }
+}
+
+/* Pantallas grandes */
+@media screen and (min-width: 1440px) {
+  .Edit-Plan {
+    width: 200px;
+    height: 70px;
+    font-size: 26px;
+  }
 }
