@@ -1,15 +1,47 @@
 .adjust-plan {
-	background-color: #f2feff;
-	border: 2px solid rgba(2, 86, 95, 0.35);
-	border-radius: 12px;
-	padding: 20px;
-	max-width: 300px;
-	margin: 20px auto;
-	text-align: center;
+  background-color: #f2feff;
+  border: 2px solid rgba(2, 86, 95, 0.35);
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 300px;
+  margin: 20px auto;
+  text-align: center;
 }
 
 .adjust-plan h2 {
-	font-size: 18px;
-	color: #333;
-	margin: 10px 0;
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Tablets en adelante */
+@media screen and (min-width: 768px) {
+  .adjust-plan {
+    max-width: 400px;
+    padding: 30px;
+  }
+  .adjust-plan h2 {
+    font-size: 20px;
+  }
+}
+
+/* Computadoras */
+@media screen and (min-width: 1024px) {
+  .adjust-plan {
+    max-width: 450px;
+  }
+  .adjust-plan h2 {
+    font-size: 26px;
+  }
+}
+
+/* Pantallas grandes */
+@media screen and (min-width: 1440px) {
+  .adjust-plan {
+    max-width: 500px;
+    padding: 40px;
+  }
+  .adjust-plan h2 {
+    font-size: 28px;
+  }
 }
