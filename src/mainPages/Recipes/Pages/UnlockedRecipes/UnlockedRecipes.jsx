@@ -90,9 +90,9 @@ function UnlockedRecipes() {
 
   return (
     <section>
-      <button className="button-chevro1" onClick={handleGoBack}>
+      <section className="button-chevro1" onClick={handleGoBack}>
         <ChevronLeft />
-      </button>
+      </section>
 
       <TitleEditBLD day={day} mealTime={mealTime} />
 
@@ -145,15 +145,16 @@ function UnlockedRecipes() {
       <TitleUnlockedFoods />
 
 
-      <section>
-        {completedRecipes.map((recipe, index) => (
-          <CardsUnlocked
-            key={index}
-            recipe={recipe}
-            onAddRecipe={handleAddRecipe}
-          />
-        ))}
-      </section>
+      <section className="unlocked-cards-container">
+  {completedRecipes.map((recipe, index) => (
+    <CardsUnlocked
+      key={index}
+      recipe={recipe}
+      onAddRecipe={handleAddRecipe}
+    />
+  ))}
+</section>
+
 
       <section className="spaceiwi"></section>
       <section className="menuconttainer">

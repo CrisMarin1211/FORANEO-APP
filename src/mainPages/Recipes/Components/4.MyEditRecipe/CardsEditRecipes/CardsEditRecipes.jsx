@@ -19,7 +19,7 @@ function CardsEditRecipes({ mealTime, recipe, day, showPencil = true }) {
 		<section className='recipe-card-let'>
 			<h3>{mealTime}</h3>
 			<img src={recipe.image} alt={recipe.name} className='recipe-image-edit' />
-			<p>{recipe.name}</p>
+			<p className='recipeNamename'>{recipe.name}</p>
 
 			{recipe.ingredients && (
 				<ul className='ingredients-list'>

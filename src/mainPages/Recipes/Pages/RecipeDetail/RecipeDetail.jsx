@@ -45,15 +45,17 @@ function RecipeDetail() {
 
 return (
   <section>
+    <section className='leftside'>
     <ChevronLeft className='button-chevro2' onClick={handleGoBack} />
 
     <TitleMealTime mealTime={mealTime} />
     <CardImageRecipes name={recipe.name} image={recipe.image} description={recipe.description} />
     <IngredientsRecipes ingredients={recipe.ingredients} />
 
-    {/* Mostrar el botón solo si showPriceInput es falso */}
+    
     {!showPriceInput && <ButtonLetsCook onClick={handleLetsCookClick} />}
-
+</section>
+    <section className='rightside'>
     {showPriceInput && (
       <section className='ingredient-price-inputSection'>
       <IngredientPriceInput
@@ -64,6 +66,8 @@ return (
       />
       </section>
     )}
+
+    </section>
 
     <section className='sapaceiwi'></section>
     <section className='menuconnttainer'>

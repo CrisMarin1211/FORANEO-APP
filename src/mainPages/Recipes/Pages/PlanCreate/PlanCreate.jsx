@@ -145,32 +145,38 @@ function PlanCreate() {
   }
 
   return (
-    <section className="plan-container">
-      <TitleBuild />
-      <BudgetInput budget={budget} setBudget={setBudget} />
-      <FoodTypeSelector
-        selectedFoodTypes={selectedFoodTypes}
-        setSelectedFoodTypes={setSelectedFoodTypes}
-      />
-      <IngredientsList
-        selectedIngredients={selectedIngredients}
-        setSelectedIngredients={setSelectedIngredients}
-      />
-      <DaySelectorCook
-        selectedDays={selectedDays}
-        setSelectedDays={setSelectedDays}
-      />
-      <ButtonCreatePlan onClick={handleCreatePlan} />
-
-      <section className="spaccceiwi">
-
+  <section className="plan-container">
+    <section className="sections-wrapper">
+      <section className="left-section">
+        <TitleBuild />
+        <BudgetInput budget={budget} setBudget={setBudget} />
+        <FoodTypeSelector
+          selectedFoodTypes={selectedFoodTypes}
+          setSelectedFoodTypes={setSelectedFoodTypes}
+        />
       </section>
-      <section className="menusectionplan">
 
-        <Menu />
+      <section className="right-section">
+        <IngredientsList
+          selectedIngredients={selectedIngredients}
+          setSelectedIngredients={setSelectedIngredients}
+        />
+        <DaySelectorCook
+          selectedDays={selectedDays}
+          setSelectedDays={setSelectedDays}
+        />
       </section>
     </section>
-  );
+
+    <ButtonCreatePlan onClick={handleCreatePlan} />
+
+    <section className="spaccceiwi"></section>
+    <section className="menusectionplan">
+      <Menu />
+    </section>
+  </section>
+);
+
 }
 
 export default PlanCreate;

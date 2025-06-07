@@ -38,14 +38,16 @@ function EditRecipe() {
     navigate(`/unlockedrecipes/${day}/${mealTime}`);
   };
 
-  return (
-    <section className='bigContainerEditrecipe'>
-      <section className='button-chevro' onClick={handleGoBack}>
-        <ChevronLeft />
-      </section>
 
-      <TitleEditRecipes day={day} />
+return (
+  <section className='bigContainerEditrecipe'>
+    <section className='button-chevro'  onClick={handleGoBack}>
+      <ChevronLeft />
+    </section>
 
+    <TitleEditRecipes day={day} />
+
+    <section className="cards-edit-wrapper">
       {recipes.breakfast && (
         <CardsEditRecipes
           mealTime='Breakfast'
@@ -85,13 +87,14 @@ function EditRecipe() {
           onEditRecipe={() => handleEditRecipe('Dinner')}
         />
       )}
-
-      <section className='spaceiwi'></section>
-      <section className='menucontaiiner'>
-        <Menu />
-      </section>
     </section>
-  );
+
+    <section className='spaceiwi'></section>
+    <section className='menucontaiiner'>
+      <Menu />
+    </section>
+  </section>
+);
 }
 
 export default EditRecipe;
