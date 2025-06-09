@@ -6,37 +6,73 @@
 	background: white;
 	border-radius: 15px;
 	padding: 20px;
-	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-	width: 90%;
-	max-width: 400px;
+
+	width: 100%;
 	margin: auto;
-	border: 2px solid #02565f;
-	margin-top: 50px;
 	margin-bottom: 100px;
+	color: black;
 }
 
 .todo-title {
 	text-align: center;
 	font-weight: bold;
-	font-size: 1.5rem;
+	font-size: 40px;
 	margin-bottom: 20px;
+		margin-top: 0;
 }
 
 .task-list {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	gap: 10px;
+	gap: 30px;
 }
 
 .task-item {
+	flex-direction: column;
 	display: flex;
 	align-items: center;
-	border: 2.5px solid #00a0b2;
+	border: 2.5px solid #dedede;
 	border-radius: 12px;
 	padding: 10px;
-	width: 100%;
+	width: 300px;
+	gap: 20px;
+	padding-bottom: 30px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.task-actions{
+	display: flex;
+	justify-content: space-between;
+	width: 250px;
+	flex-direction: row;
 	gap: 10px;
+}
+
+
+.task-content {
+	display: flex;
+	flex-direction: row ;
+	gap: 5px;
+}
+
+.edit-btn{
+	padding: 0;
+	margin: 0;
+	color: #02565f;
+	background-color: transparent;
+	width: 30px;
+}
+
+.edit-btn:hover{
+		padding: 0;
+	margin: 0;
+	color: #02565f;
+	background-color: transparent;
+	border: transparent;
+	width: 30px;
+
 }
 
 .delete-task {
@@ -44,6 +80,9 @@
 	font-size: 1.2rem;
 	color: #02565f;
 	transition: transform 0.2s ease;
+	display: flex;
+	align-self: flex-start;
+	margin-left: 10px;
 }
 
 .delete-task:hover {
@@ -54,6 +93,7 @@
 	flex-grow: 1;
 	font-size: 1.2rem;
 	font-weight: 500;
+	width: 200px;
 }
 
 .task-status {
@@ -62,19 +102,28 @@
 	border-radius: 5px;
 	cursor: pointer;
 	font-weight: bold;
-	font-size: 1rem;
+	font-size: 20px;
 }
 
 .task-status.pending {
 	background: #cea8fc;
+	color: black;
 }
 
 .task-status.inprogress {
-	background: #cbf6ab;
+	color: black;
+background: #99ced4;
 }
 
 .task-status.completed {
-	background: #b2f0f7;
+	color: black;
+
+		background: #aed393;
+}
+
+.optionv{
+	background-color: white;
+	font-size: 1rem;
 }
 
 .new-task-btn {
@@ -91,14 +140,170 @@
 	color: white;
 }
 
-@media (max-width: 600px) {
+
+
+
+
+
+
+@media (min-width: 425px) {
 	.task-item {
-		flex-direction: row;
+		flex-direction: column;
 		align-items: center;
+		width: 400px;
+
 	}
 
 	.task-status {
 		width: auto;
 		min-width: 100px;
 	}
+}
+
+
+@media (min-width: 500px) {
+	.task-item {
+		flex-direction: column;
+		align-items: center;
+		width: 450px;
+
+	}
+
+	.task-status {
+		width: auto;
+		min-width: 100px;
+	}
+			.task-text {
+	font-size: 22px;
+  }
+}
+@media (min-width: 600px) and (min-width: 768px) {
+  .task-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Esto crea dos columnas de igual tamaño */
+    gap: 30px; /* Espacio entre las tareas */
+    width: 100%;
+  }
+
+  .task-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Asegura que las tareas ocupen el 100% del espacio de su celda en el grid */
+    box-sizing: border-box;
+  }
+			.task-text {
+	font-size: 24px;
+  }
+}
+
+
+@media (min-width: 800px) and (min-width: 900px) {
+  .task-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Esto crea dos columnas de igual tamaño */
+    gap: 30px; /* Espacio entre las tareas */
+    width: 100%;
+  }
+
+  .task-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Asegura que las tareas ocupen el 100% del espacio de su celda en el grid */
+    box-sizing: border-box;
+  }
+			.task-text {
+	font-size: 24px;
+  }
+}
+
+@media (min-width: 900px) and (min-width: 1025px) {
+  .task-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Esto crea dos columnas de igual tamaño */
+    gap: 30px; /* Espacio entre las tareas */
+    width: 100%;
+  }
+
+  .task-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Asegura que las tareas ocupen el 100% del espacio de su celda en el grid */
+    box-sizing: border-box;
+  }
+
+	.task-text {
+	font-size: 26px;
+  }
+}
+
+@media (min-width: 1205px) {
+  .task-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Esto crea dos columnas de igual tamaño */
+    gap: 30px; /* Espacio entre las tareas */
+    width: 100%;
+  }
+
+  .task-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Asegura que las tareas ocupen el 100% del espacio de su celda en el grid */
+    box-sizing: border-box;
+  }
+
+		.task-text {
+	font-size: 26px;
+  }
+}
+
+@media (min-width: 1505px) {
+  .task-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Esto crea dos columnas de igual tamaño */
+    gap: 30px; /* Espacio entre las tareas */
+    width: 100%;
+  }
+
+	.task-text {
+	font-size: 26px;
+  }
+
+.todo-title {
+	text-align: center;
+	font-weight: bold;
+	font-size: 50px;
+	margin-bottom: 20px;
+	margin-top: 0;
+}
+}
+
+
+@media (min-width: 1805px) {
+  .task-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Esto crea dos columnas de igual tamaño */
+    gap: 30px; /* Espacio entre las tareas */
+    width: 100%;
+  }
+
+	.task-text {
+	font-size: 30px;
+  }
+
+.todo-title {
+	text-align: center;
+	font-weight: bold;
+	font-size: 50px;
+	margin-bottom: 20px;
+	margin-top: 0;
+}
+
+.task-status {
+	font-size: 26px;
+	margin-top: 20px;
+}
 }

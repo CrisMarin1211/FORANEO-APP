@@ -6,8 +6,7 @@
 	border-radius: 15px;
 	padding: 20px;
 	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-	width: 90%;
-	max-width: 400px;
+
 	margin: auto;
 	border: 2px solid #02565f;
 	margin-top: 50px;
@@ -29,12 +28,6 @@
 	justify-items: center;
 }
 
-@media (max-width: 600px) {
-	.image-row {
-		grid-template-columns: repeat(5, minmax(50px, 1fr));
-	}
-}
-
 .face-img {
 	width: 50px;
 	margin: 0 10px;
@@ -53,3 +46,65 @@
 	border-radius: 50%;
 	opacity: 1;
 }
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+	.image-row {
+		grid-template-columns: repeat(5, minmax(50px, 1fr));
+	}
+}
+
+/* Tablet responsiveness */
+@media (min-width: 768px) {
+	.image-row {
+		grid-template-columns: repeat(5, minmax(60px, 1fr));
+	}
+}
+
+/* Large screens (up to 2000px) */
+@media (min-width: 1024px) {
+	.day-feedback-container {
+		max-width: 100%; /* Make container larger on wider screens */
+		font-size: 2.3rem; /* Increase font size for larger screens */
+	}
+
+	.image-row {
+		grid-template-columns: repeat(5, 1fr); /* More faces per row */
+	}
+
+	.face-img {
+		width: 70px; /* Increase size of images */
+	}
+}
+
+@media (min-width: 1500px) {
+	.day-feedback-container {
+		max-width: 100%; /* Increase the container size further for very large screens */
+		font-size: 2.1rem; /* Increase font size for larger screens */
+	}
+
+	.image-row {
+		grid-template-columns: repeat(5, 1fr); /* Even more faces per row */
+	}
+
+	.face-img {
+		width: 80px; /* Further increase the size of images */
+	}
+}
+
+
+
+
+
+@media (min-width: 2000px) {
+
+	.day-feedback-title {
+		font-size: 2.3rem; /* Increase font size for larger screens */
+		margin-top: 0;
+	}
+
+	.day-feedback-container {
+		max-width: 900px; /* Keep it responsive for very wide screens */
+	}
+}
+

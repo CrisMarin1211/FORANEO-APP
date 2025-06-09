@@ -1,8 +1,6 @@
 /* Estilo general para la sección de Sign In */
 .signIn {
   width: 100%;
-  max-width: 400px;
-
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
@@ -20,7 +18,7 @@
   justify-content: center;
   align-items: center;
   align-content: center;
- 
+
 }
 
 /* Estilo para el título de bienvenida */
@@ -112,4 +110,17 @@ button > .ant-btn {
 button > .ant-btn:hover {
   background-color: #eeeeee;
   border-color: #ccc;
+}
+
+
+@media (min-width: 768px) {
+ .signIn {
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.275);
+  text-align: center;
+}
+
 }

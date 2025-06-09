@@ -8,7 +8,7 @@
   width: 390px;
   height: 220px;
   border-radius: 20px;
-  border: 7px solid #D9C437;;
+  border: 7px solid #5d7fdc;
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
 }
@@ -34,7 +34,7 @@
 .moodResumeNumber {
   font-size: 50px;
   margin: 10px;
-  color: #806200;
+  color: #5d7fdc;
   align-self: baseline;
   animation: bounce 1s ease-out forwards;
 }
@@ -45,18 +45,18 @@
   margin-left: 15px;
   margin-bottom: 20px;
   margin-top: 0px;
-  color: #806200;
+  color: #5d7fdc;
   opacity: 0;
   animation: fadeIn 1s ease-out 0.5s forwards;
 }
 
 .moodResumeMessage2 {
-  width: 150px;
+
   font-size: 40px;
   margin-left: 15px;
   margin-bottom: 0;
   margin-top: 0px;
-  color: #b69800;
+  color: #5d7fdc;
   opacity: 0;
   animation: fadeIn 1s ease-out 1s forwards;
 }
@@ -67,7 +67,7 @@
   margin-left: 15px;
   margin-bottom: 0;
   margin-top: 20px;
-  color: #806200;
+  color: #5d7fdc;
   opacity: 0;
   animation: fadeIn 1s ease-out 1s forwards;
 }
@@ -107,4 +107,12 @@
   100% {
     transform: translateY(0);
   }
+}
+
+
+.nodataMessage{
+  font-weight: 700;
+  color: #5d7fdc;
+  font-size: 25px;
+  margin-left:50px;
 }

@@ -6,7 +6,7 @@
 	padding: 20px;
 	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 	width: 90%;
-	max-width: 400px;
+	max-width: 100%;
 	margin: auto;
 	margin-top: 30px;
 }
@@ -38,10 +38,7 @@
 }
 
 .emotion-icon {
-
-		color: white;
-
-
+	color: white;
 	width: 50px;
 	height: 50px;
 	background: #c0bfbf;
@@ -60,16 +57,10 @@
 .emotion-name {
 	font-weight: bold;
 	margin-top: 5px;
-}
-
-@media (max-width: 600px) {
-	.emotion-container {
-		margin-top: 50px;
-	}
-
-	.emotion-list {
-		grid-template-columns: repeat(4, 1fr);
-	}
+	font-size: 1rem; /* Tamaño un poco más grande por defecto */
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis; /* Para manejar el desbordamiento de texto */
 }
 
 .save-emotions-btn {
@@ -93,8 +84,6 @@
 	background-color: #00a0b2;
 }
 
-
-
 .emotion-header {
 	display: flex;
 	justify-content: space-between;
@@ -110,4 +99,100 @@
 
 .arrow.open {
 	transform: rotate(180deg);
+}
+
+/* Responsive styles */
+
+/* Small screens (mobile devices) */
+@media (max-width: 600px) {
+	.emotion-container {
+		margin-top: 50px;
+		max-width: 100%; /* Make the container full width on smaller screens */
+	}
+
+	.emotion-list {
+		grid-template-columns: repeat(4, 1fr); /* Adjust to 4 emotions per row on smaller screens */
+	}
+
+	.emotion-title {
+		font-size: 1.25rem; /* Slightly smaller font size */
+	}
+
+	.emotion-name {
+		font-size: 0.875rem; /* Aumenté un poquito el tamaño */
+	}
+}
+
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+	.emotion-list {
+		grid-template-columns: repeat(5, 1fr); /* Adjust to 5 emotions per row */
+	}
+
+	.emotion-title {
+		font-size: 1.35rem;
+	}
+
+	.emotion-name {
+		font-size: 1rem; /* Un poquito más grande */
+	}
+}
+
+
+/* Tablet responsiveness */
+@media (min-width: 768px) {
+	.emotion-list {
+		grid-template-columns: repeat(5, 1fr); /* Adjust to 5 emotions per row */
+	}
+
+	.emotion-title {
+		font-size: 1.35rem;
+	}
+
+	.emotion-name {
+		font-size: 1rem; /* Un poquito más grande */
+	}
+}
+
+/* Larger screens */
+@media (min-width: 1024px) {
+	.emotion-container {
+		max-width: 100%; /* Increase max-width for larger screens */
+	}
+
+	.emotion-list {
+		grid-template-columns: repeat(6, 1fr); /* 6 emotions per row */
+	}
+
+	.emotion-title {
+		font-size: 1.5rem;
+	}
+
+	.emotion-name {
+		font-size: 1.125rem; /* Aumenté un poquito más */
+	}
+}
+
+/* Very large screens (up to 2000px) */
+@media (min-width: 1500px) {
+	.emotion-container {
+		max-width: 100%; /* Increase max-width for large screens */
+	}
+
+	.emotion-list {
+		grid-template-columns: repeat(8, 1fr); /* More emotions per row on very large screens */
+	}
+
+	.emotion-icon {
+		width: 70px; /* Increase the size of emotion icons */
+		height: 70px;
+	}
+
+	.emotion-title {
+		font-size: 1.75rem; /* Increase font size for very large screens */
+	}
+
+	.emotion-name {
+		font-size: 1.15rem; /* Aumenté el tamaño más para pantallas muy grandes */
+	}
 }

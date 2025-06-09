@@ -11,6 +11,11 @@
 	z-index: 1000;
 }
 
+.input-task{
+	color: black;
+	background-color: white;
+}
+
 .modal-content {
 	background: #f8f8f8;
 	padding: 30px;

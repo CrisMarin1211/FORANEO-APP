@@ -26,6 +26,7 @@ const ModalAddTask = ({ onClose, onAdd }) => {
 					<h2>Add Task</h2>
 					<form onSubmit={handlerSubmit}>
 						<input
+						 className='input-task'
 							type='text'
 							placeholder='Write your task'
 							value={task}

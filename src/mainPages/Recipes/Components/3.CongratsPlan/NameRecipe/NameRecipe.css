@@ -25,13 +25,13 @@
 }
 
 /* Responsive para pantallas pequeñas */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .title-NameRecipe {
-    font-size: 20px; /* Reducción en pantallas pequeñas */
+    font-size: 30px; /* Reducción en pantallas pequeñas */
   }
 
   .recipe-image {
-    width: 100%; /* Imagen más grande en móviles */
+   
     height: auto;
   }
 }
@@ -39,11 +39,13 @@
 /* Responsive para pantallas grandes */
 @media (min-width: 1024px) {
   .title-NameRecipe {
-    font-size: 28px; /* Aumento en pantallas grandes */
+     margin-top: 100px;
+    font-size: 34px; /* Aumento en pantallas grandes */
   }
 
   .recipe-image {
-    width: 60%;
-    height: auto;
+
+    width: 90%;
+    height: 100% ;
   }
 }

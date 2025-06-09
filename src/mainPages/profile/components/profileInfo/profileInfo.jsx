@@ -32,15 +32,24 @@ const ProfileInfo = () => {
 
   return (
     <section className="profile-container">
-      <h2>Profile Information</h2>
+
+      <section className="profile-left">
+
       <section className="profile-info">
+        <h2>👤 Profile Information</h2>
         <p><strong>Name:</strong> {userInfo.name || 'N/A'}</p>
         <p><strong>Email:</strong> {userInfo.email || 'N/A'}</p>
         <p><strong>Preferred Currency:</strong> {userInfo.currency || 'N/A'}</p>
+
+      
+
       </section>
 
-      <h3>Finished Goals</h3>
+
       <section className="finished-goals">
+
+        <h3>🚀 Finished Goals</h3>
+
         {userInfo.finishedGoals && userInfo.finishedGoals.length > 0 ? (
           <ul>
             {userInfo.finishedGoals.map((goal, index) => (
@@ -56,8 +65,13 @@ const ProfileInfo = () => {
         )}
       </section>
 
-<h3>Finished Recipes</h3>
+      </section>
+
+      <section className="profile-right">
+
+
 <section className="finished-recipes">
+   <h3>🥗 Finished Recipes</h3>
   {completedRecipes.length > 0 ? (
     <section className="cards-container">
       {completedRecipes.map((recipe, index) => (
@@ -83,6 +97,8 @@ const ProfileInfo = () => {
   ) : (
     <p>No finished recipes yet.</p>
   )}
+</section>
+
 </section>
 
 

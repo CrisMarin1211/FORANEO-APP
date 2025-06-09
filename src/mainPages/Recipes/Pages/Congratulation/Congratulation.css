@@ -27,10 +27,7 @@
     padding: 10px; /* Menos espacio en pantallas pequeñas */
   }
 
-  .title-Congrats {
-    font-size: 20px; /* Reducción del tamaño del texto en pantallas pequeñas */
-    padding: 30px 0; /* Ajustar el padding */
-  }
+
 
   .unlockedmessageee {
     margin-bottom: 20px; /* Espaciado reducido en pantallas móviles */
@@ -45,23 +42,28 @@
 @media (min-width: 769px) and (max-width: 1024px) {
   .CongratsContainerPage {
     max-width: 800px; /* Aumentamos el ancho en pantallas medianas */
+
   }
 
-  .title-Congrats {
-    font-size: 22px; /* Aumentamos un poco el tamaño del título */
-  }
 }
 
 /* Media Queries para pantallas grandes */
 @media (min-width: 1025px) {
   .CongratsContainerPage {
+     display: flex;
+    flex-direction: row;
     max-width: 1000px; /* Expansión del ancho máximo en pantallas grandes */
   }
 
-  .title-Congrats {
-    font-size: 28px; /* Aumento de tamaño del título en pantallas grandes */
-    padding: 70px 0; /* Aumentamos el espacio alrededor del título */
-  }
+  .leftCongrats{
+  margin-right: 30px;
+}
+
+.spaceesp {
+  height: 50px;
+}
+
+
 }
 
 /* Estilo para la sección del título de congratulation */
@@ -73,12 +75,3 @@
   padding: 10px 0;
 }
 
-.title-Congrats {
-  font-family: 'Satoshi', sans-serif !important;
-  font-weight: 900 !important;
-  font-size: 24px;
-  color: #000000;
-  margin: 0;
-  padding: 60px;
-  text-align: center;
-}

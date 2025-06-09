@@ -12,22 +12,23 @@ function Congratulation() {
   const [completedRecipes, setCompletedRecipes] = useState(null);
 
   useEffect(() => {
-    // Recuperar todas las recetas completadas desde localStorage
+  
     const savedRecipes = JSON.parse(localStorage.getItem('completedRecipes')) || [];
     if (savedRecipes.length > 0) {
-      setCompletedRecipes(savedRecipes); // Establecer todas las recetas completadas
+      setCompletedRecipes(savedRecipes);
     }
   }, []);
 
   if (!completedRecipes || completedRecipes.length === 0) {
-    return <section>Loading...</section>; // Mientras se carga o no hay recetas completadas
+    return <section>Loading...</section>;
   }
 
-  // Mostrar la receta más reciente completada
+
   const recentRecipe = completedRecipes[completedRecipes.length - 1];
 
   return (
     <section className='CongratsContainerPage '>
+      <section className='leftCongrats'>
       <TitleCongrats />
       <ImageEmotions />
 
@@ -35,9 +36,13 @@ function Congratulation() {
       <UnlockedMessage recipeName={recentRecipe.name} />
       <MealPlanPhrase />
       </section>
+      </section>
 
+    <section className='rightCongrats'>
       <NameRecipe recipeName={recentRecipe.name} recipeImage={recentRecipe.image} />
       <section className='spaceesp'></section>
+     </section>
+
       <Menu></Menu>
 
     </section>

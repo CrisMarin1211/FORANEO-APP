@@ -1,7 +1,4 @@
-.ProfileContainerPage {
-	width: 430px;
-	max-width: 100%;
-}
+
 
 .logoout{
 	background-color: rgb(255, 93, 131);
@@ -18,4 +15,39 @@
 
 .spacesp{
 	height: 170px;
+}
+
+
+@media (min-width: 1025px) {
+  .profile-container {
+    display: flex;
+    flex-direction: row;
+  }
+    .profile-right{
+    margin-left: 40px;
+  }
+
+	.cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+}
+
+
+
+@media (min-width: 1625px) {
+  .profile-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .profile-right{
+    margin-left: 50px;
+  }
+	.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
 }

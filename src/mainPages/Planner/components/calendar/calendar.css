@@ -14,6 +14,7 @@
 }
 
 .calendarSpan{
+	color: black;
 	font-size: 20px;
 	margin: 20px;
 }
@@ -36,7 +37,7 @@
 	cursor: pointer;
 	font-size: 16px;
 	border-radius: 5px;
-	color: white;
+	color: black;
 	font-weight: bold;
 	transition: background-color 0.3s ease;
 }
@@ -50,7 +51,7 @@
 	grid-template-columns: repeat(7, 1fr);
 	gap: 12px;
 	width: 100%;
-	max-width: 450px;
+
 	box-sizing: border-box;
 	justify-content: center;
 }
@@ -89,7 +90,7 @@
 	align-items: center;
 	align-content: center;
 	justify-items: center;
-	width: 380px;
+	width: 400px;
 }
 
 @media (max-width: 480px) {
@@ -116,4 +117,38 @@
 .image-face-src {
 	width: 40px;
 	height: 40px;
+}
+
+@media (min-width: 768px) {
+	.calendar-grid {
+		gap: 10px;
+		max-width: 100%;
+		padding: 0 10px;
+	}
+
+	.calendar-svg {
+		width: 90px;
+		height: 90px;
+	}
+
+	.calendar-day-number {
+		font-size: 18px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.calendar-grid {
+		gap: 12px;
+		max-width: 100%;
+		padding: 0 10px;
+	}
+
+	.calendar-svg {
+		width: 100px;
+		height: 100px;
+	}
+
+	.calendar-day-number {
+		font-size: 20px;
+	}
 }

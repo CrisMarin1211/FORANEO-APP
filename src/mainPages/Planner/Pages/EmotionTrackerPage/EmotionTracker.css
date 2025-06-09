@@ -1,14 +1,19 @@
+
+
+
+
+
+.emotionstrackerr{
+	color: rgb(0, 66, 73);
+}
+
 .save-emotions-wrapper {
 	display: flex;
 	justify-content: center;
 	margin-top: 20px;
 }
 
-@media (max-width: 768px) {
-	.save-emotions-wrapper {
-		margin-bottom: 100px;
-	}
-}
+
 
 .selected-date-header {
 	display: flex;
@@ -56,6 +61,86 @@
 	}
 }
 
+@media (min-width: 1025px) {
+	.emotion-tracker-back-container {
+		margin-top: 80px;
+	}
+}
+
+
+
 .icon-arrow {
 	color: #02565f;
+}
+
+
+.selected-date-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px auto 10px;
+  gap: 8px;
+  color: #333;
+  cursor: pointer;
+  margin-top: 60px;
+  word-wrap: break-word; /* Asegura que el texto largo no se desborde */
+}
+
+.date-arrow-icon {
+  font-size: 14px;
+  margin-top: 2px;
+  transition: transform 0.2s ease;
+}
+
+.date-arrow-icon:hover {
+  transform: translateY(2px);
+  color: #79cfd9;
+}
+
+.selected-date-header span {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .selected-date-header {
+    font-size: 16px;  /* Reducir tamaño en pantallas pequeñas */
+    margin-top: 50px;
+  }
+
+  .date-arrow-icon {
+    font-size: 12px;  /* Reducir el tamaño del ícono de la flecha */
+  }
+}
+
+/* Tablet: 768px o más */
+@media (max-width: 768px) {
+  .selected-date-header {
+    font-size: 18px;  /* Ajustar el tamaño para tabletas */
+  }
+
+  .date-arrow-icon {
+    font-size: 13px;  /* Ajustar el tamaño del ícono de la flecha */
+  }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1025px) {
+  .selected-date-header {
+    font-size: 30px;  /* Aumentar tamaño en pantallas grandes */
+  }
+
+  .date-arrow-icon {
+    font-size: 24px;  /* Aumentar el tamaño del ícono de la flecha */
+  }
+}
+
+.save-emotions-btn{
+	margin-bottom: 150px;
 }

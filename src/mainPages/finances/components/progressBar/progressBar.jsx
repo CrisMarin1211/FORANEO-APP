@@ -17,9 +17,8 @@ const ProgressBar = ({ goal, percent }) => {
     <section className="progressBarContainer">
       <section
         className="floatingNumber"
-        style={{
-          left: `min(90%, max(10%, ${roundedPercent}%))`,
-          transform: "translateX(-50%)",
+        style={{color: "black",
+          left: `min(90%, max(10%, ${roundedPercent}%)), `,
         }}
       >
         ${raisedAmount.toLocaleString()}

@@ -38,7 +38,7 @@ function RecipeDetail() {
   };
 
   const handleLetsCookClick = () => {
-    setShowPriceInput(true); // Mostrar los inputs cuando se haga clic en "Let's Cook"
+    setShowPriceInput(true);
   };
 
 
@@ -52,7 +52,7 @@ return (
     <CardImageRecipes name={recipe.name} image={recipe.image} description={recipe.description} />
     <IngredientsRecipes ingredients={recipe.ingredients} />
 
-    
+
     {!showPriceInput && <ButtonLetsCook onClick={handleLetsCookClick} />}
 </section>
     <section className='rightside'>

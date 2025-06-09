@@ -1,29 +1,34 @@
-import React from 'react';
-import './CalendarPage.css';
-import Menu from '../../components/navBar/navBar';
-import Calendar from '../../components/calendar/calendar';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from "react";
+import "./CalendarPage.css";
+import Menu from "../../components/navBar/navBar";
+import Calendar from "../../components/calendar/calendar";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { getCalendarEventsFromFirestore } from "../../../../services/calendarFirebase";
+import { setCalendarEvents } from "../../../../redux/planner/calendarSlice";
+import ToDoButton from "../../components/toDoButton/toDoButton";
 
 const CalendarPage = () => {
-	const navigate = useNavigate();
-	const handlerBackClick = () => {
-		navigate('/to-do');
-	};
-	return (
-		<>
-			<section className='calendar-back-container'>
+  const dispatch = useDispatch();
 
-				<button className='back-button' onClick={handlerBackClick}>
-					<FontAwesomeIcon icon={faChevronLeft} className='icon-arrow' />
-					<h2 className='calendar-title'>Mood Tracker</h2>
-				</button>
-			</section>
-			<Menu />
-			<Calendar />
-		</>
-	);
+  useEffect(() => {
+    async function loadEvents() {
+      const events = await getCalendarEventsFromFirestore();
+      dispatch(setCalendarEvents(events));
+    }
+    loadEvents();
+  }, [dispatch]);
+
+
+  return (
+    <>
+      <Menu />
+    <section className="toDoButton-Container">
+      <ToDoButton />
+      </section>
+      <Calendar />
+    </>
+  );
 };
 
 export default CalendarPage;

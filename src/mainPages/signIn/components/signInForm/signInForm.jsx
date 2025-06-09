@@ -4,7 +4,7 @@ import { Button, Form, Input, Select, message } from 'antd';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { setDoc, doc } from 'firebase/firestore';
 import { auth, db } from '../../../../services/firebaseConfig'
-
+import './signInForm.css';
 const { Option } = Select;
 
 const currencyOptions = [
@@ -60,7 +60,8 @@ const onFinish = async (values) => {
         form={form}
         name="register"
         onFinish={onFinish}
-        style={{ maxWidth: 400, margin: 'auto' }}
+        className='formRegister1'
+
         layout="vertical"
       >
         <Form.Item

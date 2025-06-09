@@ -6,11 +6,11 @@
 	border-radius: 15px;
 	padding: 20px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	width: 90%;
-	max-width: 400px;
 	margin: auto;
-	border: 2px solid #02565f;
-	margin-top: 45px;
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+	margin-top: 20px;
+	margin-bottom: 40px;
+	transition: all 0.3s ease; /* Transición suave cuando el tamaño del contenedor cambia */
 }
 
 .icon-column {
@@ -38,6 +38,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	margin-left: 5px;
 }
 
 .row {
@@ -49,10 +50,66 @@
 .icon-column svg {
 	width: 45px;
 	height: 45px;
+	transition: width 0.3s ease, height 0.3s ease; /* Transición de tamaño para los iconos */
 }
 
 .food-column svg {
 	width: 27px;
 	height: 27px;
 	color: #00a0b2;
+	transition: width 0.3s ease, height 0.3s ease; /* Transición de tamaño para los iconos */
 }
+
+/* Cambiar tamaño cuando se expande */
+.summary-card:hover .icon-column svg {
+	width: 60px;
+	height: 60px;
+}
+
+.current-face {
+	width: 50px;
+	height: 100%;
+}
+
+.close-summary-btn {
+	background-color: transparent;
+	color: #02565f;
+}
+
+.edit-summary-btn {
+	margin: 0;
+	background-color: transparent;
+	color: #02565f;
+	margin-top: 20px;
+}
+
+.summary-buttons {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-self: baseline;
+}
+
+
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+	
+
+}
+
+
+/* Tablet responsiveness */
+@media (min-width: 768px) {
+
+}
+
+/* Larger screens */
+@media (min-width: 1024px) {
+
+}
+
+/* Very large screens (up to 2000px) */
+@media (min-width: 1500px) {
+}
+

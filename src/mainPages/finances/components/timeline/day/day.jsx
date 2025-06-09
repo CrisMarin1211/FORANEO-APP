@@ -7,8 +7,8 @@ const Day = ({ date }) => {
 
 
   const day = formattedDate.getDate();
-  const month = formattedDate.toLocaleString('default', { month: 'long' });
-  const weekday = formattedDate.toLocaleString('default', { weekday: 'short' });
+  const month = formattedDate.toLocaleString('en-US', { month: 'long' });
+  const weekday = formattedDate.toLocaleString('en-US',  { weekday: 'short' });
 
   return (
     <section className="timeLineDate">

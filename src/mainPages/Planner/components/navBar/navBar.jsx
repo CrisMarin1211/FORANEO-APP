@@ -54,6 +54,8 @@ const Menu = () => {
     <section>
       <nav className='menu'>
        <svg
+
+
   className='menu-bg-svg'
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 393 96"
@@ -73,13 +75,13 @@ const Menu = () => {
 
 
         <div className='menu-inner'>
-          <Link className='btn' to='/finances'><IconMoney /></Link>
-          <Link className='btn' to={hasWeeklyPlan ? '/weeklyplan' : '/welcome'}><IconFood /></Link>
+          <Link className='btn' aria-label="Go to finances page"  to='/finances'><IconMoney /></Link>
+          <Link className='btn' aria-label="Go to recipes page"  to={hasWeeklyPlan ? '/weeklyplan' : '/welcome'}><IconFood /></Link>
           <section className='main'>
-            <Link className='btn home' to='/main'><IconHome /></Link>
+            <Link className='btn home' aria-label="Go to main page" to='/main'><IconHome /></Link>
           </section>
-          <Link className='btn' to='/calendar'><IconCalendar /></Link>
-          <Link className='btn' to='/profile'><IconUser /></Link>
+          <Link className='btn' aria-label="Go to calendar page"  to='/calendar'><IconCalendar /></Link>
+          <Link className='btn' aria-label="Go to profile page"  to='/profile'><IconUser /></Link>
         </div>
       </nav>
     </section>

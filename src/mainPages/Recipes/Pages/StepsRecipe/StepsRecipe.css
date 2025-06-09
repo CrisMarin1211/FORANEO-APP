@@ -151,6 +151,9 @@ button:disabled {
 .stepscont{
   align-self: center;
   justify-self: center;
+  display: flex;
+  justify-self: start;
+  margin-left: 20px;
 }
 
 .sspaceiwi{

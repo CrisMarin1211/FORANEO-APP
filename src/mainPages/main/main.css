@@ -3,28 +3,31 @@
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-	width: 430px;
+	width: 100%;
 	max-width: 100%;
+	padding: 20px;
+	box-sizing: border-box;
 }
 
 .MainContainerr {
-	margin-top: 10px;
-	width: 390px;
-	height: 350px;
+	width: 100%;
+	max-width: 430px;
+	height: auto;
 	border-radius: 10px;
 	box-shadow: 0px 0px 10px 0px rgba(75, 75, 75, 0.75);
+	margin-top: 10px;
 }
 
 .MenuBarr {
-	width: 230px;
-	margin-right: 200px;
+	width: 100%;
+	max-width: 230px;
+	margin-right: 0;
 }
 
 .messageWelcome {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-content: center;
 	align-items: center;
 	color: black;
 	font-size: 15px;
@@ -52,14 +55,9 @@
 
 /* Media Queries para dispositivos pequeños (móviles) */
 @media (max-width: 480px) {
-	.MainContainerPage {
-		width: 100%;
-		max-width: 100%;
-	}
-
 	.MainContainerr {
-		width: 90%;
-		height: auto;
+		width: 100%;
+		padding: 10px;
 	}
 
 	.MenuBarr {
@@ -69,10 +67,11 @@
 
 	.messageWelcome {
 		font-size: 13px;
+		text-align: center;
 	}
 
 	.usernameMessage {
-		font-size: 20px;
+		font-size: 18px;
 	}
 
 	.wrappedMessage {
@@ -86,18 +85,14 @@
 
 /* Media Queries para dispositivos medianos (tabletas) */
 @media (min-width: 481px) and (max-width: 768px) {
-	.MainContainerPage {
-		width: 90%;
-	}
-
 	.MainContainerr {
-		width: 80%;
-		height: 300px;
+		width: 90%;
+		height: auto;
 	}
 
 	.MenuBarr {
-		width: 200px;
-		margin-right: 50px;
+		width: 80%;
+		margin-right: 0;
 	}
 
 	.messageWelcome {
@@ -105,7 +100,7 @@
 	}
 
 	.usernameMessage {
-		font-size: 22px;
+		font-size: 20px;
 	}
 
 	.wrappedMessage {
@@ -117,15 +112,11 @@
 	}
 }
 
-/* Media Queries para pantallas extra grandes (desktops grandes) */
+/* Media Queries para pantallas grandes (desktops) */
 @media (min-width: 1025px) {
-	.MainContainerPage {
-		width: 100%;
-	}
-
 	.MainContainerr {
 		width: 60%;
-		height: 350px;
+		height: auto;
 	}
 
 	.MenuBarr {
@@ -134,18 +125,47 @@
 	}
 
 	.messageWelcome {
-		font-size: 16px;
+		font-size: 18px;
 	}
 
 	.usernameMessage {
-		font-size: 26px;
+		font-size: 30px; /* Aumenta aún más el tamaño de la fuente */
 	}
 
 	.wrappedMessage {
-		font-size: 22px;
+		font-size: 24px; /* Aumenta el tamaño de la fuente */
 	}
 
 	.spaceiwii {
 		height: 150px;
+	}
+}
+
+/* Media Queries para pantallas extra grandes (pantallas enormes) */
+@media (min-width: 1440px) {
+	.MainContainerr {
+		width: 50%;
+		height: auto;
+	}
+
+	.MenuBarr {
+		width: 300px;
+		margin-right: 200px;
+	}
+
+	.messageWelcome {
+		font-size: 20px;
+	}
+
+	.usernameMessage {
+		font-size: 36px; /* Aumenta el tamaño para pantallas muy grandes */
+	}
+
+	.wrappedMessage {
+		font-size: 28px; /* Aumenta el tamaño de la fuente para pantallas grandes */
+	}
+
+	.spaceiwii {
+		height: 200px; /* Más espacio entre secciones para pantallas grandes */
 	}
 }

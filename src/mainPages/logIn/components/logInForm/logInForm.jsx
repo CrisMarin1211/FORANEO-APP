@@ -36,7 +36,7 @@ const LogInForm = ({ onFinish, onFinishFailed }) => {
       name="login"
       labelCol={{ span: 8 }}
       wrapperCol={{ span: 16 }}
-      style={{ maxWidth: 600 }}
+      
       initialValues={{ remember: true }}
       onFinish={handleSubmit}
       onFinishFailed={onFinishFailed}
