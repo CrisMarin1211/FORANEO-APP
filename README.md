@@ -1,83 +1,74 @@
-# Foraneo App
-Foráneo App
-Foráneo App is an application designed to improve daily management in three key areas: personal finances, recipes and meal planning, and emotion and task management. With this app, you can efficiently organize your daily activities all in one place.
+# Foráneo App
 
-Main Features
-Daily Finances: Track your income, expenses, and savings in a simple and visual way.
+Foráneo App is an application designed to improve daily management in three key areas: **personal finances**, **recipes and meal planning**, and **emotion and task management**. With this app, you can efficiently organize your daily activities all in one place.
 
-Recipes and Daily Meal Plan: Find recipes, plan your meals, and keep track of your daily diet.
+## Main Features
 
-Emotion and Task Management: Organize your day, manage tasks, and track your emotional state.
+1. **Daily Finances**: Track your income, expenses, and savings in a simple and visual way.
+2. **Recipes and Daily Meal Plan**: Find recipes, plan your meals, and keep track of your daily diet.
+3. **Emotion and Task Management**: Organize your day, manage tasks, and track your emotional state.
 
-Technologies Used
-Node.js: JavaScript runtime environment for the server-side.
+## Technologies Used
 
-React: JavaScript library for building user interfaces.
+- **Node.js**: JavaScript runtime environment for the server-side.
+- **React**: JavaScript library for building user interfaces.
+- **Vite**: Fast build tool for front-end applications.
+- **Lucide Icons**: Easy-to-integrate icon library.
+- **Moment.js**: Library for date and time manipulation and formatting.
+- **Ant Design (Ant)**: React UI components library.
+- **ApexCharts**: Tool for creating interactive charts and visualizations.
+- **FontAwesome**: Icon library supporting various sizes and styles.
+- **Firebase**: Backend-as-a-Service (BaaS) platform for authentication, real-time database, and more.
+- **Redux**: State management library for React applications.
 
-Vite: Fast build tool for front-end applications.
+## How to Initialize the Project
 
-Lucide Icons: Easy-to-integrate icon library.
+### Prerequisites
 
-Moment.js: Library for date and time manipulation and formatting.
-
-Ant Design (Ant): React UI components library.
-
-ApexCharts: Tool for creating interactive charts and visualizations.
-
-FontAwesome: Icon library supporting various sizes and styles.
-
-Firebase: Backend-as-a-Service (BaaS) platform for authentication, real-time database, and more.
-
-Redux: State management library for React applications.
-
-How to Initialize the Project
-Prerequisites
 Make sure you have the following installed on your machine:
 
-Node.js: Download it from here.
+- **Node.js**: Download it from [here](https://nodejs.org/).
+- **Git**: Install it from [here](https://git-scm.com/).
 
-Git: Install it from here.
+### Installation Instructions
 
-Installation Instructions
-Clone the repository:
+1. **Clone the repository:**
 
-Open your terminal and clone the repository to your local machine:
+   Open your terminal and clone the repository to your local machine:
 
-bash
-Copiar
-git clone https://github.com/your-username/foraneo-app.git
-Switch to the develop branch:
+   ```bash
+   git clone https://github.com/CrisMarin1211/FORANEO-APP/tree/develop
 
-After cloning the repository, switch to the develop branch:
+2. **Switch to the develop branch:**
 
-bash
-Copiar
-git checkout develop
-Install dependencies:
+   After cloning the repository, switch to the develop branch:
 
-Navigate to the project folder and run the following command to install all the necessary dependencies:
+   ```bash
+   git checkout develop
 
-bash
-Copiar
-cd foraneo-app
-npm install
-Run the app:
+3. **Install dependencies:**
 
-Once the dependencies are installed, run the following command to start the application locally:
+   Navigate to the project folder and run the following command to install all the necessary dependencies:
 
-bash
-Copiar
-npm run dev
+   ```bash
+   cd foraneo-app
+   npm install
+
+4. **Run the app:**
+
+  Once the dependencies are installed, run the following command to start the application locally:
+
+    ```bash
+      npm run dev
+
 This will open the app in your browser at http://localhost:3000 (by default).
 
-Firebase Configuration (if necessary):
-
-If you're using Firebase, make sure your project is set up in Firebase Console. Create a .env file at the root of the project and add your Firebase configuration variables there. You can find these variables in your Firebase Console under Project Settings -> Firebase SDK Configuration.
+5. **Firebase Configuration:**
+Create a .env file at the root of the project and add your Firebase configuration variables there. You can find these variables in your Firebase Console under Project Settings -> Firebase SDK Configuration.
 
 Example .env file:
 
-env
-Copiar
+.env
 REACT_APP_FIREBASE_API_KEY=your-api-key
 REACT_APP_FIREBASE_AUTH_DOMAIN=your-auth-domain
 REACT_APP_FIREBASE_PROJECT_ID=your-project-id
